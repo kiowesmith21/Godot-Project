@@ -1,0 +1,100 @@
+[gd_scene load_steps=23 format=2]
+
+[ext_resource path="res://Enemies/Thief/Thief_Walk_2.png" type="Texture" id=1]
+[ext_resource path="res://Enemies/Thief/Thief_Idle_1.png" type="Texture" id=2]
+[ext_resource path="res://Enemies/Thief/Thief_Idle_2.png" type="Texture" id=3]
+[ext_resource path="res://Enemies/Thief/Thief_Idle_3.png" type="Texture" id=4]
+[ext_resource path="res://Enemies/Thief/Thief_Idle_4.png" type="Texture" id=5]
+[ext_resource path="res://Enemies/Thief/Thief_Walk_1.png" type="Texture" id=6]
+[ext_resource path="res://Enemies/Thief/Thief_Walk_3.png" type="Texture" id=7]
+[ext_resource path="res://Enemies/Thief/Thief_Walk_4.png" type="Texture" id=8]
+[ext_resource path="res://Enemies/Thief/Thief_Melee_3.png" type="Texture" id=9]
+[ext_resource path="res://Enemies/Thief/Thief_Melee_4.png" type="Texture" id=10]
+[ext_resource path="res://Enemies/Thief/Thief_Melee_2.png" type="Texture" id=11]
+[ext_resource path="res://Enemies/Thief/Thief_Melee_1.png" type="Texture" id=12]
+[ext_resource path="res://Enemies/Thief/Thief.gd" type="Script" id=13]
+[ext_resource path="res://Enemies/PlayerDetectionZone.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Stats.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Hitboxes and Hurtboxes/Hurtbox.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Hitboxes and Hurtboxes/Hitbox.tscn" type="PackedScene" id=17]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ), ExtResource( 1 ), ExtResource( 7 ), ExtResource( 8 ) ],
+"loop": true,
+"name": "Walk",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 12 ), ExtResource( 11 ), ExtResource( 9 ), ExtResource( 10 ) ],
+"loop": true,
+"name": "Melee",
+"speed": 10.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 6.9944
+height = 9.44257
+
+[sub_resource type="CircleShape2D" id=3]
+radius = 106.424
+
+[sub_resource type="CapsuleShape2D" id=4]
+height = 8.00737
+
+[sub_resource type="CapsuleShape2D" id=5]
+radius = 22.5314
+height = 0.0
+
+[node name="Thief" type="KinematicBody2D"]
+script = ExtResource( 13 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+scale = Vector2( 1.5, 1.5 )
+frames = SubResource( 1 )
+animation = "Idle"
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 12.2157 )
+shape = SubResource( 2 )
+
+[node name="PlayerDetectionZone" parent="." instance=ExtResource( 14 )]
+
+[node name="CollisionShape2D" parent="PlayerDetectionZone" index="0"]
+modulate = Color( 1, 1, 1, 0.180392 )
+position = Vector2( 0, 8.67646 )
+shape = SubResource( 3 )
+
+[node name="Stats" parent="." instance=ExtResource( 15 )]
+
+[node name="Hurtbox" parent="." instance=ExtResource( 16 )]
+collision_layer = 8
+collision_mask = 32
+
+[node name="CollisionShape2D" parent="Hurtbox" index="0"]
+modulate = Color( 0.388235, 0.843137, 0.811765, 1 )
+position = Vector2( 0, 12.2157 )
+shape = SubResource( 4 )
+
+[node name="Hitbox" parent="." instance=ExtResource( 17 )]
+collision_layer = 0
+collision_mask = 2147483652
+
+[node name="CollisionShape2D" parent="Hitbox" index="0"]
+modulate = Color( 0.890196, 0.905882, 0.407843, 1 )
+position = Vector2( 0, 12.2157 )
+shape = SubResource( 5 )
+[connection signal="area_entered" from="Hurtbox" to="." method="_on_Hurtbox_area_entered"]
+[connection signal="area_entered" from="Hitbox" to="." method="_on_Hitbox_area_entered"]
+[connection signal="area_exited" from="Hitbox" to="." method="_on_Hitbox_area_exited"]
+
+[editable path="PlayerDetectionZone"]
+
+[editable path="Hurtbox"]
+
+[editable path="Hitbox"]
