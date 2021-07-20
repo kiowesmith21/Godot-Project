@@ -24,6 +24,7 @@ var Arrow = preload("res://Player/Arrow.tscn")
 
 onready var anim = $AnimatedSprite
 onready var meleeHitbox = $MeleeHitbox
+onready var hurtBox = $Hurtbox
 
 func _ready():
 	stats.connect("no_health", self, "queue_free") #connect to player stats signal
@@ -102,4 +103,5 @@ func get_input(delta):
 #player getting hit, their hurtbox being entered
 func _on_Hurtbox_area_entered(area):
 	stats.set_health(stats.health - 1)
-	#queue_free()
+	hurtBox.start_invincibility(0.5)
+	

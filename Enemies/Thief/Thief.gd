@@ -21,6 +21,7 @@ var state = CHASE
 onready var stats =  $Stats
 onready var anim = $AnimatedSprite
 onready var playerDetectionZone = $PlayerDetectionZone 
+onready var hurtBox = $Hurtbox
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
