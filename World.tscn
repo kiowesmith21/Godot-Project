@@ -707,6 +707,7 @@ position = Vector2( -189.588, 131.498 )
 scale = Vector2( 1.5, 1.5 )
 frames = SubResource( 2 )
 animation = "Idle"
+frame = 3
 playing = true
 
 [node name="Villager-Male" type="AnimatedSprite" parent="YSort" groups=[
@@ -716,7 +717,7 @@ position = Vector2( -153.177, 132.654 )
 scale = Vector2( 1.5, 1.5 )
 frames = SubResource( 3 )
 animation = "Idle"
-frame = 2
+frame = 1
 playing = true
 flip_h = true
 
@@ -813,6 +814,10 @@ __meta__ = {
 anims/ShowDialogue = SubResource( 19 )
 
 [node name="Skillbar" parent="CanvasLayer" instance=ExtResource( 13 )]
+margin_left = 129.546
+margin_top = 6.92894
+margin_right = 173.546
+margin_bottom = 21.9289
 
 [node name="FireballSpellbook" parent="." instance=ExtResource( 15 )]
 position = Vector2( 64.2172, 73.1362 )

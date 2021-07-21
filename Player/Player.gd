@@ -36,6 +36,7 @@ func _physics_process(delta):
 	direction.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
 	direction.y = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
 	
+	
 	#handling diagonal movement 
 	if (abs(direction.x) == 1 and abs(direction.y) == 1):
 		direction = direction.normalized()
@@ -46,6 +47,7 @@ func _physics_process(delta):
 	else:
 		anim.play("Idle")
 	var movement = MAX_SPEED * direction * delta
+	last_direction = direction
 	move_and_collide(movement)
 	
 	if direction != Vector2.ZERO:
@@ -71,7 +73,7 @@ func attack(choice):
 	elif (choice == 3):
 		var a = Arrow.instance()
 		get_parent().add_child(a)
-		a.direction = last_direction.normalized()
+		a.direction = last_direction
 		a.transform = $MageHand.global_transform
 		a.Timer()
 	else:

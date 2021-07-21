@@ -1,8 +1,7 @@
 extends Area2D
 const FRICTION = .05
 const ACCELERATION = .1
-const MAX_SPEED = 100
-
+const MAX_SPEED = 80
 
 var speed = 80
 var direction : Vector2
@@ -13,7 +12,7 @@ func _process(delta):
 		speed = lerp(speed,MAX_SPEED,ACCELERATION)
 	else:
 		speed = lerp(speed,Vector2.ZERO,FRICTION)
-	position = position + speed * delta * direction
+	position += transform.x * speed * delta * direction
 
 func _on_Arrow_body_entered(body):
 	if body.name == "Player":

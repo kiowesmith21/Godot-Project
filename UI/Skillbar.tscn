@@ -6,10 +6,10 @@
 [ext_resource path="res://Weapons/dagger.png" type="Texture" id=4]
 
 [node name="Skillbar" type="ColorRect"]
-margin_left = 119.719
-margin_top = 13.5409
-margin_right = 177.719
-margin_bottom = 28.5409
+margin_left = 120.0
+margin_top = 14.0
+margin_right = 164.0
+margin_bottom = 29.0
 color = Color( 0.282353, 0.317647, 0.305882, 1 )
 script = ExtResource( 3 )
 __meta__ = {
@@ -63,14 +63,3 @@ light_mask = 64
 position = Vector2( 7.1369, 6.94189 )
 scale = Vector2( 0.100258, 0.127422 )
 texture = ExtResource( 2 )
-
-[node name="Skill4" type="ColorRect" parent="."]
-margin_left = 42.7658
-margin_top = 1.47218
-margin_right = 56.7658
-margin_bottom = 14.4722
-rect_pivot_offset = Vector2( 8.76503, 7.1459 )
-color = Color( 0, 0, 0, 0.490196 )
-__meta__ = {
-"_edit_use_anchors_": false
-}

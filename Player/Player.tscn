@@ -62,9 +62,10 @@ shape = SubResource( 3 )
 position = Vector2( -6.12827, 16.2496 )
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
-position = Vector2( 0.824959, 14.6135 )
+position = Vector2( 0.158287, 14.6135 )
 enabled = true
 cast_to = Vector2( 5, 0 )
+
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_Hurtbox_area_entered"]
 
 [editable path="Hurtbox"]
