@@ -3,16 +3,18 @@ const FRICTION = .05
 const ACCELERATION = .1
 const MAX_SPEED = 80
 
-var speed = 80
-var direction : Vector2
+var speed = 100
+var direction
 var atk_dmg
 
+
 func _process(delta):
+	print(direction)
 	if(speed >= 0):
 		speed = lerp(speed,MAX_SPEED,ACCELERATION)
 	else:
 		speed = lerp(speed,Vector2.ZERO,FRICTION)
-	position += transform.x * speed * delta * direction
+	position = position + speed * delta * direction
 
 func _on_Arrow_body_entered(body):
 	if body.name == "Player":
@@ -22,3 +24,5 @@ func _on_Arrow_body_entered(body):
 func Timer():
 	yield(get_tree().create_timer(0.75), "timeout")
 	queue_free()
+
+

@@ -31,8 +31,8 @@ func _ready():
 
 #movement
 func _physics_process(delta):
-	var attack_direction = get_input(delta) #run get input to find attack input (weapon choice)
 	var direction: Vector2
+	var attack_direction = get_input(delta) #run get input to find attack input (weapon choice)
 	direction.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
 	direction.y = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
 	
@@ -47,12 +47,14 @@ func _physics_process(delta):
 	else:
 		anim.play("Idle")
 	var movement = MAX_SPEED * direction * delta
-	last_direction = direction
 	move_and_collide(movement)
 	
 	if direction != Vector2.ZERO:
 		$RayCast2D.cast_to = direction.normalized() * 8
-	
+	last_direction = direction
+
+#weapon choices determine distance and damage. 
+#sword = highest damage but closest distance while arrow = lowest damage but further distance
 func attack(choice):
 	#melee
 	if (choice == 1):
@@ -72,8 +74,8 @@ func attack(choice):
 			print("Fireball isn't given!")
 	elif (choice == 3):
 		var a = Arrow.instance()
-		get_parent().add_child(a)
 		a.direction = last_direction
+		get_parent().add_child(a)
 		a.transform = $MageHand.global_transform
 		a.Timer()
 	else:
