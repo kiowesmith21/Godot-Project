@@ -13,15 +13,15 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 8 ), ExtResource( 5 ), ExtResource( 2 ), ExtResource( 6 ) ],
-"loop": true,
-"name": "Idle",
-"speed": 4.0
-}, {
 "frames": [ ExtResource( 1 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 7 ) ],
 "loop": true,
 "name": "Walk",
 "speed": 10.0
+}, {
+"frames": [ ExtResource( 8 ), ExtResource( 5 ), ExtResource( 2 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 4.0
 } ]
 
 [sub_resource type="CapsuleShape2D" id=2]
@@ -53,7 +53,6 @@ visible = false
 collision_layer = 4
 
 [node name="CollisionShape2D" parent="Hurtbox" index="0"]
-visible = false
 modulate = Color( 1, 1, 1, 0.760784 )
 position = Vector2( 0.15731, 14.3154 )
 shape = SubResource( 3 )
@@ -62,9 +61,10 @@ shape = SubResource( 3 )
 position = Vector2( -6.12827, 16.2496 )
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
-position = Vector2( 0.824959, 14.6135 )
+position = Vector2( 0.158287, 14.6135 )
 enabled = true
 cast_to = Vector2( 5, 0 )
+
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_Hurtbox_area_entered"]
 
 [editable path="Hurtbox"]
