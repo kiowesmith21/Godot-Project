@@ -707,6 +707,7 @@ position = Vector2( -189.588, 131.498 )
 scale = Vector2( 1.5, 1.5 )
 frames = SubResource( 2 )
 animation = "Idle"
+frame = 1
 playing = true
 
 [node name="Villager-Male" type="AnimatedSprite" parent="YSort" groups=[
@@ -716,7 +717,7 @@ position = Vector2( -153.177, 132.654 )
 scale = Vector2( 1.5, 1.5 )
 frames = SubResource( 3 )
 animation = "Idle"
-frame = 2
+frame = 3
 playing = true
 flip_h = true
 
