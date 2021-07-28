@@ -144,9 +144,10 @@ choose_weapon_4={
 2d_physics/layer_5="Enemy"
 2d_render/layer_6="PlayerHitbox"
 2d_physics/layer_6="PlayerHitbox"
+2d_physics/layer_7="SoftCollisions"
 
 [rendering]
 
-2d/snapping/use_gpu_pixel_snap=true
-environment/default_environment="res://default_env.tres"
 quality/2d/use_pixel_snap=true
+environment/default_environment="res://default_env.tres"
+2d/snapping/use_gpu_pixel_snap=true

@@ -22,6 +22,7 @@ onready var stats =  $Stats
 onready var anim = $AnimatedSprite
 onready var playerDetectionZone = $PlayerDetectionZone 
 onready var hurtBox = $Hurtbox
+onready var softCollision = $SoftCollision
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -51,6 +52,10 @@ func _physics_process(delta):
 			else:
 				anim.play("Walk")
 			anim.flip_h = velocity.x < 0 #flip the sprite to the direction we're facing
+	
+	#enemies have soft collisions with each other
+	if softCollision.is_colliding():
+		velocity += softCollision.get_push_vector() * delta * 400
 	
 	velocity = move_and_slide(velocity)
 

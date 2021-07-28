@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Npcs/Archer/Archer_Walk_1.png" type="Texture" id=1]
 [ext_resource path="res://Npcs/Archer/Archer_Idle_3.png" type="Texture" id=2]
@@ -10,8 +10,13 @@
 [ext_resource path="res://Npcs/Archer/Archer_Idle_1.png" type="Texture" id=8]
 [ext_resource path="res://Player/Player.gd" type="Script" id=9]
 [ext_resource path="res://Hitboxes and Hurtboxes/Hurtbox.tscn" type="PackedScene" id=10]
+[ext_resource path="res://WhiteColor.shader" type="Shader" id=11]
 
-[sub_resource type="SpriteFrames" id=1]
+[sub_resource type="ShaderMaterial" id=1]
+shader = ExtResource( 11 )
+shader_param/active = false
+
+[sub_resource type="SpriteFrames" id=2]
 animations = [ {
 "frames": [ ExtResource( 1 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 7 ) ],
 "loop": true,
@@ -24,13 +29,25 @@ animations = [ {
 "speed": 4.0
 } ]
 
-[sub_resource type="CapsuleShape2D" id=2]
+[sub_resource type="CapsuleShape2D" id=3]
 radius = 7.15211
 height = 0.0
 
-[sub_resource type="CapsuleShape2D" id=3]
+[sub_resource type="CapsuleShape2D" id=4]
 radius = 8.18526
 height = 0.0
+
+[sub_resource type="Animation" id=5]
+resource_name = "Blink"
+
+[sub_resource type="Animation" id=6]
+resource_name = "Start"
+length = 0.2
+loop = true
+
+[sub_resource type="Animation" id=7]
+resource_name = "Stop"
+length = 0.1
 
 [node name="Player" type="KinematicBody2D"]
 position = Vector2( 148.726, 78.0111 )
@@ -39,14 +56,15 @@ collision_layer = 2
 script = ExtResource( 9 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+material = SubResource( 1 )
 position = Vector2( 0, 0.0589256 )
 scale = Vector2( 1.5, 1.5 )
-frames = SubResource( 1 )
-animation = "Walk"
+frames = SubResource( 2 )
+animation = "Idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -1.41581, 15.6454 )
-shape = SubResource( 2 )
+shape = SubResource( 3 )
 
 [node name="Hurtbox" parent="." instance=ExtResource( 10 )]
 visible = false
@@ -55,7 +73,7 @@ collision_layer = 4
 [node name="CollisionShape2D" parent="Hurtbox" index="0"]
 modulate = Color( 1, 1, 1, 0.760784 )
 position = Vector2( 0.15731, 14.3154 )
-shape = SubResource( 3 )
+shape = SubResource( 4 )
 
 [node name="MageHand" type="Position2D" parent="."]
 position = Vector2( -6.12827, 16.2496 )
@@ -65,6 +83,10 @@ position = Vector2( 0.158287, 14.6135 )
 enabled = true
 cast_to = Vector2( 5, 0 )
 
+[node name="BlinkAnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Blink = SubResource( 5 )
+anims/Start = SubResource( 6 )
+anims/Stop = SubResource( 7 )
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_Hurtbox_area_entered"]
 
 [editable path="Hurtbox"]

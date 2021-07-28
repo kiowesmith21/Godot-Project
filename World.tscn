@@ -707,7 +707,7 @@ position = Vector2( -189.588, 131.498 )
 scale = Vector2( 1.5, 1.5 )
 frames = SubResource( 2 )
 animation = "Idle"
-frame = 1
+frame = 2
 playing = true
 
 [node name="Villager-Male" type="AnimatedSprite" parent="YSort" groups=[
@@ -717,7 +717,6 @@ position = Vector2( -153.177, 132.654 )
 scale = Vector2( 1.5, 1.5 )
 frames = SubResource( 3 )
 animation = "Idle"
-frame = 3
 playing = true
 flip_h = true
 
@@ -735,6 +734,9 @@ position = Vector2( 2300.32, 565.205 )
 
 [node name="Thief2" parent="." instance=ExtResource( 6 )]
 position = Vector2( 276.777, 91.567 )
+
+[node name="Thief3" parent="." instance=ExtResource( 6 )]
+position = Vector2( 286.676, 151.671 )
 
 [node name="Forest-Village-Tilemap" type="TileMap" parent="."]
 tile_set = SubResource( 18 )
@@ -821,5 +823,4 @@ margin_bottom = 21.9289
 
 [node name="FireballSpellbook" parent="." instance=ExtResource( 15 )]
 position = Vector2( 64.2172, 73.1362 )
-
 [connection signal="animation_finished" from="CanvasLayer/DialogueUI/AnimationPlayer" to="CanvasLayer/DialogueUI" method="_on_AnimationPlayer_animation_finished"]
