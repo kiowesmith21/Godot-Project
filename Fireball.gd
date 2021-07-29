@@ -22,7 +22,3 @@ func _on_Fireball_body_entered(body):
 func Timer():
 	yield(get_tree().create_timer(0.75), "timeout")
 	queue_free()
-
-func Distance():
-	yield(get_tree().create_timer(0.5), "timeout")
-	queue_free()

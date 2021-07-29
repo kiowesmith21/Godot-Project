@@ -74,7 +74,7 @@ func attack(choice):
 			print("Fireball isn't given!")
 	elif (choice == 3):
 		var a = Arrow.instance()
-		a.direction = last_direction
+		a.direction = (get_global_mouse_position() - position).normalized()
 		get_parent().add_child(a)
 		a.transform = $MageHand.global_transform
 		a.Timer()
