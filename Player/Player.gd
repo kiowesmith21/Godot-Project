@@ -20,7 +20,7 @@ var fireball_given = false
 #loading other scenes
 var Melee = preload("res://Player/Melee.tscn")
 var Fireball = preload("res://Player/Fireball.tscn")
-var Arrow = preload("res://Player/Arrow.tscn")
+var Arrow = preload("res://Player/Bow And Arrow.tscn")
 
 onready var anim = $AnimatedSprite
 onready var meleeHitbox = $MeleeHitbox

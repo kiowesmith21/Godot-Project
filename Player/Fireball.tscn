@@ -39,7 +39,7 @@ script = ExtResource( 1 )
 [node name="Animated Sprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 0.05, 0.05 )
 frames = SubResource( 5 )
-frame = 2
+frame = 3
 speed_scale = 1.2
 playing = true
 
@@ -47,4 +47,5 @@ playing = true
 position = Vector2( 0.891907, 0.891907 )
 scale = Vector2( 1.18474, -0.0700272 )
 shape = SubResource( 6 )
+
 [connection signal="body_entered" from="." to="." method="_on_Fireball_body_entered"]

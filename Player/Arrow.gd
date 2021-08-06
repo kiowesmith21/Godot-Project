@@ -4,7 +4,7 @@ const ACCELERATION = .25
 const MAX_SPEED = 500
 
 var speed = 500
-var direction
+var direction = 1
 var atk_dmg
 
 func _process(delta):
