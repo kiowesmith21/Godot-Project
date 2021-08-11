@@ -74,7 +74,6 @@ func attack(choice):
 		else:
 			print("Fireball isn't given!")
 	elif (choice == 3):
-		
 		var a = Arrow.instance()
 		get_parent().add_child(a)
 		a.direction = (get_global_mouse_position() - position).normalized()
@@ -94,7 +93,7 @@ func get_input(delta):
 		var b = Bow.instance()
 		get_parent().add_child(b)
 		b.direction = (get_global_mouse_position() - position).normalized()
-		b.transform = $MageHand.global_transform
+		
 	
 	if(atk_cooldown <= 0):
 		if(Input.get_action_strength("shoot") > 0):
