@@ -3,8 +3,8 @@ const FRICTION = .05
 const ACCELERATION = .25
 const MAX_SPEED = 500
 
-var speed = 500
-var direction = 1
+var speed = 125
+var direction : Vector2
 var atk_dmg
 
 func _process(delta):

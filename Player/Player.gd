@@ -20,7 +20,8 @@ var fireball_given = false
 #loading other scenes
 var Melee = preload("res://Player/Melee.tscn")
 var Fireball = preload("res://Player/Fireball.tscn")
-var Arrow = preload("res://Player/Bow And Arrow.tscn")
+var Arrow = preload("res://Player/Arrow.tscn")
+var Bow = preload("res://Player/Bow And Arrow.tscn")
 
 onready var anim = $AnimatedSprite
 onready var meleeHitbox = $MeleeHitbox
@@ -73,9 +74,10 @@ func attack(choice):
 		else:
 			print("Fireball isn't given!")
 	elif (choice == 3):
+		
 		var a = Arrow.instance()
-		a.direction = (get_global_mouse_position() - position).normalized()
 		get_parent().add_child(a)
+		a.direction = (get_global_mouse_position() - position).normalized()
 		a.transform = $MageHand.global_transform
 		a.Timer()
 	else:
@@ -87,8 +89,12 @@ func get_input(delta):
 		wpn_choice = 1
 	if(Input.get_action_strength("choose_weapon_2")):
 		wpn_choice = 2
-	elif(Input.get_action_strength('choose_weapon_3')):
+	elif(Input.get_action_strength("choose_weapon_3")):
 		wpn_choice = 3
+		var b = Bow.instance()
+		get_parent().add_child(b)
+		b.direction = (get_global_mouse_position() - position).normalized()
+		b.transform = $MageHand.global_transform
 	
 	if(atk_cooldown <= 0):
 		if(Input.get_action_strength("shoot") > 0):
