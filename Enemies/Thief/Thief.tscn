@@ -26,14 +26,14 @@ animations = [ {
 "name": "Melee",
 "speed": 10.0
 }, {
-"frames": [ ExtResource( 6 ), ExtResource( 1 ), ExtResource( 7 ), ExtResource( 8 ) ],
-"loop": true,
-"name": "Walk",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ) ],
 "loop": true,
 "name": "Idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ), ExtResource( 1 ), ExtResource( 7 ), ExtResource( 8 ) ],
+"loop": true,
+"name": "Walk",
 "speed": 5.0
 } ]
 
@@ -62,7 +62,7 @@ script = ExtResource( 13 )
 scale = Vector2( 1.5, 1.5 )
 frames = SubResource( 1 )
 animation = "Idle"
-frame = 2
+frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
