@@ -733,7 +733,7 @@ position = Vector2( -297.057, -64.7424 )
 position = Vector2( 2300.32, 565.205 )
 
 [node name="Thief2" parent="." instance=ExtResource( 6 )]
-position = Vector2( 276.777, 91.567 )
+position = Vector2( 275.716, 92.6277 )
 
 [node name="Thief3" parent="." instance=ExtResource( 6 )]
 position = Vector2( 286.676, 151.671 )

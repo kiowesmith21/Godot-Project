@@ -1,15 +1,13 @@
 extends Area2D
 const FRICTION = .05
-const ACCELERATION = .1
-const MAX_SPEED = 80
+const ACCELERATION = .25
+const MAX_SPEED = 500
 
-var speed = 100
-var direction
+var speed = 125
+var direction : Vector2
 var atk_dmg
 
-
 func _process(delta):
-	print(direction)
 	if(speed >= 0):
 		speed = lerp(speed,MAX_SPEED,ACCELERATION)
 	else:
@@ -22,7 +20,7 @@ func _on_Arrow_body_entered(body):
 	direction = Vector2.ZERO
 	
 func Timer():
-	yield(get_tree().create_timer(0.75), "timeout")
+	yield(get_tree().create_timer(0.5), "timeout")
 	queue_free()
 
 
