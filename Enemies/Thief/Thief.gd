@@ -73,7 +73,7 @@ func _on_Hurtbox_area_entered(area):
 	#hit effect
 	var hitEffect = HitEffect.instance()
 	get_parent().add_child(hitEffect)
-	hitEffect.global_position = global_position
+	hitEffect.global_position = Vector2(global_position.x + 6, global_position.y + 15) #spawn the effect in the middle of the sprite
 	#knockback
 	knockback = area.knockback_vector * 150 #this value changes how far enemy gets knocked back, needs to be knocked back based on player direction
 	#enemy loses health on hit
