@@ -10,6 +10,11 @@ enum {
 	CHASE
 }
 
+#death effect
+const EnemyDeathEffect = preload("res://Effects/EnemyDeathEffect.tscn")
+#hit effect
+const HitEffect = preload("res://Effects/HitEffect.tscn")
+
 var attacking = false
 
 var knockback = Vector2.ZERO
@@ -22,10 +27,11 @@ onready var stats =  $Stats
 onready var anim = $AnimatedSprite
 onready var playerDetectionZone = $PlayerDetectionZone 
 onready var hurtBox = $Hurtbox
+onready var softCollision = $SoftCollision
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	stats.connect("no_health", self, "queue_free") #connect to stats signal, will delete enemy when it reaches 0 health
+	stats.connect("no_health", self, "die") #connect to stats signal, runs die() function when it reaches 0 health
 
 func _physics_process(delta):
 	
@@ -52,6 +58,10 @@ func _physics_process(delta):
 				anim.play("Walk")
 			anim.flip_h = velocity.x < 0 #flip the sprite to the direction we're facing
 	
+	#enemies have soft collisions with each other
+	if softCollision.is_colliding():
+		velocity += softCollision.get_push_vector() * delta * 400
+	
 	velocity = move_and_slide(velocity)
 
 func seek_player():
@@ -60,7 +70,12 @@ func seek_player():
 
 #hitting the enemy
 func _on_Hurtbox_area_entered(area):
-	knockback = area.knockback_vector * 250 #this value changes how far enemy gets knocked back, needs to be knocked back based on player direction
+	#hit effect
+	var hitEffect = HitEffect.instance()
+	get_parent().add_child(hitEffect)
+	hitEffect.global_position = Vector2(global_position.x + 6, global_position.y + 15) #spawn the effect in the middle of the sprite
+	#knockback
+	knockback = area.knockback_vector * 150 #this value changes how far enemy gets knocked back, needs to be knocked back based on player direction
 	#enemy loses health on hit
 	stats.set_health(stats.health - 1)
 
@@ -70,3 +85,10 @@ func _on_Hitbox_area_entered(area):
 
 func _on_Hitbox_area_exited(area):
 	attacking = false
+	
+func die():
+	queue_free() #delete enemy
+	#death effect
+	var enemyDeathEffect = EnemyDeathEffect.instance()
+	get_parent().add_child(enemyDeathEffect)
+	enemyDeathEffect.global_position = global_position

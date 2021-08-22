@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://Enemies/Thief/Thief_Walk_2.png" type="Texture" id=1]
 [ext_resource path="res://Enemies/Thief/Thief_Idle_1.png" type="Texture" id=2]
@@ -17,6 +17,7 @@
 [ext_resource path="res://Stats.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Hitboxes and Hurtboxes/Hurtbox.tscn" type="PackedScene" id=16]
 [ext_resource path="res://Hitboxes and Hurtboxes/Hitbox.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Hitboxes and Hurtboxes/SoftCollision.tscn" type="PackedScene" id=18]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -50,6 +51,10 @@ height = 8.00737
 radius = 22.5314
 height = 0.0
 
+[sub_resource type="CapsuleShape2D" id=6]
+radius = 6.673
+height = 13.4795
+
 [node name="Thief" type="KinematicBody2D"]
 script = ExtResource( 13 )
 
@@ -57,7 +62,7 @@ script = ExtResource( 13 )
 scale = Vector2( 1.5, 1.5 )
 frames = SubResource( 1 )
 animation = "Idle"
-frame = 3
+frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -90,6 +95,13 @@ collision_mask = 2147483652
 modulate = Color( 0.890196, 0.905882, 0.407843, 1 )
 position = Vector2( 0, 12.2157 )
 shape = SubResource( 5 )
+
+[node name="SoftCollision" parent="." instance=ExtResource( 18 )]
+
+[node name="CollisionShape2D" parent="SoftCollision" index="0"]
+visible = false
+position = Vector2( 0, 12.1737 )
+shape = SubResource( 6 )
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_Hurtbox_area_entered"]
 [connection signal="area_entered" from="Hitbox" to="." method="_on_Hitbox_area_entered"]
 [connection signal="area_exited" from="Hitbox" to="." method="_on_Hitbox_area_exited"]
@@ -99,3 +111,5 @@ shape = SubResource( 5 )
 [editable path="Hurtbox"]
 
 [editable path="Hitbox"]
+
+[editable path="SoftCollision"]
