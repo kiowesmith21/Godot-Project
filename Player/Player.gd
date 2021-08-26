@@ -24,7 +24,7 @@ var Arrow = preload("res://Player/Arrow.tscn")
 var Bow = preload("res://Player/Bow And Arrow.tscn")
 
 onready var anim = $AnimatedSprite
-onready var meleeHitbox = $MeleeHitbox
+onready var meleeHitbox = $MeleeHitbox#are we adding this back in?
 onready var hurtBox = $Hurtbox
 
 func _ready():
@@ -74,11 +74,17 @@ func attack(choice):
 		else:
 			print("Fireball isn't given!")
 	elif (choice == 3):
+		var b = Bow.instance()
+		get_parent().add_child(b)
+		b.direction = (get_global_mouse_position() - position).normalized()
+		b.transform = $MageHand.global_transform
 		var a = Arrow.instance()
 		get_parent().add_child(a)
 		a.direction = (get_global_mouse_position() - position).normalized()
 		a.transform = $MageHand.global_transform
+		b.Timer()
 		a.Timer()
+		
 	else:
 		return
 		
@@ -90,9 +96,7 @@ func get_input(delta):
 		wpn_choice = 2
 	elif(Input.get_action_strength("choose_weapon_3")):
 		wpn_choice = 3
-		var b = Bow.instance()
-		get_parent().add_child(b)
-		b.direction = (get_global_mouse_position() - position).normalized()
+		
 		
 	
 	if(atk_cooldown <= 0):

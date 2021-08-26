@@ -5,7 +5,7 @@
 
 [sub_resource type="SegmentShape2D" id=1]
 a = Vector2( 8.95922, -8.0776 )
-b = Vector2( -5.77309, 6.79502 )
+b = Vector2( -1.59921, 8.33383 )
 
 [node name="Bow" type="Area2D"]
 position = Vector2( 152.802, 82.9049 )

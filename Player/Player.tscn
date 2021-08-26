@@ -87,6 +87,7 @@ cast_to = Vector2( 5, 0 )
 anims/Blink = SubResource( 5 )
 anims/Start = SubResource( 6 )
 anims/Stop = SubResource( 7 )
+
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_Hurtbox_area_entered"]
 
 [editable path="Hurtbox"]
