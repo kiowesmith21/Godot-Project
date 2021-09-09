@@ -9,7 +9,7 @@ extents = Vector2( 6.45871, 1.45984 )
 [node name="Arrow" type="Area2D"]
 script = ExtResource( 2 )
 
-[node name="Sprite" type="Sprite" parent="."]
+[node name="ArrowSprite" type="Sprite" parent="."]
 scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 1 )
 

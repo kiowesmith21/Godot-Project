@@ -7,6 +7,11 @@ var speed = 125
 var direction : Vector2
 var atk_dmg
 
+
+func _ready():
+	direction = (get_global_mouse_position() - position).normalized()
+	$ArrowSprite.rotation = direction.angle()
+
 func _process(delta):
 	if(speed >= 0):
 		speed = lerp(speed,MAX_SPEED,ACCELERATION)

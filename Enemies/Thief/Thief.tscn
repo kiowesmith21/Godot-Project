@@ -102,14 +102,12 @@ shape = SubResource( 5 )
 visible = false
 position = Vector2( 0, 12.1737 )
 shape = SubResource( 6 )
+
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_Hurtbox_area_entered"]
 [connection signal="area_entered" from="Hitbox" to="." method="_on_Hitbox_area_entered"]
 [connection signal="area_exited" from="Hitbox" to="." method="_on_Hitbox_area_exited"]
 
 [editable path="PlayerDetectionZone"]
-
 [editable path="Hurtbox"]
-
 [editable path="Hitbox"]
-
 [editable path="SoftCollision"]
