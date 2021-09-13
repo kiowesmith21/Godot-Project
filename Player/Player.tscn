@@ -18,15 +18,15 @@ shader_param/active = false
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
-"frames": [ ExtResource( 8 ), ExtResource( 5 ), ExtResource( 2 ), ExtResource( 6 ) ],
-"loop": true,
-"name": "Idle",
-"speed": 4.0
-}, {
 "frames": [ ExtResource( 1 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 7 ) ],
 "loop": true,
 "name": "Walk",
 "speed": 10.0
+}, {
+"frames": [ ExtResource( 8 ), ExtResource( 5 ), ExtResource( 2 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 4.0
 } ]
 
 [sub_resource type="CapsuleShape2D" id=3]

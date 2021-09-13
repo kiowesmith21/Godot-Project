@@ -79,6 +79,7 @@ func attack(choice):
 		b.direction = (get_global_mouse_position() - position).normalized()
 		b.transform = $MageHand.global_transform
 		var a = Arrow.instance()
+		a.Player = self
 		get_parent().add_child(a)
 		a.direction = (get_global_mouse_position() - position).normalized()
 		a.transform = $MageHand.global_transform
