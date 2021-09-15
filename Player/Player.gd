@@ -60,6 +60,7 @@ func attack(choice):
 	#melee
 	if (choice == 1):
 		var m = Melee.instance()
+		m.Player = self
 		get_parent().add_child(m)
 		m.direction = last_direction.normalized()
 		m.transform = $MageHand.global_transform #shoots the projectile from the position of MageHand
