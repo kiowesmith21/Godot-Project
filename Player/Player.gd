@@ -76,6 +76,7 @@ func attack(choice):
 	elif (choice == 3):
 		var b = Bow.instance()
 		get_parent().add_child(b)
+		b.Player = self
 		b.direction = (get_global_mouse_position() - position).normalized()
 		b.transform = $MageHand.global_transform
 		var a = Arrow.instance()
