@@ -9,7 +9,6 @@ var quest_status = QuestStatus.NOT_STARTED
 var spellbook_found = false
 
 var dialogue_state = 0
-var fireball_given = false
 
 var dialogueUI
 var player
@@ -24,44 +23,38 @@ func talk(choice = ""):
 	dialogueUI.npc = self
 	dialogueUI.npcname = "Elder"
 	
-	if(fireball_given == false):
+	if(player.fireball_given == false):
 			#matches the current dialogue state to the dialogue to output
 			match dialogue_state:
 				0:
+					dialogueUI.dialogue = "Ah! Hello there. I see you are out to save us. Please go to the bandit camp to the right."
+					dialogueUI.choices = "[E] Uh... Ok. [Q] No thanks."
 					dialogue_state = 1
-					dialogueUI.dialogue = "Ah! Hello there. I see you are out to save us. Here, have some magic."
-					dialogueUI.choices = " [E] Uh... Ok. [Q] No thanks."
 					dialogueUI.open()
 					
 				1:
 					match choice:
 						"E":
-							dialogue_state = 2
-							dialogueUI.dialogue = "Alright, there you go. Don't go burning down the town."
-							dialogueUI.choices = "[E] Thank you, bye."
+							dialogueUI.dialogue = "Alright, there you go. There's a spicy gift there."
+							dialogueUI.choices = "[Q] Thank you, bye."
+							dialogue_state = 3
 							dialogueUI.open()
 						"Q":
+							dialogueUI.dialogue = "Sucks for us... Someday we'll be saved."
+							dialogueUI.choices = "[Q] See ya."
 							dialogue_state = 3
-							dialogueUI.dialogue = "Sucks for you. See you."
-							dialogueUI.choices = "[E] See ya."
 							dialogueUI.open()
-				2:
-					dialogueUI.close()
-					dialogue_state = 3
-					player.fireball_given = true
-					fireball_given = true
-
-					
 				3:
-					dialogueUI.close()
 					dialogue_state = 0
+					dialogueUI.close()
+
 
 	else:
 		match dialogue_state:
 			0:
 				dialogue_state = 1
-				dialogueUI.dialogue = "I already gave you magic! Go save our town!"
-				dialogueUI.choices = "[E] Bye then."
+				dialogueUI.dialogue = "Thanks for taking out those nasty bandits."
+				dialogueUI.choices = "[E] No problem."
 				dialogueUI.open()
 			1:
 				dialogueUI.close()

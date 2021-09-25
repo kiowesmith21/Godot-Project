@@ -1,14 +1,14 @@
 [gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Elder.gd" type="Script" id=1]
-[ext_resource path="res://Npcs/Magic Shopkeeper/MagicShopKeeper_Idle + Walk_3.png" type="Texture" id=2]
-[ext_resource path="res://Npcs/Magic Shopkeeper/MagicShopKeeper_Idle + Walk_2.png" type="Texture" id=3]
-[ext_resource path="res://Npcs/Magic Shopkeeper/MagicShopKeeper_Idle + Walk_1.png" type="Texture" id=4]
-[ext_resource path="res://Npcs/Magic Shopkeeper/MagicShopKeeper_Idle + Walk_4.png" type="Texture" id=5]
+[ext_resource path="res://Npcs/Magic Shopkeeper/MagicShopKeeper_Idle + Walk_4.png" type="Texture" id=2]
+[ext_resource path="res://Npcs/Magic Shopkeeper/MagicShopKeeper_Idle + Walk_1.png" type="Texture" id=3]
+[ext_resource path="res://Npcs/Magic Shopkeeper/MagicShopKeeper_Idle + Walk_3.png" type="Texture" id=4]
+[ext_resource path="res://Npcs/Magic Shopkeeper/MagicShopKeeper_Idle + Walk_2.png" type="Texture" id=5]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 4 ), ExtResource( 3 ), ExtResource( 2 ), ExtResource( 5 ) ],
+"frames": [ ExtResource( 3 ), ExtResource( 5 ), ExtResource( 4 ), ExtResource( 2 ) ],
 "loop": true,
 "name": "idle",
 "speed": 5.0
@@ -27,7 +27,7 @@ script = ExtResource( 1 )
 scale = Vector2( 1.5, 1.5 )
 frames = SubResource( 1 )
 animation = "idle"
-frame = 1
+frame = 2
 speed_scale = 1.2
 playing = true
 
