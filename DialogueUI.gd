@@ -21,6 +21,7 @@ func choices_set(new_value):
 func open():
 	get_tree().paused = true
 	popup()
+	
 	$AnimationPlayer.playback_speed = 60.0 / dialogue.length()
 	$AnimationPlayer.play("ShowDialogue")
 

@@ -17,8 +17,6 @@ var atk_dmg = 100
 var wpn_choice = 1
 var fireball_given = false
 
-var waitforTimer = false
-
 #loading other scenes
 var Melee = preload("res://Player/Melee.tscn")
 var Fireball = preload("res://Player/Fireball.tscn")
@@ -112,18 +110,11 @@ func get_input(delta):
 		atk_cooldown -= delta
 	
 	if(Input.get_action_strength("interact")):
-		$DialogueTimer.wait_time = .5
-		$DialogueTimer.start()
-		waitforTimer = true
-		if(waitforTimer):
-			var target = $RayCast2D.get_collider()
-			if target != null:
-				if target.is_in_group("NPC"):
-					target.talk()
-
-func _on_Timer_timeout():
-	$DialogueTimer.stop()
-	waitforTimer = false
+		var target = $RayCast2D.get_collider()
+		if target != null:
+			if target.is_in_group("NPC"):
+				target.talk()
+				
 
 #player getting hit, their hurtbox being entered
 func _on_Hurtbox_area_entered(area):
