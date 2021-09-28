@@ -4,5 +4,4 @@
 
 [node name="Stats" type="Node"]
 script = ExtResource( 1 )
-
 [connection signal="wpn_change" from="." to="." method="_on_Stats_wpn_change"]

@@ -1,7 +1,7 @@
 extends Node
 
 export(int) var max_health = 4 setget set_max_health
-var health = max_health setget set_health
+export(int) var health = max_health setget set_health
 
 export(int) var curr_wpn = 1
 onready var wpn_choice = curr_wpn

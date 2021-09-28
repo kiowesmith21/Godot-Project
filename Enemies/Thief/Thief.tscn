@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://Enemies/Thief/Thief_Walk_2.png" type="Texture" id=1]
 [ext_resource path="res://Enemies/Thief/Thief_Idle_1.png" type="Texture" id=2]
@@ -18,6 +18,7 @@
 [ext_resource path="res://Hitboxes and Hurtboxes/Hurtbox.tscn" type="PackedScene" id=16]
 [ext_resource path="res://Hitboxes and Hurtboxes/Hitbox.tscn" type="PackedScene" id=17]
 [ext_resource path="res://Hitboxes and Hurtboxes/SoftCollision.tscn" type="PackedScene" id=18]
+[ext_resource path="res://UI/HealthBar.tscn" type="PackedScene" id=19]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -73,7 +74,7 @@ shape = SubResource( 2 )
 
 [node name="CollisionShape2D" parent="PlayerDetectionZone" index="0"]
 modulate = Color( 1, 1, 1, 0.180392 )
-position = Vector2( 0, 8.67646 )
+position = Vector2( 0, 7.91207 )
 shape = SubResource( 3 )
 
 [node name="Stats" parent="." instance=ExtResource( 15 )]
@@ -103,11 +104,24 @@ visible = false
 position = Vector2( 0, 12.1737 )
 shape = SubResource( 6 )
 
+[node name="Control" parent="." instance=ExtResource( 19 )]
+
+[node name="ProgressBar" parent="Control" index="0"]
+margin_left = -17.061
+margin_top = -11.9631
+margin_right = 152.939
+margin_bottom = 9.03687
+rect_scale = Vector2( 0.2, 0.2 )
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_Hurtbox_area_entered"]
 [connection signal="area_entered" from="Hitbox" to="." method="_on_Hitbox_area_entered"]
 [connection signal="area_exited" from="Hitbox" to="." method="_on_Hitbox_area_exited"]
 
 [editable path="PlayerDetectionZone"]
+
 [editable path="Hurtbox"]
+
 [editable path="Hitbox"]
+
 [editable path="SoftCollision"]
+
+[editable path="Control"]
