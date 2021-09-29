@@ -65,7 +65,7 @@ func attack(choice):
 		m.direction = last_direction.normalized()
 		m.transform = $MageHand.global_transform #shoots the projectile from the position of MageHand
 		m.Timer()
-	elif (choice == 2):
+	elif (choice == 3):
 		if(fireball_given == true):
 			var f = Fireball.instance()
 			get_parent().add_child(f)
@@ -74,7 +74,7 @@ func attack(choice):
 			f.Timer()
 		else:
 			print("Fireball isn't given!")
-	elif (choice == 3):
+	elif (choice == 2):
 		var b = Bow.instance()
 		get_parent().add_child(b)
 		b.Player = self
