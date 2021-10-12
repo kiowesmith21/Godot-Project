@@ -24,11 +24,6 @@ config/name="Rpg Project"
 run/main_scene="res://World.tscn"
 config/icon="res://icon.png"
 
-[autoload]
-
-PlayerStats="*res://Player/PlayerStats.tscn"
-Stats="*res://Stats.tscn"
-
 [display]
 
 window/size/width=320

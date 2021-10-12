@@ -14,7 +14,7 @@
 [ext_resource path="res://Enemies/Thief/Thief_Melee_1.png" type="Texture" id=12]
 [ext_resource path="res://Enemies/Thief/Thief.gd" type="Script" id=13]
 [ext_resource path="res://Enemies/PlayerDetectionZone.tscn" type="PackedScene" id=14]
-[ext_resource path="res://Stats.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Enemies/Thief/ThiefStats.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Hitboxes and Hurtboxes/Hurtbox.tscn" type="PackedScene" id=16]
 [ext_resource path="res://Hitboxes and Hurtboxes/Hitbox.tscn" type="PackedScene" id=17]
 [ext_resource path="res://Hitboxes and Hurtboxes/SoftCollision.tscn" type="PackedScene" id=18]
@@ -27,14 +27,14 @@ animations = [ {
 "name": "Melee",
 "speed": 10.0
 }, {
-"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ) ],
-"loop": true,
-"name": "Idle",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 6 ), ExtResource( 1 ), ExtResource( 7 ), ExtResource( 8 ) ],
 "loop": true,
 "name": "Walk",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "Idle",
 "speed": 5.0
 } ]
 
@@ -77,8 +77,6 @@ modulate = Color( 1, 1, 1, 0.180392 )
 position = Vector2( 0, 7.91207 )
 shape = SubResource( 3 )
 
-[node name="Stats" parent="." instance=ExtResource( 15 )]
-
 [node name="Hurtbox" parent="." instance=ExtResource( 16 )]
 collision_layer = 8
 collision_mask = 32
@@ -112,6 +110,8 @@ margin_top = -11.9631
 margin_right = 152.939
 margin_bottom = 9.03687
 rect_scale = Vector2( 0.2, 0.2 )
+
+[node name="Stats" parent="." instance=ExtResource( 15 )]
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_Hurtbox_area_entered"]
 [connection signal="area_entered" from="Hitbox" to="." method="_on_Hitbox_area_entered"]
 [connection signal="area_exited" from="Hitbox" to="." method="_on_Hitbox_area_exited"]
