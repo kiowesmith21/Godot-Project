@@ -12,7 +12,8 @@ var stats = PlayerStats
 
 #player weapons/abilities
 var atk_cooldown = 0
-var atk_dmg = 100
+var patk_dmg = 0
+var atk_dmg = "atk_dmg"
 
 var wpn_choice = 1
 var fireball_given = false
@@ -65,15 +66,6 @@ func attack(choice):
 		m.direction = last_direction.normalized()
 		m.transform = $MageHand.global_transform #shoots the projectile from the position of MageHand
 		m.Timer()
-	elif (choice == 3):
-		if(fireball_given == true):
-			var f = Fireball.instance()
-			get_parent().add_child(f)
-			f.direction = last_direction.normalized()
-			f.transform = $MageHand.global_transform #shoots the projectile from the position of MageHand
-			f.Timer()
-		else:
-			print("Fireball isn't given!")
 	elif (choice == 2):
 		var b = Bow.instance()
 		get_parent().add_child(b)
@@ -87,6 +79,15 @@ func attack(choice):
 		a.transform = $MageHand.global_transform
 		b.Timer()
 		a.Timer()
+	elif (choice == 3):
+		if(fireball_given == true):
+			var f = Fireball.instance()
+			get_parent().add_child(f)
+			f.direction = last_direction.normalized()
+			f.transform = $MageHand.global_transform #shoots the projectile from the position of MageHand
+			f.Timer()
+		else:
+			print("Fireball isn't given!")
 		
 	else:
 		return
@@ -95,11 +96,13 @@ func attack(choice):
 func get_input(delta):
 	if(Input.get_action_strength("choose_weapon_1")):
 		wpn_choice = 1
+		patk_dmg = Melee.get(atk_dmg)
 	if(Input.get_action_strength("choose_weapon_2")):
 		wpn_choice = 2
+		patk_dmg = Arrow.get(atk_dmg)
 	elif(Input.get_action_strength("choose_weapon_3")):
 		wpn_choice = 3
-		
+		patk_dmg = Fireball.get(atk_dmg)
 		
 	
 	if(atk_cooldown <= 0):
@@ -120,4 +123,4 @@ func get_input(delta):
 func _on_Hurtbox_area_entered(area):
 	stats.set_health(stats.health - 1)
 	hurtBox.start_invincibility(0.5)
-	
+

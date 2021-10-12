@@ -48,8 +48,7 @@ func talk(choice = ""):
 				2:
 					dialogueUI.close()
 					dialogue_state = 3
-					player.fireball_given = true
-					fireball_given = true
+
 
 					
 				3:

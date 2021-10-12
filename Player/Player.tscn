@@ -18,15 +18,15 @@ shader_param/active = false
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
-"frames": [ ExtResource( 1 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 7 ) ],
-"loop": true,
-"name": "Walk",
-"speed": 10.0
-}, {
 "frames": [ ExtResource( 8 ), ExtResource( 5 ), ExtResource( 2 ), ExtResource( 6 ) ],
 "loop": true,
 "name": "Idle",
 "speed": 4.0
+}, {
+"frames": [ ExtResource( 1 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "Walk",
+"speed": 10.0
 } ]
 
 [sub_resource type="CapsuleShape2D" id=3]
@@ -82,11 +82,13 @@ position = Vector2( -6.12827, 16.2496 )
 position = Vector2( 0.158287, 14.6135 )
 enabled = true
 cast_to = Vector2( 5, 0 )
+collide_with_areas = true
 
 [node name="BlinkAnimationPlayer" type="AnimationPlayer" parent="."]
 anims/Blink = SubResource( 5 )
 anims/Start = SubResource( 6 )
 anims/Stop = SubResource( 7 )
+
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_Hurtbox_area_entered"]
 
 [editable path="Hurtbox"]

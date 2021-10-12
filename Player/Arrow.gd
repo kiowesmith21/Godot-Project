@@ -5,7 +5,7 @@ const MAX_SPEED = 500
 
 var speed = 500
 var direction : Vector2
-var atk_dmg
+var atk_dmg = 15
 var Player
 
 func _ready():
@@ -24,4 +24,5 @@ func Timer():
 	yield(get_tree().create_timer(0.5), "timeout")
 	queue_free()
 
-
+func _get(property):
+	return property

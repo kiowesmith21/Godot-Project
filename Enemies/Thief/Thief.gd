@@ -15,6 +15,8 @@ const EnemyDeathEffect = preload("res://Effects/EnemyDeathEffect.tscn")
 #hit effect
 const HitEffect = preload("res://Effects/HitEffect.tscn")
 
+var Player = preload("res://Player/Player.tscn")
+
 var attacking = false
 
 var knockback = Vector2.ZERO
@@ -28,6 +30,7 @@ onready var anim = $AnimatedSprite
 onready var playerDetectionZone = $PlayerDetectionZone 
 onready var hurtBox = $Hurtbox
 onready var softCollision = $SoftCollision
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
