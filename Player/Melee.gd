@@ -2,7 +2,7 @@ extends Area2D
 
 var speed = 300
 var direction : Vector2
-var atk_dmg
+var atk_dmg = 25
 var timer = Timer.new()
 var Player
 
@@ -25,3 +25,6 @@ func _on_Melee_body_entered(body):
 	if body.name == "Player":
 		return
 	direction = Vector2.ZERO
+
+func _get(property):
+	return property

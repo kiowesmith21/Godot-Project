@@ -15,8 +15,8 @@ animations = [ {
 } ]
 
 [sub_resource type="CapsuleShape2D" id=2]
-radius = 12.1893
-height = 17.403
+radius = 17.145
+height = 0.0
 
 [node name="Elder" type="KinematicBody2D" groups=[
 "NPC",
@@ -27,10 +27,10 @@ script = ExtResource( 1 )
 scale = Vector2( 1.5, 1.5 )
 frames = SubResource( 1 )
 animation = "idle"
-frame = 1
+frame = 2
 speed_scale = 1.2
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0.420929, 9.12001 )
+position = Vector2( -0.688995, 12.9287 )
 shape = SubResource( 2 )

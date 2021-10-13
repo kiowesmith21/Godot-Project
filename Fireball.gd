@@ -5,7 +5,7 @@ var knockback_vector = Vector2.ZERO
 var tilemap
 var speed = 120
 var direction : Vector2
-var atk_dmg
+var atk_dmg = 20
 var timer = Timer.new()
 
 func _process(delta):
@@ -22,3 +22,6 @@ func _on_Fireball_body_entered(body):
 func Timer():
 	yield(get_tree().create_timer(0.75), "timeout")
 	queue_free()
+
+func _get(property):
+	return property

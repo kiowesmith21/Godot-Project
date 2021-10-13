@@ -22,20 +22,20 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 12 ), ExtResource( 11 ), ExtResource( 9 ), ExtResource( 10 ) ],
+"frames": [ ExtResource( 6 ), ExtResource( 1 ), ExtResource( 7 ), ExtResource( 8 ) ],
 "loop": true,
-"name": "Melee",
-"speed": 10.0
+"name": "Walk",
+"speed": 5.0
 }, {
 "frames": [ ExtResource( 6 ), ExtResource( 1 ), ExtResource( 7 ), ExtResource( 8 ) ],
 "loop": true,
 "name": "Walk",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ) ],
+"frames": [ ExtResource( 12 ), ExtResource( 11 ), ExtResource( 9 ), ExtResource( 10 ) ],
 "loop": true,
-"name": "Idle",
-"speed": 5.0
+"name": "Melee",
+"speed": 10.0
 } ]
 
 [sub_resource type="CapsuleShape2D" id=2]
@@ -63,7 +63,7 @@ script = ExtResource( 13 )
 scale = Vector2( 1.5, 1.5 )
 frames = SubResource( 1 )
 animation = "Idle"
-frame = 1
+frame = 3
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
