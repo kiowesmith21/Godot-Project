@@ -24,10 +24,6 @@ config/name="Rpg Project"
 run/main_scene="res://World.tscn"
 config/icon="res://icon.png"
 
-[autoload]
-
-PlayerStats="*res://Player/PlayerStats.tscn"
-
 [display]
 
 window/size/width=320
@@ -148,6 +144,6 @@ choose_weapon_4={
 
 [rendering]
 
-2d/snapping/use_gpu_pixel_snap=true
-environment/default_environment="res://default_env.tres"
 quality/2d/use_pixel_snap=true
+environment/default_environment="res://default_env.tres"
+2d/snapping/use_gpu_pixel_snap=true

@@ -33,33 +33,33 @@ scale = Vector2( 0.35, 0.35 )
 texture = ExtResource( 4 )
 
 [node name="Skill2" type="ColorRect" parent="."]
-margin_left = 14.602
-margin_top = 1.078
-margin_right = 28.602
-margin_bottom = 14.078
+margin_left = 14.6918
+margin_top = 1.0784
+margin_right = 28.6918
+margin_bottom = 14.0784
 color = Color( 0, 0, 0, 0.490196 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Arrow" type="Sprite" parent="Skill2"]
-light_mask = 64
-position = Vector2( 7.38354, 6.99181 )
-scale = Vector2( 0.100258, 0.127422 )
-texture = ExtResource( 2 )
-
-[node name="Skill3" type="ColorRect" parent="."]
-margin_left = 29.1588
-margin_top = 1.01655
-margin_right = 43.1588
-margin_bottom = 14.0166
-color = Color( 0, 0, 0, 0.490196 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Fireball" type="Sprite" parent="Skill3"]
-position = Vector2( 6.8584, 7.0564 )
+[node name="Fireball" type="Sprite" parent="Skill2"]
+position = Vector2( 6.66064, 6.4382 )
 scale = Vector2( 0.0136217, 0.0126017 )
 texture = ExtResource( 1 )
 normal_map = ExtResource( 1 )
+
+[node name="Skill3" type="ColorRect" parent="."]
+margin_left = 28.6019
+margin_top = 1.4623
+margin_right = 42.6019
+margin_bottom = 14.4623
+color = Color( 0, 0, 0, 0.490196 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Arrow" type="Sprite" parent="Skill3"]
+light_mask = 64
+position = Vector2( 7.1369, 6.94189 )
+scale = Vector2( 0.100258, 0.127422 )
+texture = ExtResource( 2 )

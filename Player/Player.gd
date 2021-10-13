@@ -8,8 +8,6 @@ const COOLDOWN_WAIT_TIME = 1
 var velocity  = Vector2.ZERO
 var last_direction = Vector2(0, 1)
 
-var stats = PlayerStats
-
 #player weapons/abilities
 var atk_cooldown = 0
 var patk_dmg = 0
@@ -24,6 +22,7 @@ var Fireball = preload("res://Player/Fireball.tscn")
 var Arrow = preload("res://Player/Arrow.tscn")
 var Bow = preload("res://Player/Bow And Arrow.tscn")
 
+onready var stats = $PlayerStats
 onready var anim = $AnimatedSprite
 onready var meleeHitbox = $MeleeHitbox #are we adding this back in?
 onready var hurtBox = $Hurtbox

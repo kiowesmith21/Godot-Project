@@ -25,7 +25,7 @@ var velocity = Vector2.ZERO
 
 var state = CHASE
 
-onready var stats =  $Stats
+onready var stats = $Stats
 onready var anim = $AnimatedSprite
 onready var playerDetectionZone = $PlayerDetectionZone 
 onready var hurtBox = $Hurtbox
@@ -35,6 +35,7 @@ onready var softCollision = $SoftCollision
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	stats.connect("no_health", self, "die") #connect to stats signal, runs die() function when it reaches 0 health
+	stats.set_max_health(100)
 
 func _physics_process(delta):
 	
