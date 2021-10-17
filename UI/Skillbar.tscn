@@ -42,24 +42,24 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Fireball" type="Sprite" parent="Skill2"]
-position = Vector2( 6.66064, 6.4382 )
-scale = Vector2( 0.0136217, 0.0126017 )
-texture = ExtResource( 1 )
-normal_map = ExtResource( 1 )
+[node name="Arrow" type="Sprite" parent="Skill2"]
+light_mask = 64
+position = Vector2( 6.95972, 6.99171 )
+scale = Vector2( 0.100258, 0.127422 )
+texture = ExtResource( 2 )
 
 [node name="Skill3" type="ColorRect" parent="."]
-margin_left = 28.6019
-margin_top = 1.4623
-margin_right = 42.6019
-margin_bottom = 14.4623
+margin_left = 29.0473
+margin_top = 1.1839
+margin_right = 43.0473
+margin_bottom = 14.1839
 color = Color( 0, 0, 0, 0.490196 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Arrow" type="Sprite" parent="Skill3"]
-light_mask = 64
-position = Vector2( 7.1369, 6.94189 )
-scale = Vector2( 0.100258, 0.127422 )
-texture = ExtResource( 2 )
+[node name="Fireball" type="Sprite" parent="Skill3"]
+position = Vector2( 7.33984, 6.88953 )
+scale = Vector2( 0.0136217, 0.0126017 )
+texture = ExtResource( 1 )
+normal_map = ExtResource( 1 )

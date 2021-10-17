@@ -4,7 +4,7 @@ var speed = 300
 var direction : Vector2
 var atk_dmg = 25
 var timer = Timer.new()
-var Player
+var Player = KinematicBody2D #it thinks player doesn't exist so when a new instance is run, it crashes
 
 var knockback_vector = Vector2.ZERO
 

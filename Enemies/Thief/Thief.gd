@@ -36,6 +36,7 @@ onready var softCollision = $SoftCollision
 func _ready():
 	stats.connect("no_health", self, "die") #connect to stats signal, runs die() function when it reaches 0 health
 	stats.set_max_health(100)
+	Player = get_tree().root.get_node("/root/World/YSort/Player")
 
 func _physics_process(delta):
 	
@@ -81,7 +82,8 @@ func _on_Hurtbox_area_entered(area):
 	#knockback
 	knockback = area.knockback_vector * 150 #this value changes how far enemy gets knocked back, needs to be knocked back based on player direction
 	#enemy loses health on hit
-	stats.set_health(stats.health - 1)
+	print(Player.atk_dmg)
+	stats.set_health(stats.health - Player.atk_dmg)
 
 #when enemy enters player's hurtbox (hits the player)
 func _on_Hitbox_area_entered(area):
