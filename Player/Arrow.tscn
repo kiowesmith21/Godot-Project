@@ -7,6 +7,8 @@
 extents = Vector2( 6.45871, 1.45984 )
 
 [node name="Arrow" type="Area2D"]
+collision_layer = 32
+collision_mask = 8
 script = ExtResource( 2 )
 
 [node name="ArrowSprite" type="Sprite" parent="."]
@@ -17,4 +19,5 @@ flip_h = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -0.08371, 0.0848401 )
 shape = SubResource( 1 )
+[connection signal="area_entered" from="." to="." method="_on_Arrow_area_entered"]
 [connection signal="body_entered" from="." to="." method="_on_Arrow_body_entered"]

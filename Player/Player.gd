@@ -62,7 +62,7 @@ func attack(choice):
 		var m = Melee.instance()
 		m.Player = self #Melee doesn't like this line :(
 		get_parent().add_child(m)
-		m.direction = last_direction.normalized()
+		m.direction = (get_global_mouse_position() - position).normalized()
 		m.transform = $MageHand.global_transform #shoots the projectile from the position of MageHand
 		m.Timer()
 	elif (choice == 2):
