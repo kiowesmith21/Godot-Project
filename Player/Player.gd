@@ -23,7 +23,6 @@ var Bow = preload("res://Player/Bow And Arrow.tscn").instance()
 
 onready var stats = $PlayerStats
 onready var anim = $AnimatedSprite
-onready var meleeHitbox = $MeleeHitbox #are we adding this back in?
 onready var hurtBox = $Hurtbox
 
 func _ready():
