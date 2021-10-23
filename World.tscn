@@ -642,6 +642,20 @@ points = PoolVector2Array( 25.324, 28.6898, 6.80551, 28.6898, 6.80551, 13.0648, 
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 20/z_index = 0
+21/name = "Aurora Tileset.png 21"
+21/texture = ExtResource( 8 )
+21/tex_offset = Vector2( 0, 0 )
+21/modulate = Color( 1, 1, 1, 1 )
+21/region = Rect2( 577, 96, 33, 68 )
+21/tile_mode = 0
+21/occluder_offset = Vector2( 0, 0 )
+21/navigation_offset = Vector2( 0, 0 )
+21/shape_offset = Vector2( 0, 0 )
+21/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+21/shape_one_way = false
+21/shape_one_way_margin = 0.0
+21/shapes = [  ]
+21/z_index = 0
 
 [sub_resource type="GDScript" id=19]
 script/source = "extends Node
@@ -724,7 +738,6 @@ position = Vector2( -189.588, 131.498 )
 scale = Vector2( 1.5, 1.5 )
 frames = SubResource( 2 )
 animation = "Idle"
-frame = 2
 playing = true
 
 [node name="Villager-Male" type="AnimatedSprite" parent="YSort" groups=[
@@ -734,6 +747,7 @@ position = Vector2( -153.177, 132.654 )
 scale = Vector2( 1.5, 1.5 )
 frames = SubResource( 3 )
 animation = "Idle"
+frame = 2
 playing = true
 flip_h = true
 
@@ -833,5 +847,5 @@ margin_right = 173.546
 margin_bottom = 21.9289
 
 [node name="FireballSpellbook" parent="." instance=ExtResource( 15 )]
-position = Vector2( 64.2172, 73.1362 )
+position = Vector2( 2285.02, 1007.48 )
 [connection signal="animation_finished" from="CanvasLayer/DialogueUI/AnimationPlayer" to="CanvasLayer/DialogueUI" method="_on_AnimationPlayer_animation_finished"]
