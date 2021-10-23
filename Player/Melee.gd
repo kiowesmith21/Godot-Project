@@ -1,6 +1,6 @@
 extends Area2D
 
-var speed = 300
+var speed = 400
 var direction : Vector2
 var atk_dmg = 25
 var timer = Timer.new()
@@ -12,13 +12,12 @@ func _ready():
 	$Sprite.rotation += Player.position.angle_to_point(get_local_mouse_position())
 
 func _process(delta):
-	#gets the position of the mouse for the fireball so the fireball follows the mouse
-	direction = (get_global_mouse_position() - position).normalized()
+	#gets the position of the mouse 
 	position = position + speed * delta * direction
 	knockback_vector = direction
 	
 func Timer():
-	yield(get_tree().create_timer(0.3), "timeout")
+	yield(get_tree().create_timer(0.2), "timeout")
 	queue_free()
 
 func _on_Melee_body_entered(body):
@@ -28,3 +27,6 @@ func _on_Melee_body_entered(body):
 
 func _get(property):
 	return property
+
+func _on_Melee_area_entered(area):
+	queue_free()
