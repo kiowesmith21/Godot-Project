@@ -16,10 +16,10 @@ var wpn_choice = 1
 var fireball_given = false
 
 #loading other scenes
-var Melee = preload("res://Player/Melee.tscn").instance()
-var Fireball = preload("res://Player/Fireball.tscn").instance()
-var Arrow = preload("res://Player/Arrow.tscn").instance()
-var Bow = preload("res://Player/Bow And Arrow.tscn").instance()
+var Melee = preload("res://Player/Melee.tscn")
+var Fireball = preload("res://Player/Fireball.tscn")
+var Arrow = preload("res://Player/Arrow.tscn")
+var Bow = preload("res://Player/Bow And Arrow.tscn")
 
 onready var stats = $PlayerStats
 onready var anim = $AnimatedSprite
@@ -59,19 +59,19 @@ func _physics_process(delta):
 func attack(choice):
 	#melee
 	if (choice == 1):
-		var m = Melee
+		var m = Melee.instance()
 		m.Player = self #Melee doesn't like this line :(
 		get_parent().add_child(m)
 		m.direction = last_direction.normalized()
 		m.transform = $MageHand.global_transform #shoots the projectile from the position of MageHand
 		m.Timer()
 	elif (choice == 2):
-		var b = Bow
+		var b = Bow.instance()
 		get_parent().add_child(b)
 		b.Player = self
 		b.direction = (get_global_mouse_position() - position).normalized()
 		b.transform = $MageHand.global_transform
-		var a = Arrow
+		var a = Arrow.instance()
 		a.Player = self
 		get_parent().add_child(a)
 		a.direction = (get_global_mouse_position() - position).normalized()
@@ -80,7 +80,7 @@ func attack(choice):
 		a.Timer()
 	elif (choice == 3):
 		if(fireball_given == true):
-			var f = Fireball
+			var f = Fireball.instance()
 			get_parent().add_child(f)
 			f.direction = last_direction.normalized()
 			f.transform = $MageHand.global_transform #shoots the projectile from the position of MageHand
@@ -94,14 +94,17 @@ func attack(choice):
 
 func get_input(delta):
 	if(Input.get_action_strength("choose_weapon_1")):
+		var m = Melee.instance()
 		wpn_choice = 1
-		atk_dmg = Melee.atk_dmg
+		atk_dmg = m.atk_dmg
 	if(Input.get_action_strength("choose_weapon_2")):
+		var a = Arrow.instance()
 		wpn_choice = 2
-		atk_dmg = Arrow.atk_dmg
+		atk_dmg = a.atk_dmg
 	elif(Input.get_action_strength("choose_weapon_3")):
+		var f = Fireball.instance()
 		wpn_choice = 3
-		atk_dmg = Fireball.atk_dmg
+		atk_dmg = f.atk_dmg
 		
 	
 	if(atk_cooldown <= 0):
