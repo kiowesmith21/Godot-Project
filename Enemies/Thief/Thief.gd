@@ -25,7 +25,7 @@ var velocity = Vector2.ZERO
 
 var state = CHASE
 
-onready var stats = $Stats
+onready var stats = $ThiefStats
 onready var anim = $AnimatedSprite
 onready var playerDetectionZone = $PlayerDetectionZone 
 onready var hurtBox = $Hurtbox
