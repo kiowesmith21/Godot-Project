@@ -24,6 +24,7 @@ var Bow = preload("res://Player/Bow And Arrow.tscn")
 onready var stats = $PlayerStats
 onready var anim = $AnimatedSprite
 onready var hurtBox = $Hurtbox
+onready var healthBar = get_node("/root/World/CanvasLayer/HealthBar") #healthbar
 
 func _ready():
 	stats.connect("no_health", self, "queue_free") #connect to player stats signal
@@ -123,6 +124,7 @@ func get_input(delta):
 
 #player getting hit, their hurtbox being entered
 func _on_Hurtbox_area_entered(area):
-	stats.set_health(stats.health - 1)
-	hurtBox.start_invincibility(0.5)
+	healthBar.set_value(stats.health - 20) #set healthbar value to new health
+	stats.set_health(stats.health - 20) #set player's health to new health
+	hurtBox.start_invincibility(0.5) 
 

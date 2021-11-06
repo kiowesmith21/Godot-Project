@@ -14,8 +14,8 @@ __meta__ = {
 [node name="ProgressBar" type="ProgressBar" parent="."]
 margin_left = 39.0
 margin_top = 50.0
-margin_right = 209.0
-margin_bottom = 71.0
+margin_right = 303.0
+margin_bottom = 88.0
 theme = ExtResource( 1 )
 value = 50.0
 percent_visible = false
