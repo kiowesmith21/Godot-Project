@@ -19,6 +19,8 @@ var Player = preload("res://Player/Player.tscn")
 
 var attacking = false
 
+var atk_dmg = 20
+
 var knockback = Vector2.ZERO
 
 var velocity = Vector2.ZERO
@@ -35,7 +37,7 @@ onready var softCollision = $SoftCollision
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	stats.connect("no_health", self, "die") #connect to stats signal, runs die() function when it reaches 0 health
-	stats.set_max_health(100)
+	#stats.set_max_health(50)
 	Player = get_tree().root.get_node("/root/World/YSort/Player")
 
 func _physics_process(delta):
@@ -84,6 +86,7 @@ func _on_Hurtbox_area_entered(area):
 	#enemy loses health on hit
 	print(Player.atk_dmg)
 	stats.set_health(stats.health - Player.atk_dmg)
+	#print("Enemy Health: " + str(stats.health))
 
 #when enemy enters player's hurtbox (hits the player)
 func _on_Hitbox_area_entered(area):
