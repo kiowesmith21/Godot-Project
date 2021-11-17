@@ -10,7 +10,7 @@ var last_direction = Vector2(0, 1)
 
 #player weapons/abilities
 var atk_cooldown = 0
-var atk_dmg = 0
+var atk_dmg = 25
 
 var wpn_choice = 1
 var fireball_given = false
@@ -124,7 +124,9 @@ func get_input(delta):
 
 #player getting hit, their hurtbox being entered
 func _on_Hurtbox_area_entered(area):
-	healthBar.set_value(stats.health - 20) #set healthbar value to new health
-	stats.set_health(stats.health - 20) #set player's health to new health
-	hurtBox.start_invincibility(0.5) 
+	healthBar.set_value(stats.health - area.get_parent().atk_dmg) #set healthbar value to new health
+	#player loses health on hit
+	print(area.get_parent().atk_dmg)
+	stats.set_health(stats.health - area.get_parent().atk_dmg)
+	hurtBox.start_invincibility(0.5) #player invincible for a second so doesnt instantly die
 
