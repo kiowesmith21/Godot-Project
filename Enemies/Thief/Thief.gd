@@ -14,6 +14,8 @@ enum {
 const EnemyDeathEffect = preload("res://Effects/EnemyDeathEffect.tscn")
 #hit effect
 const HitEffect = preload("res://Effects/HitEffect.tscn")
+#spawn effect
+const EnemySpawnEffect = preload("res://Effects/EnemySpawnEffect.tscn")
 
 var Player = preload("res://Player/Player.tscn")
 
@@ -36,6 +38,11 @@ onready var softCollision = $SoftCollision
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$AnimatedSprite.hide()
+	var enemySpawnEffect = EnemySpawnEffect.instance()
+	get_parent().add_child(enemySpawnEffect)
+	enemySpawnEffect.global_position = global_position-5
+	$AnimatedSprite.show()
 	stats.connect("no_health", self, "die") #connect to stats signal, runs die() function when it reaches 0 health
 	#stats.set_max_health(50)
 	Player = get_tree().root.get_node("/root/World/YSort/Player")

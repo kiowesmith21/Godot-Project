@@ -25,6 +25,8 @@ func _on_ForestSpawnArea_body_exited(body):
 func seek_player():
 	if can_see_player():
 		state = SPAWN
+	else:
+		state = IDLE
 
 func _physics_process(delta):
 	
@@ -51,6 +53,7 @@ func _physics_process(delta):
 				spawnCoolDown = spawnTime
 			else:
 				spawnCoolDown = spawnCoolDown - delta
+			seek_player()
 
 
 

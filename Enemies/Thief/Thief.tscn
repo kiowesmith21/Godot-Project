@@ -21,9 +21,9 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 12 ), ExtResource( 11 ), ExtResource( 9 ), ExtResource( 10 ) ],
+"frames": [ ExtResource( 6 ), ExtResource( 1 ), ExtResource( 7 ), ExtResource( 8 ) ],
 "loop": true,
-"name": "Melee",
+"name": "Walk",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 5 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ) ],
@@ -31,9 +31,9 @@ animations = [ {
 "name": "Idle",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 6 ), ExtResource( 1 ), ExtResource( 7 ), ExtResource( 8 ) ],
+"frames": [ ExtResource( 12 ), ExtResource( 11 ), ExtResource( 9 ), ExtResource( 10 ) ],
 "loop": true,
-"name": "Walk",
+"name": "Melee",
 "speed": 5.0
 } ]
 
@@ -57,6 +57,9 @@ height = 13.4795
 
 [node name="Thief" type="KinematicBody2D"]
 script = ExtResource( 13 )
+ACCELERATION = null
+MAX_SPEED = null
+FRICTION = null
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( -0.117977, 1.06185 )
@@ -101,14 +104,12 @@ position = Vector2( 0, 12.1737 )
 shape = SubResource( 6 )
 
 [node name="ThiefStats" parent="." instance=ExtResource( 15 )]
+
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_Hurtbox_area_entered"]
 [connection signal="area_entered" from="Hitbox" to="." method="_on_Hitbox_area_entered"]
 [connection signal="area_exited" from="Hitbox" to="." method="_on_Hitbox_area_exited"]
 
 [editable path="PlayerDetectionZone"]
-
 [editable path="Hurtbox"]
-
 [editable path="Hitbox"]
-
 [editable path="SoftCollision"]
