@@ -41,7 +41,7 @@ func _ready():
 	$AnimatedSprite.hide()
 	var enemySpawnEffect = EnemySpawnEffect.instance()
 	get_parent().add_child(enemySpawnEffect)
-	enemySpawnEffect.global_position = global_position-5
+	enemySpawnEffect.global_position = global_position
 	$AnimatedSprite.show()
 	stats.connect("no_health", self, "die") #connect to stats signal, runs die() function when it reaches 0 health
 	#stats.set_max_health(50)
