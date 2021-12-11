@@ -1,7 +1,6 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://UI/title-screen/Buttons/NewGameButton.tscn" type="PackedScene" id=1]
-[ext_resource path="res://UI/title-screen/img/logo.png" type="Texture" id=2]
 [ext_resource path="res://UI/title-screen/Buttons/ContinueButton.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Npcs/Archer/Archer_Idle_3.png" type="Texture" id=4]
 [ext_resource path="res://Npcs/Archer/Archer_Idle_4.png" type="Texture" id=5]
@@ -12,7 +11,14 @@
 [ext_resource path="res://UI/title-screen/Buttons/OptionsButton.tscn" type="PackedScene" id=10]
 [ext_resource path="res://UI/title-screen/fade_in/FadeIn.tscn" type="PackedScene" id=11]
 
-[sub_resource type="SpriteFrames" id=1]
+[sub_resource type="DynamicFontData" id=1]
+font_path = "res://UI/title-screen/Fonts/Montserrat-ExtraBold.ttf"
+
+[sub_resource type="DynamicFont" id=2]
+size = 100
+font_data = SubResource( 1 )
+
+[sub_resource type="SpriteFrames" id=3]
 animations = [ {
 "frames": [ ExtResource( 8 ), ExtResource( 6 ), ExtResource( 4 ), ExtResource( 5 ) ],
 "loop": true,
@@ -20,7 +26,7 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=4]
 size = 24
 font_data = ExtResource( 9 )
 
@@ -41,56 +47,57 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Logo" type="TextureRect" parent="Menu"]
+[node name="Label" type="Label" parent="Menu"]
 margin_right = 1040.0
-margin_bottom = 128.0
-texture = ExtResource( 2 )
-stretch_mode = 4
+margin_bottom = 123.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+custom_fonts/font = SubResource( 2 )
+text = "MERLIN"
 
 [node name="CenterRow" type="HBoxContainer" parent="Menu"]
-margin_top = 132.0
+margin_top = 127.0
 margin_right = 1040.0
 margin_bottom = 491.0
 size_flags_vertical = 3
 
 [node name="Buttons" type="VBoxContainer" parent="Menu/CenterRow"]
 margin_right = 518.0
-margin_bottom = 359.0
+margin_bottom = 364.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/separation = 20
 alignment = 1
 
 [node name="NewGame" parent="Menu/CenterRow/Buttons" instance=ExtResource( 1 )]
-margin_top = 69.0
+margin_top = 72.0
 margin_right = 518.0
-margin_bottom = 129.0
+margin_bottom = 132.0
 
 [node name="ContinueButton" parent="Menu/CenterRow/Buttons" instance=ExtResource( 3 )]
-margin_top = 149.0
+margin_top = 152.0
 margin_right = 518.0
-margin_bottom = 209.0
+margin_bottom = 212.0
 scene_to_load = "res://World.tscn"
 
 [node name="OptionsButton" parent="Menu/CenterRow/Buttons" instance=ExtResource( 10 )]
-margin_top = 229.0
+margin_top = 232.0
 margin_right = 518.0
-margin_bottom = 289.0
+margin_bottom = 292.0
 scene_to_load = "res://World.tscn"
 
 [node name="CenterContainer" type="CenterContainer" parent="Menu/CenterRow"]
 margin_left = 522.0
 margin_right = 1040.0
-margin_bottom = 359.0
+margin_bottom = 364.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Menu/CenterRow/CenterContainer"]
 position = Vector2( 443.353, 156.679 )
 scale = Vector2( 10, 10 )
-frames = SubResource( 1 )
+frames = SubResource( 3 )
 animation = "Idle"
-frame = 2
 playing = true
 
 [node name="VersionLabel" type="Label" parent="Menu"]
@@ -99,7 +106,7 @@ margin_right = 1040.0
 margin_bottom = 560.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 4 )
 text = "Version 0.5
 Merlin Studios"
 
