@@ -788,23 +788,19 @@ scale = Vector2( 1, 1 )
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="YSort/Player"]
 remote_path = NodePath("../../../Camera2D")
 
-[node name="Villager-Female" type="AnimatedSprite" parent="YSort" groups=[
-"NPC",
-]]
+[node name="Villager-Female" type="AnimatedSprite" parent="YSort" groups=["NPC"]]
 position = Vector2( -189.588, 131.498 )
 scale = Vector2( 1.5, 1.5 )
 frames = SubResource( 22 )
 animation = "Idle"
+frame = 2
 playing = true
 
-[node name="Villager-Male" type="AnimatedSprite" parent="YSort" groups=[
-"NPC",
-]]
+[node name="Villager-Male" type="AnimatedSprite" parent="YSort" groups=["NPC"]]
 position = Vector2( -153.177, 132.654 )
 scale = Vector2( 1.5, 1.5 )
 frames = SubResource( 23 )
 animation = "Idle"
-frame = 2
 playing = true
 flip_h = true
 
@@ -813,18 +809,12 @@ position = Vector2( -297.057, -64.7424 )
 
 [node name="Executioner" parent="." instance=ExtResource( 7 )]
 
-[node name="Thief-Boss" parent="." groups=[
-"Enemy",
-] instance=ExtResource( 27 )]
+[node name="Thief-Boss" parent="." groups=["Enemy"] instance=ExtResource( 27 )]
 
-[node name="Thief" parent="." groups=[
-"Enemy",
-] instance=ExtResource( 6 )]
+[node name="Thief" parent="." groups=["Enemy"] instance=ExtResource( 6 )]
 position = Vector2( 2300.32, 565.205 )
 
-[node name="Thief2" parent="." groups=[
-"Enemy",
-] instance=ExtResource( 6 )]
+[node name="Thief2" parent="." groups=["Enemy"] instance=ExtResource( 6 )]
 position = Vector2( 275.716, 92.6277 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -857,8 +847,8 @@ margin_left = 3.0
 margin_top = 1.0
 margin_right = 293.0
 margin_bottom = 12.0
-custom_fonts/font = ExtResource( 31 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 31 )
 text = "placeholder"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -869,8 +859,8 @@ margin_left = 3.41583
 margin_top = 12.5281
 margin_right = 266.416
 margin_bottom = 51.5281
-custom_fonts/font = ExtResource( 31 )
 custom_colors/font_color = Color( 0, 0, 0, 0.639216 )
+custom_fonts/font = ExtResource( 31 )
 text = "placeholder"
 autowrap = true
 percent_visible = 0.0
@@ -884,8 +874,8 @@ margin_left = 4.77728
 margin_top = 46.5636
 margin_right = 269.777
 margin_bottom = 60.5636
-custom_fonts/font = ExtResource( 31 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 31 )
 text = "placeholder"
 align = 1
 __meta__ = {
@@ -903,6 +893,7 @@ margin_bottom = 21.9289
 
 [node name="FireballSpellbook" parent="." instance=ExtResource( 15 )]
 position = Vector2( 2285.02, 1007.48 )
+
 [connection signal="body_entered" from="ForestSpawnArea" to="ForestSpawnArea" method="_on_ForestSpawnArea_body_entered"]
 [connection signal="body_exited" from="ForestSpawnArea" to="ForestSpawnArea" method="_on_ForestSpawnArea_body_exited"]
 [connection signal="animation_finished" from="CanvasLayer/DialogueUI/AnimationPlayer" to="CanvasLayer/DialogueUI" method="_on_AnimationPlayer_animation_finished"]

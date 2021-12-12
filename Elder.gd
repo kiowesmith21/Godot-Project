@@ -29,7 +29,7 @@ func talk(choice = ""):
 			match dialogue_state:
 				0:
 					dialogue_state = 1
-					dialogueUI.dialogue = "Ah! Hello there. I see you are out to save us. Here, have some magic."
+					dialogueUI.dialogue = "Ah! Hello there. We need you to retrieve the spellbook from the bandit camp."
 					dialogueUI.choices = " [E] Uh... Ok. [Q] No thanks."
 					dialogueUI.open()
 					
@@ -37,7 +37,7 @@ func talk(choice = ""):
 					match choice:
 						"E":
 							dialogue_state = 2
-							dialogueUI.dialogue = "Alright, there you go. Don't go burning down the town."
+							dialogueUI.dialogue = "Alright, there you go. Don't go burning down the town with that spellbook."
 							dialogueUI.choices = "[E] Thank you, bye."
 							dialogueUI.open()
 						"Q":

@@ -1,5 +1,8 @@
 extends ColorRect
 
+var fireball_given = get_tree().root.get_node("/root/World/YSort/Player").fireball_given
+#add a signal to create a function that turns the visibility of sprite three from off to on
+
 signal wpn_changed
 
 func _ready():
