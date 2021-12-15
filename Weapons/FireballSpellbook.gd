@@ -1,16 +1,21 @@
 extends Area2D
 
 var player #uses variables from this node
-var dialogueUI #will pop up text o show player picked it up
+var dialogueUI #will pop up text to show player picked it up
+var skillbar #used to tell the skillbar to show the fireball skill
 var dialogue_state = 0
+#2285.02, 1007.48
 
 func _ready():
 	player = get_tree().root.get_node("/root/World/YSort/Player")
+	skillbar = get_tree().root.get_node("/root/World/CanvasLayer/Skillbar")
 	dialogueUI = get_tree().root.get_node("/root/World/CanvasLayer/DialogueUI")
 
 func _on_FireballSpellbook_body_entered(body):
 	if body.name == "Player":
 		talk() #show player picked it up
+		skillbar.get_child(2).get_child(0).show()
+		
 	
 #Pop up dialogue to tell player picked up item
 func talk(choice = ""):
