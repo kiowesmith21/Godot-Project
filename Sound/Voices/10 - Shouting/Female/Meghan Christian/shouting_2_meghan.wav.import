@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/shouting_2_meghan.wav-a6e506dbd6315cae71d5bc15785495b4.sample"
+
+[deps]
+
+source_file="res://Sound/Voices/10 - Shouting/Female/Meghan Christian/shouting_2_meghan.wav"
+dest_files=[ "res://.import/shouting_2_meghan.wav-a6e506dbd6315cae71d5bc15785495b4.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

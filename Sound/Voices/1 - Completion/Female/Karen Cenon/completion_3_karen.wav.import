@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/completion_3_karen.wav-821f9728eb507e536f55fac43cd032a6.sample"
+
+[deps]
+
+source_file="res://Sound/Voices/1 - Completion/Female/Karen Cenon/completion_3_karen.wav"
+dest_files=[ "res://.import/completion_3_karen.wav-821f9728eb507e536f55fac43cd032a6.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

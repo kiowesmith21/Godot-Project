@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/death_5_sean.wav-7e92dcc6e43b0e6f525edfa5a306ce5c.sample"
+
+[deps]
+
+source_file="res://Sound/Voices/8 - Death/Male/Sean Lenhart/death_5_sean.wav"
+dest_files=[ "res://.import/death_5_sean.wav-7e92dcc6e43b0e6f525edfa5a306ce5c.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

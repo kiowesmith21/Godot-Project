@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/completion_4_ian.wav-04d1ddc16303cf2dd6928fc8d383346b.sample"
+
+[deps]
+
+source_file="res://Sound/Voices/1 - Completion/Male/Ian Lampert/completion_4_ian.wav"
+dest_files=[ "res://.import/completion_4_ian.wav-04d1ddc16303cf2dd6928fc8d383346b.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

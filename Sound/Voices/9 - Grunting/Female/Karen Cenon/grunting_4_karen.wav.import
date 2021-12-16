@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/grunting_4_karen.wav-b990f2c7e19b303f4e67a73d780d812b.sample"
+
+[deps]
+
+source_file="res://Sound/Voices/9 - Grunting/Female/Karen Cenon/grunting_4_karen.wav"
+dest_files=[ "res://.import/grunting_4_karen.wav-b990f2c7e19b303f4e67a73d780d812b.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

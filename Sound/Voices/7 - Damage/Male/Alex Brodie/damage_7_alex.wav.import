@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/damage_7_alex.wav-9f13d72c49f945c58e5dbf551f5318af.sample"
+
+[deps]
+
+source_file="res://Sound/Voices/7 - Damage/Male/Alex Brodie/damage_7_alex.wav"
+dest_files=[ "res://.import/damage_7_alex.wav-9f13d72c49f945c58e5dbf551f5318af.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

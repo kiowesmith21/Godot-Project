@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/confirmation_5_karen.wav-dbc39273e0e138982121eb5f2ad15b0a.sample"
+
+[deps]
+
+source_file="res://Sound/Voices/2 - Confirmation/Female/Karen Cenon/confirmation_5_karen.wav"
+dest_files=[ "res://.import/confirmation_5_karen.wav-dbc39273e0e138982121eb5f2ad15b0a.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

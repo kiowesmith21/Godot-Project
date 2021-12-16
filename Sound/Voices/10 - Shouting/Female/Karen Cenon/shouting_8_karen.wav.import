@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/shouting_8_karen.wav-af0f5a27cfa0cf54fd6f4e6a9e519a63.sample"
+
+[deps]
+
+source_file="res://Sound/Voices/10 - Shouting/Female/Karen Cenon/shouting_8_karen.wav"
+dest_files=[ "res://.import/shouting_8_karen.wav-af0f5a27cfa0cf54fd6f4e6a9e519a63.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

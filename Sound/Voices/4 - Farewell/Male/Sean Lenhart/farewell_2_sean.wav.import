@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/farewell_2_sean.wav-28166f0ea3d8f07d2c18cf0efd9817d4.sample"
+
+[deps]
+
+source_file="res://Sound/Voices/4 - Farewell/Male/Sean Lenhart/farewell_2_sean.wav"
+dest_files=[ "res://.import/farewell_2_sean.wav-28166f0ea3d8f07d2c18cf0efd9817d4.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

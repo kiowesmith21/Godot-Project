@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/death_4_meghan.wav-2173a399d5ccb34700e33858f7e9e48f.sample"
+
+[deps]
+
+source_file="res://Sound/Voices/8 - Death/Female/Meghan Christian/death_4_meghan.wav"
+dest_files=[ "res://.import/death_4_meghan.wav-2173a399d5ccb34700e33858f7e9e48f.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/miscellaneous_9_meghan.wav-45b9ae4ff9976d035407c9450e68cf36.sample"
+
+[deps]
+
+source_file="res://Sound/Voices/6 - Miscellaneous/Female/Meghan Christian/miscellaneous_9_meghan.wav"
+dest_files=[ "res://.import/miscellaneous_9_meghan.wav-45b9ae4ff9976d035407c9450e68cf36.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

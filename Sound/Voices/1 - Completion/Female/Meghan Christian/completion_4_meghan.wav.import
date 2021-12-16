@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/completion_4_meghan.wav-8ab0c86605eff67c3dd332adc7e87219.sample"
+
+[deps]
+
+source_file="res://Sound/Voices/1 - Completion/Female/Meghan Christian/completion_4_meghan.wav"
+dest_files=[ "res://.import/completion_4_meghan.wav-8ab0c86605eff67c3dd332adc7e87219.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/grunting_7_sean.wav-4fac1f795199d51c641e802335b5b716.sample"
+
+[deps]
+
+source_file="res://Sound/Voices/9 - Grunting/Male/Sean Lenhart/grunting_7_sean.wav"
+dest_files=[ "res://.import/grunting_7_sean.wav-4fac1f795199d51c641e802335b5b716.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

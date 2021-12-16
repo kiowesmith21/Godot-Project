@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/greeting_4_karen.wav-991101765c4d7aa4b060c3253cfafd42.sample"
+
+[deps]
+
+source_file="res://Sound/Voices/3 - Greeting/Female/Karen Cenon/greeting_4_karen.wav"
+dest_files=[ "res://.import/greeting_4_karen.wav-991101765c4d7aa4b060c3253cfafd42.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

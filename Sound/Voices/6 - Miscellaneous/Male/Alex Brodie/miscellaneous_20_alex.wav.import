@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/miscellaneous_20_alex.wav-bc1622259cf1951d45e296c0fd529fb6.sample"
+
+[deps]
+
+source_file="res://Sound/Voices/6 - Miscellaneous/Male/Alex Brodie/miscellaneous_20_alex.wav"
+dest_files=[ "res://.import/miscellaneous_20_alex.wav-bc1622259cf1951d45e296c0fd529fb6.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

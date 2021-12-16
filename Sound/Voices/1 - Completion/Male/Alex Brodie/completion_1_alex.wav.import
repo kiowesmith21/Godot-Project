@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/completion_1_alex.wav-01f9ed40dc49e0ab78130d4aaf7505bb.sample"
+
+[deps]
+
+source_file="res://Sound/Voices/1 - Completion/Male/Alex Brodie/completion_1_alex.wav"
+dest_files=[ "res://.import/completion_1_alex.wav-01f9ed40dc49e0ab78130d4aaf7505bb.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

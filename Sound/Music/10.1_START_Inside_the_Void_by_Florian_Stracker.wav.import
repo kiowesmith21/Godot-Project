@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/10.1_START_Inside_the_Void_by_Florian_Stracker.wav-58ce1840b8d2992fa6de8cd22422c57f.sample"
+
+[deps]
+
+source_file="res://Sound/Music/10.1_START_Inside_the_Void_by_Florian_Stracker.wav"
+dest_files=[ "res://.import/10.1_START_Inside_the_Void_by_Florian_Stracker.wav-58ce1840b8d2992fa6de8cd22422c57f.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

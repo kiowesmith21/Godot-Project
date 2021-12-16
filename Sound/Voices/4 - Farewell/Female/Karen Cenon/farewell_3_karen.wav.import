@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/farewell_3_karen.wav-92092a5498cd0551c2665c6e4d07a353.sample"
+
+[deps]
+
+source_file="res://Sound/Voices/4 - Farewell/Female/Karen Cenon/farewell_3_karen.wav"
+dest_files=[ "res://.import/farewell_3_karen.wav-92092a5498cd0551c2665c6e4d07a353.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

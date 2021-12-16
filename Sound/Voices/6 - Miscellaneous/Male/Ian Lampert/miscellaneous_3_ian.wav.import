@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/miscellaneous_3_ian.wav-3b56a9f5348e45260d0fd8c09ab44a73.sample"
+
+[deps]
+
+source_file="res://Sound/Voices/6 - Miscellaneous/Male/Ian Lampert/miscellaneous_3_ian.wav"
+dest_files=[ "res://.import/miscellaneous_3_ian.wav-3b56a9f5348e45260d0fd8c09ab44a73.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

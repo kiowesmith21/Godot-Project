@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/farewell_9_ian.wav-e402e53c14cce4385c6365988380e438.sample"
+
+[deps]
+
+source_file="res://Sound/Voices/4 - Farewell/Male/Ian Lampert/farewell_9_ian.wav"
+dest_files=[ "res://.import/farewell_9_ian.wav-e402e53c14cce4385c6365988380e438.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/farewell_4_meghan.wav-14739f2ea94fd8f5b356cdd49efd86ea.sample"
+
+[deps]
+
+source_file="res://Sound/Voices/4 - Farewell/Female/Meghan Christian/farewell_4_meghan.wav"
+dest_files=[ "res://.import/farewell_4_meghan.wav-14739f2ea94fd8f5b356cdd49efd86ea.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

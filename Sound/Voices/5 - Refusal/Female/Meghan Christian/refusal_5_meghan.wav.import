@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/refusal_5_meghan.wav-cc9c0379173fd41316e8f633ab5ca884.sample"
+
+[deps]
+
+source_file="res://Sound/Voices/5 - Refusal/Female/Meghan Christian/refusal_5_meghan.wav"
+dest_files=[ "res://.import/refusal_5_meghan.wav-cc9c0379173fd41316e8f633ab5ca884.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/death_1_ian.wav-e0404332120c96aad121793941b9529b.sample"
+
+[deps]
+
+source_file="res://Sound/Voices/8 - Death/Male/Ian Lampert/death_1_ian.wav"
+dest_files=[ "res://.import/death_1_ian.wav-e0404332120c96aad121793941b9529b.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

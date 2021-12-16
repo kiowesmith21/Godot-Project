@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/miscellaneous_18_karen.wav-3a1e1691d56c6d17407832068070761d.sample"
+
+[deps]
+
+source_file="res://Sound/Voices/6 - Miscellaneous/Female/Karen Cenon/miscellaneous_18_karen.wav"
+dest_files=[ "res://.import/miscellaneous_18_karen.wav-3a1e1691d56c6d17407832068070761d.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

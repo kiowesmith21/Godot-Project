@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/refusal_2_alex.wav-9511866a207165873e4d11c936d965e0.sample"
+
+[deps]
+
+source_file="res://Sound/Voices/5 - Refusal/Male/Alex Brodie/refusal_2_alex.wav"
+dest_files=[ "res://.import/refusal_2_alex.wav-9511866a207165873e4d11c936d965e0.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

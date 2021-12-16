@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/grunting_7_meghan.wav-67d20b66362f7b28efcc740c7f69e66f.sample"
+
+[deps]
+
+source_file="res://Sound/Voices/9 - Grunting/Female/Meghan Christian/grunting_7_meghan.wav"
+dest_files=[ "res://.import/grunting_7_meghan.wav-67d20b66362f7b28efcc740c7f69e66f.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

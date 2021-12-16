@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/02.2_LOOP_Valley_Grounds_by_Florian_Stracker.wav-e506328f5bd715ccad9dc742128da1a7.sample"
+
+[deps]
+
+source_file="res://Sound/Music/02.2_LOOP_Valley_Grounds_by_Florian_Stracker.wav"
+dest_files=[ "res://.import/02.2_LOOP_Valley_Grounds_by_Florian_Stracker.wav-e506328f5bd715ccad9dc742128da1a7.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

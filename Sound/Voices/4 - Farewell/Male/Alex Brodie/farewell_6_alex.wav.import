@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/farewell_6_alex.wav-5ac5259410c29e3f2fcb1dc6e1c30200.sample"
+
+[deps]
+
+source_file="res://Sound/Voices/4 - Farewell/Male/Alex Brodie/farewell_6_alex.wav"
+dest_files=[ "res://.import/farewell_6_alex.wav-5ac5259410c29e3f2fcb1dc6e1c30200.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

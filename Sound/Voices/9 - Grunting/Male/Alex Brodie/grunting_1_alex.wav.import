@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/grunting_1_alex.wav-62c2feb4f0b01f4751809b880b148205.sample"
+
+[deps]
+
+source_file="res://Sound/Voices/9 - Grunting/Male/Alex Brodie/grunting_1_alex.wav"
+dest_files=[ "res://.import/grunting_1_alex.wav-62c2feb4f0b01f4751809b880b148205.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

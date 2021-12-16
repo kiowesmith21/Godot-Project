@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/08.2_LOOP_Besiege_the_Castle_by_Florian_Stracker.wav-6bafa10f7100f7740b2978a0c700fc84.sample"
+
+[deps]
+
+source_file="res://Sound/Music/08.2_LOOP_Besiege_the_Castle_by_Florian_Stracker.wav"
+dest_files=[ "res://.import/08.2_LOOP_Besiege_the_Castle_by_Florian_Stracker.wav-6bafa10f7100f7740b2978a0c700fc84.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

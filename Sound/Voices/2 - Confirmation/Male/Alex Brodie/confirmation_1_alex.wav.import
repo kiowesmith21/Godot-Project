@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/confirmation_1_alex.wav-62de764ee4915125df573cd1fc29743e.sample"
+
+[deps]
+
+source_file="res://Sound/Voices/2 - Confirmation/Male/Alex Brodie/confirmation_1_alex.wav"
+dest_files=[ "res://.import/confirmation_1_alex.wav-62de764ee4915125df573cd1fc29743e.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

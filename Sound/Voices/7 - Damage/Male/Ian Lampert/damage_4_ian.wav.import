@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/damage_4_ian.wav-c3547553b154b4a319ecf9d2181c4eb2.sample"
+
+[deps]
+
+source_file="res://Sound/Voices/7 - Damage/Male/Ian Lampert/damage_4_ian.wav"
+dest_files=[ "res://.import/damage_4_ian.wav-c3547553b154b4a319ecf9d2181c4eb2.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

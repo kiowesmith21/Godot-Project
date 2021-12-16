@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/miscellaneous_12_sean.wav-e646db00f9729a2331b750b1444ea40f.sample"
+
+[deps]
+
+source_file="res://Sound/Voices/6 - Miscellaneous/Male/Sean Lenhart/miscellaneous_12_sean.wav"
+dest_files=[ "res://.import/miscellaneous_12_sean.wav-e646db00f9729a2331b750b1444ea40f.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

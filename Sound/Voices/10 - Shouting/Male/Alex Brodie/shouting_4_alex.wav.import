@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/shouting_4_alex.wav-dc3ca39ac8a024c89081890a3cc6a53d.sample"
+
+[deps]
+
+source_file="res://Sound/Voices/10 - Shouting/Male/Alex Brodie/shouting_4_alex.wav"
+dest_files=[ "res://.import/shouting_4_alex.wav-dc3ca39ac8a024c89081890a3cc6a53d.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

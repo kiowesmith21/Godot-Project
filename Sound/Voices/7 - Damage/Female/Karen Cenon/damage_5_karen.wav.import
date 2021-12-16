@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/damage_5_karen.wav-ae3095207880a95b8e612adc40ae6d9b.sample"
+
+[deps]
+
+source_file="res://Sound/Voices/7 - Damage/Female/Karen Cenon/damage_5_karen.wav"
+dest_files=[ "res://.import/damage_5_karen.wav-ae3095207880a95b8e612adc40ae6d9b.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

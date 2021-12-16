@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/confirmation_8_ian.wav-134d53bd31ab3c58c85ef909fc6f3922.sample"
+
+[deps]
+
+source_file="res://Sound/Voices/2 - Confirmation/Male/Ian Lampert/confirmation_8_ian.wav"
+dest_files=[ "res://.import/confirmation_8_ian.wav-134d53bd31ab3c58c85ef909fc6f3922.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

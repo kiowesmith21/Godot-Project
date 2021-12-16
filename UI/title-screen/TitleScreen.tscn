@@ -1,6 +1,7 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://UI/title-screen/Buttons/NewGameButton.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Sound/Music/01.2_LOOP_The_Sword_and_the_Heart_by_Florian_Stracker.wav" type="AudioStream" id=2]
 [ext_resource path="res://UI/title-screen/Buttons/ContinueButton.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Npcs/Archer/Archer_Idle_3.png" type="Texture" id=4]
 [ext_resource path="res://Npcs/Archer/Archer_Idle_4.png" type="Texture" id=5]
@@ -37,6 +38,10 @@ script = ExtResource( 7 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="TitleMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
+volume_db = -20.0
 
 [node name="Menu" type="VBoxContainer" parent="."]
 margin_left = 120.0
@@ -113,5 +118,4 @@ Merlin Studios"
 
 [node name="FadeIn" parent="." instance=ExtResource( 11 )]
 visible = false
-
 [connection signal="fade_finished" from="FadeIn" to="." method="_on_FadeIn_fade_finished"]

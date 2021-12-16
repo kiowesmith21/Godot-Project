@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/confirmation_10_sean.wav-ef93070cebe28e3d83d2e301e2be84fb.sample"
+
+[deps]
+
+source_file="res://Sound/Voices/2 - Confirmation/Male/Sean Lenhart/confirmation_10_sean.wav"
+dest_files=[ "res://.import/confirmation_10_sean.wav-ef93070cebe28e3d83d2e301e2be84fb.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

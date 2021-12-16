@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/death_5_alex.wav-db221fada9e989e354573d311af5b4d7.sample"
+
+[deps]
+
+source_file="res://Sound/Voices/8 - Death/Male/Alex Brodie/death_5_alex.wav"
+dest_files=[ "res://.import/death_5_alex.wav-db221fada9e989e354573d311af5b4d7.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
