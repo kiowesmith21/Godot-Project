@@ -6,7 +6,6 @@
 [ext_resource path="res://World/Small-House.png" type="Texture" id=4]
 [ext_resource path="res://World/Woods/GrassBackground.png" type="Texture" id=5]
 [ext_resource path="res://Enemies/Thief/Thief.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Enemies/Executioner.tscn" type="PackedScene" id=7]
 [ext_resource path="res://World/Aurora Tileset.png" type="Texture" id=8]
 [ext_resource path="res://World/Fences/Wooden fence/Wooden-fence-2.png" type="Texture" id=9]
 [ext_resource path="res://World/Fences/Wooden fence/Wooden-fence-1.png" type="Texture" id=10]
@@ -28,6 +27,7 @@
 [ext_resource path="res://World/Bench and chest/Bench.png" type="Texture" id=26]
 [ext_resource path="res://Enemies/Thief-Boss.tscn" type="PackedScene" id=27]
 [ext_resource path="res://Forest-Spawn-Area.gd" type="Script" id=28]
+[ext_resource path="res://Enemies/Executioner/Executioner.tscn" type="PackedScene" id=29]
 [ext_resource path="res://UI/Magero.tres" type="DynamicFont" id=31]
 [ext_resource path="res://DialogueUI.gd" type="Script" id=32]
 
@@ -793,7 +793,7 @@ position = Vector2( -189.588, 131.498 )
 scale = Vector2( 1.5, 1.5 )
 frames = SubResource( 22 )
 animation = "Idle"
-frame = 3
+frame = 2
 playing = true
 
 [node name="Villager-Male" type="AnimatedSprite" parent="YSort" groups=["NPC"]]
@@ -801,14 +801,14 @@ position = Vector2( -153.177, 132.654 )
 scale = Vector2( 1.5, 1.5 )
 frames = SubResource( 23 )
 animation = "Idle"
-frame = 1
 playing = true
 flip_h = true
 
 [node name="Elder" parent="YSort" instance=ExtResource( 12 )]
 position = Vector2( -297.057, -64.7424 )
 
-[node name="Executioner" parent="." groups=["Enemy"] instance=ExtResource( 7 )]
+[node name="Executioner" parent="." instance=ExtResource( 29 )]
+position = Vector2( 161.827, 171.396 )
 
 [node name="Thief-Boss" parent="." groups=["Enemy"] instance=ExtResource( 27 )]
 

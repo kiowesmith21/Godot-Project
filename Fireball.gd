@@ -13,7 +13,6 @@ func _process(delta):
 	direction = (get_global_mouse_position() - position).normalized()
 	position = position + speed * delta * direction
 	
-
 func _on_Fireball_body_entered(body):
 	if body.name == "Player":#add for what happens to the player and for when it goes to an enemy
 		return queue_free()
@@ -22,6 +21,5 @@ func _on_Fireball_body_entered(body):
 func Timer():
 	yield(get_tree().create_timer(0.75), "timeout")
 	queue_free()
-
 func _get(property):
 	return property
