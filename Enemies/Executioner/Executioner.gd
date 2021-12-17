@@ -56,7 +56,6 @@ func _physics_process(delta):
 		IDLE:
 			velocity = velocity.move_toward(Vector2.ZERO, FRICTION * delta) #friction
 			anim.play("Idle")
-			$Mace.hide()
 			seek_player()
 		WANDER:
 			pass

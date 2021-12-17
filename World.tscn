@@ -793,7 +793,6 @@ position = Vector2( -189.588, 131.498 )
 scale = Vector2( 1.5, 1.5 )
 frames = SubResource( 22 )
 animation = "Idle"
-frame = 2
 playing = true
 
 [node name="Villager-Male" type="AnimatedSprite" parent="YSort" groups=["NPC"]]
@@ -801,6 +800,7 @@ position = Vector2( -153.177, 132.654 )
 scale = Vector2( 1.5, 1.5 )
 frames = SubResource( 23 )
 animation = "Idle"
+frame = 2
 playing = true
 flip_h = true
 
@@ -808,7 +808,7 @@ flip_h = true
 position = Vector2( -297.057, -64.7424 )
 
 [node name="Executioner" parent="." instance=ExtResource( 29 )]
-position = Vector2( 161.827, 171.396 )
+position = Vector2( 2622.35, 644.533 )
 
 [node name="Thief-Boss" parent="." groups=["Enemy"] instance=ExtResource( 27 )]
 

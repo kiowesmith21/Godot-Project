@@ -1,12 +1,10 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Enemies/PlayerDetectionZone.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Hitboxes and Hurtboxes/SoftCollision.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Hitboxes and Hurtboxes/Hurtbox.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Enemies/Executioner/ExecutionerStats.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Enemies/Executioner/Executioner_Idle_1.png" type="Texture" id=5]
-[ext_resource path="res://Enemies/Executioner/Mace.gd" type="Script" id=6]
-[ext_resource path="res://Weapons/mace.png" type="Texture" id=7]
 [ext_resource path="res://Enemies/Executioner/Executioner_Walk_1.png" type="Texture" id=8]
 [ext_resource path="res://Enemies/Executioner/Executioner_Idle_4.png" type="Texture" id=9]
 [ext_resource path="res://Enemies/Executioner/Executioner_Walk_2.png" type="Texture" id=10]
@@ -18,14 +16,14 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 5 ), ExtResource( 12 ), ExtResource( 14 ), ExtResource( 9 ) ],
-"loop": true,
-"name": "Idle",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 8 ), ExtResource( 10 ), ExtResource( 13 ), ExtResource( 11 ) ],
 "loop": true,
 "name": "Walk",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ), ExtResource( 12 ), ExtResource( 14 ), ExtResource( 9 ) ],
+"loop": true,
+"name": "Idle",
 "speed": 5.0
 } ]
 
@@ -42,9 +40,6 @@ height = 11.115
 [sub_resource type="CapsuleShape2D" id=4]
 radius = 12.031
 height = 10.3851
-
-[sub_resource type="CircleShape2D" id=5]
-radius = 6.87776
 
 [node name="Executioner" type="KinematicBody2D"]
 position = Vector2( 156.271, 199.176 )
@@ -100,22 +95,7 @@ enabled = true
 cast_to = Vector2( 5, 0 )
 collide_with_areas = true
 
-[node name="Mace" type="Area2D" parent="."]
-position = Vector2( -22.3763, -0.71521 )
-script = ExtResource( 6 )
-
-[node name="MaceSprite" type="Sprite" parent="Mace"]
-position = Vector2( -8.24243, 19.5078 )
-scale = Vector2( 0.0896244, 0.0912615 )
-texture = ExtResource( 7 )
-
-[node name="MaceCollision" type="CollisionShape2D" parent="Mace"]
-position = Vector2( -8.92467, 14.0798 )
-shape = SubResource( 5 )
-
 [node name="ExecutionerStats" parent="." instance=ExtResource( 4 )]
-
-[connection signal="body_entered" from="Mace" to="Mace" method="_on_Mace_body_entered"]
 
 [editable path="PlayerDetectionZone"]
 [editable path="Hurtbox"]

@@ -13,23 +13,23 @@ var timer = Timer.new()
 func _ready():
 	atk_choice = randi() % 3
 	if(atk_choice == 0):#circle
-		$Executioner/Mace.position = $Executioner.position + 50
+		position = $Executioner.position + 50
 		
 	elif(atk_choice == 1):#up and smash
-		$Executioner/Mace.position = $Executioner.position + 50
+		position = $Executioner.position + 50
 		
 	else:#throw
-		$Executioner/Mace.position = $Executioner.position + 50
+		position = $Executioner.position + 50
 		
 
 func _process(delta):
 	if(atk_choice == 0):
-		$Executioner/Mace.rotation += rotation_speed * delta
+		rotation += rotation_speed * delta
 	elif(atk_choice == 0):
-		$Executioner/Mace.position = position.move_toward(Vector2(position.x,position.y+100), delta * speed)
-		$Executioner/Mace.position = position.move_toward(Vector2(position.x,$Executioner.position.y-100), delta * 360)
+		position = position.move_toward(Vector2(position.x,position.y+100), delta * speed)
+		position = position.move_toward(Vector2(position.x,$Executioner.position.y-100), delta * 360)
 	else:
-		$Executioner/Mace.position = position.move_toward(Vector2($Player.position.x,$Player.position.x), delta * 240)
+		position = position.move_toward(Vector2($Player.position.x,$Player.position.x), delta * 240)
 
 
 func _on_Mace_body_entered(body):
