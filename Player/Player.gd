@@ -124,6 +124,7 @@ func get_input(delta):
 
 #player getting hit, their hurtbox being entered
 func _on_Hurtbox_area_entered(area):
+	$hurtSound.play()
 	healthBar.set_value(stats.health - area.get_parent().atk_dmg) #set healthbar value to new health
 	#player loses health on hit
 	print(area.get_parent().atk_dmg)

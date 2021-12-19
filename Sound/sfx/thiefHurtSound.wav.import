@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/thiefHurtSound.wav-55bf65b61a7f500c0e2ea10e058ba3aa.sample"
+
+[deps]
+
+source_file="res://Sound/sfx/thiefHurtSound.wav"
+dest_files=[ "res://.import/thiefHurtSound.wav-55bf65b61a7f500c0e2ea10e058ba3aa.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

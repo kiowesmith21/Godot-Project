@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/11.1_START_Twisted_Towers_by_Florian_Stracker.wav-69a1aff2d07d43947c39139365a81afd.sample"
+
+[deps]
+
+source_file="res://Sound/Music/11.1_START_Twisted_Towers_by_Florian_Stracker.wav"
+dest_files=[ "res://.import/11.1_START_Twisted_Towers_by_Florian_Stracker.wav-69a1aff2d07d43947c39139365a81afd.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

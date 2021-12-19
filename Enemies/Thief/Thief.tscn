@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://Enemies/Thief/Thief_Walk_2.png" type="Texture" id=1]
 [ext_resource path="res://Enemies/Thief/Thief_Idle_2.png" type="Texture" id=2]
@@ -18,12 +18,14 @@
 [ext_resource path="res://Hitboxes and Hurtboxes/Hurtbox.tscn" type="PackedScene" id=16]
 [ext_resource path="res://Hitboxes and Hurtboxes/Hitbox.tscn" type="PackedScene" id=17]
 [ext_resource path="res://Hitboxes and Hurtboxes/SoftCollision.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Sound/sfx/thiefHurtSound.wav" type="AudioStream" id=19]
+[ext_resource path="res://Sound/sfx/Swipe.wav" type="AudioStream" id=20]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 6 ), ExtResource( 1 ), ExtResource( 7 ), ExtResource( 8 ) ],
+"frames": [ ExtResource( 12 ), ExtResource( 11 ), ExtResource( 9 ), ExtResource( 10 ) ],
 "loop": true,
-"name": "Walk",
+"name": "Melee",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 5 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ) ],
@@ -31,9 +33,9 @@ animations = [ {
 "name": "Idle",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 12 ), ExtResource( 11 ), ExtResource( 9 ), ExtResource( 10 ) ],
+"frames": [ ExtResource( 6 ), ExtResource( 1 ), ExtResource( 7 ), ExtResource( 8 ) ],
 "loop": true,
-"name": "Melee",
+"name": "Walk",
 "speed": 5.0
 } ]
 
@@ -57,6 +59,14 @@ height = 13.4795
 
 [node name="Thief" type="KinematicBody2D"]
 script = ExtResource( 13 )
+
+[node name="hitSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 19 )
+attenuation = 6.06286
+
+[node name="deathSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 20 )
+attenuation = 5.65685
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( -0.117977, 1.06185 )
@@ -101,12 +111,14 @@ position = Vector2( 0, 12.1737 )
 shape = SubResource( 6 )
 
 [node name="ThiefStats" parent="." instance=ExtResource( 15 )]
-
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_Hurtbox_area_entered"]
 [connection signal="area_entered" from="Hitbox" to="." method="_on_Hitbox_area_entered"]
 [connection signal="area_exited" from="Hitbox" to="." method="_on_Hitbox_area_exited"]
 
 [editable path="PlayerDetectionZone"]
+
 [editable path="Hurtbox"]
+
 [editable path="Hitbox"]
+
 [editable path="SoftCollision"]

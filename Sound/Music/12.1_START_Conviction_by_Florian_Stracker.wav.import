@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/12.1_START_Conviction_by_Florian_Stracker.wav-55b75e2dde1b02de402849d73ff42799.sample"
+
+[deps]
+
+source_file="res://Sound/Music/12.1_START_Conviction_by_Florian_Stracker.wav"
+dest_files=[ "res://.import/12.1_START_Conviction_by_Florian_Stracker.wav-55b75e2dde1b02de402849d73ff42799.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
