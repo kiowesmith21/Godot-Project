@@ -1,8 +1,7 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://UI/title-screen/Buttons/NewGameButton.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Sound/Music/01.2_LOOP_The_Sword_and_the_Heart_by_Florian_Stracker.wav" type="AudioStream" id=2]
-[ext_resource path="res://UI/title-screen/Buttons/ContinueButton.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Npcs/Archer/Archer_Idle_3.png" type="Texture" id=4]
 [ext_resource path="res://Npcs/Archer/Archer_Idle_4.png" type="Texture" id=5]
 [ext_resource path="res://Npcs/Archer/Archer_Idle_2.png" type="Texture" id=6]
@@ -75,20 +74,14 @@ custom_constants/separation = 20
 alignment = 1
 
 [node name="NewGame" parent="Menu/CenterRow/Buttons" instance=ExtResource( 1 )]
-margin_top = 72.0
+margin_top = 112.0
 margin_right = 518.0
-margin_bottom = 132.0
-
-[node name="ContinueButton" parent="Menu/CenterRow/Buttons" instance=ExtResource( 3 )]
-margin_top = 152.0
-margin_right = 518.0
-margin_bottom = 212.0
-scene_to_load = "res://World.tscn"
+margin_bottom = 172.0
 
 [node name="OptionsButton" parent="Menu/CenterRow/Buttons" instance=ExtResource( 10 )]
-margin_top = 232.0
+margin_top = 192.0
 margin_right = 518.0
-margin_bottom = 292.0
+margin_bottom = 252.0
 scene_to_load = "res://World.tscn"
 
 [node name="CenterContainer" type="CenterContainer" parent="Menu/CenterRow"]
@@ -103,7 +96,7 @@ position = Vector2( 443.353, 156.679 )
 scale = Vector2( 10, 10 )
 frames = SubResource( 3 )
 animation = "Idle"
-frame = 2
+frame = 3
 playing = true
 
 [node name="VersionLabel" type="Label" parent="Menu"]
