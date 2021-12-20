@@ -69,6 +69,7 @@ func _physics_process(delta):
 			if attacking:
 				while attacking:
 					var M = $Mace.instance()
+					print("Attacking")
 					get_parent().add_child(M)
 					M.Executioner = self
 					M.direction = (get_global_mouse_position() - position).normalized()
