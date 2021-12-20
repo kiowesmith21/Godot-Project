@@ -52,23 +52,22 @@ scale = Vector2( 1.5, 1.5 )
 script = ExtResource( 15 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( 27.7441, 5.88248 )
+position = Vector2( 27.37, -1.97474 )
 frames = SubResource( 1 )
 animation = "Idle"
 playing = true
 flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2( 26.841, 7.40085 )
 shape = SubResource( 6 )
 
 [node name="PlayerDetectionZone" parent="." instance=ExtResource( 1 )]
-visible = false
 
 [node name="CollisionShape2D" parent="PlayerDetectionZone" index="0"]
-visible = false
 modulate = Color( 1, 1, 1, 0.180392 )
-position = Vector2( 0, 7.91207 )
+position = Vector2( 24.6942, -0.319314 )
 shape = SubResource( 2 )
 
 [node name="Hurtbox" parent="." instance=ExtResource( 3 )]
@@ -91,6 +90,7 @@ position = Vector2( -0.243896, 1.0129 )
 shape = SubResource( 4 )
 
 [node name="Hitbox" parent="." instance=ExtResource( 6 )]
+visible = false
 collision_layer = 0
 collision_mask = 2147483652
 
@@ -100,10 +100,10 @@ position = Vector2( 27.196, 7.93161 )
 shape = SubResource( 7 )
 
 [node name="MaceHand" type="Position2D" parent="."]
-position = Vector2( 28.2843, 5.58407 )
+position = Vector2( 32.8396, 3.20497 )
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
-position = Vector2( 27.2052, 6.36396 )
+position = Vector2( 31.7603, 7.18287 )
 enabled = true
 cast_to = Vector2( 5, 0 )
 collide_with_areas = true

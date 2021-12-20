@@ -1,10 +1,15 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Enemies/Executioner/Mace.gd" type="Script" id=1]
 [ext_resource path="res://Weapons/mace.png" type="Texture" id=2]
+[ext_resource path="res://Hitboxes and Hurtboxes/Hitbox.tscn" type="PackedScene" id=3]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 6.87776
+
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 6.83319
+height = 0.0
 
 [node name="Mace" type="Area2D"]
 script = ExtResource( 1 )
@@ -18,4 +23,15 @@ texture = ExtResource( 2 )
 position = Vector2( -31.301, 13.3646 )
 shape = SubResource( 1 )
 
+[node name="Hitbox" parent="." instance=ExtResource( 3 )]
+collision_layer = 0
+collision_mask = 2147483652
+
+[node name="CollisionShape2D" parent="Hitbox" index="0"]
+modulate = Color( 0.890196, 0.905882, 0.407843, 1 )
+position = Vector2( -31.2714, 13.3684 )
+shape = SubResource( 2 )
+
 [connection signal="body_entered" from="." to="." method="_on_Mace_body_entered"]
+
+[editable path="Hitbox"]

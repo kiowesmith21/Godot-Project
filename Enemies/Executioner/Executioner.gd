@@ -6,7 +6,6 @@ export var FRICTION = 500
 
 enum {
 	IDLE,
-	WANDER,
 	CHASE
 }
 
@@ -57,26 +56,26 @@ func _physics_process(delta):
 			velocity = velocity.move_toward(Vector2.ZERO, FRICTION * delta) #friction
 			anim.play("Idle")
 			seek_player()
-		WANDER:
-			pass
 		CHASE:
 			var player = playerDetectionZone.player
 			if player != null:
 				var direction = (player.global_position - global_position).normalized()
 				velocity = velocity.move_toward(direction * MAX_SPEED, ACCELERATION * delta)
+				if direction != Vector2.ZERO:
+					$RayCast2D.cast_to = direction.normalized() * 8
+				if attacking:
+					while attacking:
+						var M = $Mace.instance()
+						print("Attacking")
+						get_parent().add_child(M)
+						M.Executioner = self
+						M.transform = $MaceHand.global_transform
+						yield(get_tree().create_timer(1.5), "timeout")
+				else:
+					anim.play("Walk")
 			else:
 				state = IDLE
-			if attacking:
-				while attacking:
-					var M = $Mace.instance()
-					print("Attacking")
-					get_parent().add_child(M)
-					M.Executioner = self
-					M.direction = (get_global_mouse_position() - position).normalized()
-					M.transform = $MaceHand.global_transform
-					yield(get_tree().create_timer(1.5), "timeout")
-			else:
-				anim.play("Walk")
+			
 			anim.flip_h = velocity.x < 0 #flip the sprite to the direction we're facing
 	
 	#enemies have soft collisions with each other
@@ -102,11 +101,12 @@ func _on_Hurtbox_area_entered(area):
 	stats.set_health(stats.health - Player.atk_dmg)
 	#print("Enemy Health: " + str(stats.health))
 
-#when enemy enters player's hurtbox (hits the player)
-func _on_Hitbox_area_entered(area):
+#when player enters the detection zone (hits the player)
+func _on_PlayerDetectionZone_body_entered(area):
 	attacking = true
+	
 
-func _on_Hitbox_area_exited(area):
+func _on_PlayerDetectionZone_body_exited(area):
 	attacking = false
 	
 func die():

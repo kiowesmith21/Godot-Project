@@ -26,7 +26,7 @@ func _ready():
 func _process(delta):
 	if(atk_choice == 0):
 		rotation += rotation_speed * delta
-	elif(atk_choice == 0):
+	elif(atk_choice == 1):
 		position = position.move_toward(Vector2(position.x,position.y+100), delta * speed)
 		position = position.move_toward(Vector2(position.x,Executioner.position.y-100), delta * 360)
 	else:
@@ -34,7 +34,7 @@ func _process(delta):
 
 
 func _on_Mace_body_entered(body):
-	if body.name == "Executioner":
+	if body.name == "Player":
 		return queue_free()
 	direction = Vector2.ZERO
 	
