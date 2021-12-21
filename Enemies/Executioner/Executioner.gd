@@ -38,9 +38,6 @@ onready var softCollision = $SoftCollision
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$AnimatedSprite.hide()
-	var enemySpawnEffect = EnemySpawnEffect.instance()
-	get_parent().add_child(enemySpawnEffect)
-	enemySpawnEffect.global_position = global_position
 	$AnimatedSprite.show()
 	stats.connect("no_health", self, "die") #connect to stats signal, runs die() function when it reaches 0 health
 	#stats.set_max_health(50)
@@ -105,7 +102,6 @@ func _on_Hurtbox_area_entered(area):
 func _on_PlayerDetectionZone_body_entered(area):
 	attacking = true
 	
-
 func _on_PlayerDetectionZone_body_exited(area):
 	attacking = false
 	

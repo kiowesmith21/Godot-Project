@@ -10,7 +10,7 @@ func _ready():
 	$Skill2.color = Color(0,0,0,.25)
 	$Skill3.color = Color(0,0,0,.25)
 	$Skill3/Fireball.hide()
-	var wpn_choice = $"/root/World/YSort/Player/PlayerStats".curr_wpn
+	var wpn_choice = $"/root/World/Player/Player/PlayerStats".curr_wpn
 	pass
 	
 func _input(delta):

@@ -1,11 +1,10 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Enemies/PlayerDetectionZone.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Hitboxes and Hurtboxes/SoftCollision.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Hitboxes and Hurtboxes/Hurtbox.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Enemies/Executioner/ExecutionerStats.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Enemies/Executioner/Executioner_Idle_1.png" type="Texture" id=5]
-[ext_resource path="res://Hitboxes and Hurtboxes/Hitbox.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Enemies/Executioner/Executioner_Walk_1.png" type="Texture" id=8]
 [ext_resource path="res://Enemies/Executioner/Executioner_Idle_4.png" type="Texture" id=9]
 [ext_resource path="res://Enemies/Executioner/Executioner_Walk_2.png" type="Texture" id=10]
@@ -41,10 +40,6 @@ height = 11.115
 [sub_resource type="CapsuleShape2D" id=4]
 radius = 12.031
 height = 10.3851
-
-[sub_resource type="CapsuleShape2D" id=7]
-radius = 15.2109
-height = 0.0
 
 [node name="Executioner" type="KinematicBody2D"]
 position = Vector2( 156.271, 199.176 )
@@ -90,16 +85,6 @@ visible = false
 position = Vector2( -0.243896, 1.0129 )
 shape = SubResource( 4 )
 
-[node name="Hitbox" parent="." instance=ExtResource( 6 )]
-visible = false
-collision_layer = 0
-collision_mask = 2147483652
-
-[node name="CollisionShape2D" parent="Hitbox" index="0"]
-modulate = Color( 0.890196, 0.905882, 0.407843, 1 )
-position = Vector2( 27.196, 7.93161 )
-shape = SubResource( 7 )
-
 [node name="MaceHand" type="Position2D" parent="."]
 position = Vector2( 32.8396, 3.20497 )
 
@@ -111,7 +96,9 @@ collide_with_areas = true
 
 [node name="ExecutionerStats" parent="." instance=ExtResource( 4 )]
 
+[connection signal="body_entered" from="PlayerDetectionZone" to="." method="_on_PlayerDetectionZone_body_entered"]
+[connection signal="body_exited" from="PlayerDetectionZone" to="." method="_on_PlayerDetectionZone_body_exited"]
+
 [editable path="PlayerDetectionZone"]
 [editable path="Hurtbox"]
 [editable path="SoftCollision"]
-[editable path="Hitbox"]
