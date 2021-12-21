@@ -35,7 +35,6 @@ onready var playerDetectionZone = $PlayerDetectionZone
 onready var hurtBox = $Hurtbox
 onready var softCollision = $SoftCollision
 
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$AnimatedSprite.hide()
@@ -93,7 +92,8 @@ func _on_Hurtbox_area_entered(area):
 	#enemy loses health on hit
 	print(Player.atk_dmg)
 	stats.set_health(stats.health - Player.atk_dmg)
-	#print("Enemy Health: " + str(stats.health))
+	#play hit sound effect
+	$hitSound.play()
 
 #when enemy enters player's hurtbox (hits the player)
 func _on_Hitbox_area_entered(area):
@@ -103,6 +103,7 @@ func _on_Hitbox_area_exited(area):
 	attacking = false
 	
 func die():
+	$deathSound.play()
 	queue_free() #delete enemy
 	#death effect
 	var enemyDeathEffect = EnemyDeathEffect.instance()

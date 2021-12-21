@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/04.2_LOOP_Sleep_In_by_Florian_Stracker.wav-eae5ca0a76935d82f6b70ababc7e08e2.sample"
+
+[deps]
+
+source_file="res://Sound/Music/04.2_LOOP_Sleep_In_by_Florian_Stracker.wav"
+dest_files=[ "res://.import/04.2_LOOP_Sleep_In_by_Florian_Stracker.wav-eae5ca0a76935d82f6b70ababc7e08e2.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

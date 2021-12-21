@@ -27,6 +27,7 @@
 [ext_resource path="res://World/Bench and chest/Bench.png" type="Texture" id=26]
 [ext_resource path="res://Enemies/Thief-Boss.tscn" type="PackedScene" id=27]
 [ext_resource path="res://Forest-Spawn-Area.gd" type="Script" id=28]
+[ext_resource path="res://Sound/Music/02.2_LOOP_Valley_Grounds_by_Florian_Stracker.wav" type="AudioStream" id=29]
 [ext_resource path="res://UI/Magero.tres" type="DynamicFont" id=31]
 [ext_resource path="res://DialogueUI.gd" type="Script" id=32]
 
@@ -743,6 +744,11 @@ tracks/1/keys = {
 }
 
 [node name="World" type="Node2D"]
+
+[node name="GrasslandsMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 29 )
+volume_db = -30.0
+autoplay = true
 
 [node name="GrassBackground" type="Sprite" parent="."]
 position = Vector2( 882.158, 795.617 )

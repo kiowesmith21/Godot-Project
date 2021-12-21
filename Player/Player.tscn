@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://Npcs/Archer/Archer_Walk_1.png" type="Texture" id=1]
 [ext_resource path="res://Npcs/Archer/Archer_Idle_3.png" type="Texture" id=2]
@@ -12,6 +12,8 @@
 [ext_resource path="res://Hitboxes and Hurtboxes/Hurtbox.tscn" type="PackedScene" id=10]
 [ext_resource path="res://WhiteColor.shader" type="Shader" id=11]
 [ext_resource path="res://Player/PlayerStats.gd" type="Script" id=12]
+[ext_resource path="res://Sound/sfx/playerHurtSound.wav" type="AudioStream" id=13]
+[ext_resource path="res://Sound/sfx/playerDeathSound.wav" type="AudioStream" id=14]
 
 [sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 11 )
@@ -56,6 +58,12 @@ scale = Vector2( 1.5, 1.5 )
 collision_layer = 2
 script = ExtResource( 9 )
 
+[node name="hurtSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 13 )
+
+[node name="deathSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 14 )
+
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 material = SubResource( 1 )
 position = Vector2( 0, 0.0589256 )
@@ -92,7 +100,6 @@ anims/Stop = SubResource( 7 )
 
 [node name="PlayerStats" type="Node" parent="."]
 script = ExtResource( 12 )
-
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_Hurtbox_area_entered"]
 
 [editable path="Hurtbox"]

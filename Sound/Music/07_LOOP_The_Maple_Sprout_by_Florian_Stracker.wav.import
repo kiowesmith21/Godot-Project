@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/07_LOOP_The_Maple_Sprout_by_Florian_Stracker.wav-d584ac32abdf88f01dda1a31bbeb3c33.sample"
+
+[deps]
+
+source_file="res://Sound/Music/07_LOOP_The_Maple_Sprout_by_Florian_Stracker.wav"
+dest_files=[ "res://.import/07_LOOP_The_Maple_Sprout_by_Florian_Stracker.wav-d584ac32abdf88f01dda1a31bbeb3c33.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
