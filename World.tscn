@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=2]
+[gd_scene load_steps=55 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://World/Bushes/Bush-4.png" type="Texture" id=2]
@@ -27,7 +27,6 @@
 [ext_resource path="res://World/Bench and chest/Bench.png" type="Texture" id=26]
 [ext_resource path="res://Enemies/Thief-Boss.tscn" type="PackedScene" id=27]
 [ext_resource path="res://Forest-Spawn-Area.gd" type="Script" id=28]
-[ext_resource path="res://Enemies/Executioner/Executioner.tscn" type="PackedScene" id=29]
 [ext_resource path="res://UI/Magero.tres" type="DynamicFont" id=31]
 [ext_resource path="res://DialogueUI.gd" type="Script" id=32]
 
@@ -806,9 +805,6 @@ flip_h = true
 
 [node name="Elder" parent="YSort" instance=ExtResource( 12 )]
 position = Vector2( -297.057, -64.7424 )
-
-[node name="Executioner" parent="." instance=ExtResource( 29 )]
-position = Vector2( 121.512, 167.391 )
 
 [node name="Thief-Boss" parent="." groups=["Enemy"] instance=ExtResource( 27 )]
 
