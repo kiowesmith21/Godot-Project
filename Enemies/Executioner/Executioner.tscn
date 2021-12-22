@@ -1,10 +1,11 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Enemies/PlayerDetectionZone.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Hitboxes and Hurtboxes/SoftCollision.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Hitboxes and Hurtboxes/Hurtbox.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Enemies/Executioner/ExecutionerStats.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Enemies/Executioner/Executioner_Idle_1.png" type="Texture" id=5]
+[ext_resource path="res://Enemies/PlayerAttackZone.gd" type="Script" id=6]
 [ext_resource path="res://Enemies/Executioner/Executioner_Walk_1.png" type="Texture" id=8]
 [ext_resource path="res://Enemies/Executioner/Executioner_Idle_4.png" type="Texture" id=9]
 [ext_resource path="res://Enemies/Executioner/Executioner_Walk_2.png" type="Texture" id=10]
@@ -16,14 +17,14 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 8 ), ExtResource( 10 ), ExtResource( 13 ), ExtResource( 11 ) ],
-"loop": true,
-"name": "Walk",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 5 ), ExtResource( 12 ), ExtResource( 14 ), ExtResource( 9 ) ],
 "loop": true,
 "name": "Idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ), ExtResource( 10 ), ExtResource( 13 ), ExtResource( 11 ) ],
+"loop": true,
+"name": "Walk",
 "speed": 5.0
 } ]
 
@@ -32,7 +33,7 @@ radius = 12.2572
 height = 10.6294
 
 [sub_resource type="CircleShape2D" id=2]
-radius = 106.424
+radius = 41.5405
 
 [sub_resource type="CapsuleShape2D" id=3]
 radius = 11.707
@@ -43,7 +44,6 @@ radius = 12.031
 height = 10.3851
 
 [node name="Executioner" type="KinematicBody2D"]
-position = Vector2( 156.271, 199.176 )
 scale = Vector2( 1.5, 1.5 )
 script = ExtResource( 15 )
 
@@ -51,16 +51,15 @@ script = ExtResource( 15 )
 position = Vector2( 27.37, -1.97474 )
 frames = SubResource( 1 )
 animation = "Idle"
-frame = 1
 playing = true
 flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2( 26.7623, -1.25134 )
 shape = SubResource( 6 )
 
 [node name="PlayerDetectionZone" parent="." instance=ExtResource( 1 )]
-visible = false
 
 [node name="CollisionShape2D" parent="PlayerDetectionZone" index="0"]
 modulate = Color( 1, 1, 1, 0.180392 )
@@ -77,25 +76,41 @@ position = Vector2( 27.1007, -1.34736 )
 shape = SubResource( 3 )
 
 [node name="SoftCollision" parent="." instance=ExtResource( 2 )]
+visible = false
 
 [node name="CollisionShape2D" parent="SoftCollision" index="0"]
 position = Vector2( 27.23, -1.37431 )
 shape = SubResource( 4 )
 
 [node name="MaceHand" type="Position2D" parent="."]
-position = Vector2( 32.8396, 3.20497 )
+position = Vector2( 26.2427, 4.71216 )
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
-position = Vector2( 31.7603, 7.18287 )
+position = Vector2( 26.3261, 4.59703 )
 enabled = true
 cast_to = Vector2( 5, 0 )
 collide_with_areas = true
 
 [node name="ExecutionerStats" parent="." instance=ExtResource( 4 )]
 
+[node name="PlayerAttackZone" parent="." instance=ExtResource( 1 )]
+script = ExtResource( 6 )
+
+[node name="CollisionShape2D" parent="PlayerAttackZone" index="0"]
+modulate = Color( 1, 1, 1, 0.180392 )
+position = Vector2( 26.7941, -0.319314 )
+shape = SubResource( 2 )
+
 [connection signal="body_entered" from="PlayerDetectionZone" to="." method="_on_PlayerDetectionZone_body_entered"]
 [connection signal="body_exited" from="PlayerDetectionZone" to="." method="_on_PlayerDetectionZone_body_exited"]
+[connection signal="area_entered" from="Hurtbox" to="." method="_on_Hurtbox_area_entered"]
+[connection signal="invincibility_started" from="Hurtbox" to="." method="_on_Hurtbox_invincibility_started"]
+[connection signal="body_entered" from="PlayerAttackZone" to="." method="_on_PlayerAttackZone_body_entered"]
+[connection signal="body_entered" from="PlayerAttackZone" to="PlayerAttackZone" method="_on_PlayerAttackZone_body_entered"]
+[connection signal="body_exited" from="PlayerAttackZone" to="." method="_on_PlayerAttackZone_body_exited"]
+[connection signal="body_exited" from="PlayerAttackZone" to="PlayerAttackZone" method="_on_PlayerAttackZone_body_exited"]
 
 [editable path="PlayerDetectionZone"]
 [editable path="Hurtbox"]
 [editable path="SoftCollision"]
+[editable path="PlayerAttackZone"]

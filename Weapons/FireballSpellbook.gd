@@ -7,7 +7,7 @@ var dialogue_state = 0
 #2285.02, 1007.48
 
 func _ready():
-	player = get_tree().root.get_node("/root/World/YSort/Player")
+	player = get_tree().root.get_node("/root/World/Player/Player")
 	skillbar = get_tree().root.get_node("/root/World/CanvasLayer/Skillbar")
 	dialogueUI = get_tree().root.get_node("/root/World/CanvasLayer/DialogueUI")
 

@@ -1,6 +1,8 @@
 extends Area2D
 
 export var rotation_speed = PI
+#onready var playerDetectionZone = get_node("root/World/Enemies/Executioner/PlayerDetectionZone")
+
 var Player = preload("res://Player/Player.tscn")
 var knockback_vector = Vector2.ZERO
 var tilemap
@@ -17,12 +19,15 @@ func _ready():
 func _process(delta):
 	if(atk_choice == 0):
 		rotation += rotation_speed * delta
-		
 	elif(atk_choice == 1):
-		position = position.move_toward(Vector2(position.x,position.y+100), delta * speed)
-		position = position.move_toward(Vector2(position.x,position.y-300), delta * 360)
+		global_position = global_position + global_position.move_toward(Vector2(global_position.x,global_position.y-100), delta * speed)
+		atkTimer()
+		global_position = global_position + global_position.move_toward(Vector2(global_position.x,global_position.y+300), delta * 360)
 	else:
-		position = position.move_toward(Vector2(Player.position.x,Player.position.x), delta * 240)
+		#var player = playerDetectionZone.player
+		#if player != null:
+			#var direction = (player.global_position - global_position).normalized()
+		global_position = global_position.move_toward(direction, delta * 240)
 
 
 func _on_Mace_body_entered(body):
@@ -33,6 +38,9 @@ func _on_Mace_body_entered(body):
 func Timer():
 	yield(get_tree().create_timer(1.5), "timeout")
 	queue_free()
+	
+func atkTimer():
+	yield(get_tree().create_timer(.5), "timeout")
 
 func _get(property):
 	return property

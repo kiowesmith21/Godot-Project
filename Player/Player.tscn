@@ -85,10 +85,10 @@ position = Vector2( 0.15731, 14.3154 )
 shape = SubResource( 4 )
 
 [node name="MageHand" type="Position2D" parent="."]
-position = Vector2( -6.12827, 16.2496 )
+position = Vector2( -6.4616, 15.9996 )
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
-position = Vector2( 0.158287, 14.6135 )
+position = Vector2( -6.34172, 15.9468 )
 enabled = true
 cast_to = Vector2( 5, 0 )
 collide_with_areas = true
