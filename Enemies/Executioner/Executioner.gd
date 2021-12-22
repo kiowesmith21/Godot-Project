@@ -20,6 +20,8 @@ var Player = preload("res://Player/Player.tscn")
 
 var attacking = false
 
+var Mace = preload("res://Enemies/Executioner/Mace.tscn")
+
 var atk_dmg = 40
 
 var knockback = Vector2.ZERO
@@ -41,7 +43,7 @@ func _ready():
 	$AnimatedSprite.show()
 	stats.connect("no_health", self, "die") #connect to stats signal, runs die() function when it reaches 0 health
 	#stats.set_max_health(50)
-	Player = get_tree().root.get_node("/root/World/YSort/Player")
+	Player = get_tree().root.get_node("/root/World/Player/Player")
 
 func _physics_process(delta):
 	
@@ -62,12 +64,16 @@ func _physics_process(delta):
 					$RayCast2D.cast_to = direction.normalized() * 8
 				if attacking:
 					while attacking:
-						var M = $Mace.instance()
+						var M = Mace.instance()
+						attacking = false
 						print("Attacking")
 						get_parent().add_child(M)
-						M.Executioner = self
 						M.transform = $MaceHand.global_transform
-						yield(get_tree().create_timer(1.5), "timeout")
+						if(M.atk_choice == 0):
+							yield(get_tree().create_timer(4), "timeout")
+						elif(M.atk_choice == 1):
+							yield(get_tree().create_timer(5), "timeout")
+						attacking = true
 				else:
 					anim.play("Walk")
 			else:

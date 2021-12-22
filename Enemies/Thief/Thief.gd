@@ -44,7 +44,7 @@ func _ready():
 	$AnimatedSprite.show()
 	stats.connect("no_health", self, "die") #connect to stats signal, runs die() function when it reaches 0 health
 	#stats.set_max_health(50)
-	Player = get_tree().root.get_node("/root/World/YSort/Player")
+	Player = get_tree().root.get_node("/root/World/Player/Player")
 
 func _physics_process(delta):
 	

@@ -16,18 +16,19 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 5 ), ExtResource( 12 ), ExtResource( 14 ), ExtResource( 9 ) ],
-"loop": true,
-"name": "Idle",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 8 ), ExtResource( 10 ), ExtResource( 13 ), ExtResource( 11 ) ],
 "loop": true,
 "name": "Walk",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ), ExtResource( 12 ), ExtResource( 14 ), ExtResource( 9 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 5.0
 } ]
 
 [sub_resource type="CapsuleShape2D" id=6]
+radius = 12.2572
 height = 10.6294
 
 [sub_resource type="CircleShape2D" id=2]
@@ -50,16 +51,16 @@ script = ExtResource( 15 )
 position = Vector2( 27.37, -1.97474 )
 frames = SubResource( 1 )
 animation = "Idle"
-frame = 2
+frame = 1
 playing = true
 flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
-position = Vector2( 26.841, 7.40085 )
+position = Vector2( 26.7623, -1.25134 )
 shape = SubResource( 6 )
 
 [node name="PlayerDetectionZone" parent="." instance=ExtResource( 1 )]
+visible = false
 
 [node name="CollisionShape2D" parent="PlayerDetectionZone" index="0"]
 modulate = Color( 1, 1, 1, 0.180392 )
@@ -67,22 +68,18 @@ position = Vector2( 24.6942, -0.319314 )
 shape = SubResource( 2 )
 
 [node name="Hurtbox" parent="." instance=ExtResource( 3 )]
-visible = false
 collision_layer = 8
 collision_mask = 32
 
 [node name="CollisionShape2D" parent="Hurtbox" index="0"]
-visible = false
 modulate = Color( 0.388235, 0.843137, 0.811765, 1 )
-position = Vector2( -0.350342, 0.933687 )
+position = Vector2( 27.1007, -1.34736 )
 shape = SubResource( 3 )
 
 [node name="SoftCollision" parent="." instance=ExtResource( 2 )]
-visible = false
 
 [node name="CollisionShape2D" parent="SoftCollision" index="0"]
-visible = false
-position = Vector2( -0.243896, 1.0129 )
+position = Vector2( 27.23, -1.37431 )
 shape = SubResource( 4 )
 
 [node name="MaceHand" type="Position2D" parent="."]
