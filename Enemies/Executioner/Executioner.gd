@@ -90,15 +90,10 @@ func seek_player():
 func attack():
 	if attackAllowed:
 		var M = Mace.instance()
-		#if(atk_cooldown <= 0):
 		attackAllowed = false
 		print("Attacking")
 		get_parent().add_child(M)
 		M.transform = $MaceHand.global_transform
-		if(M.atk_choice == 0):
-			yield(get_tree().create_timer(4), "timeout")
-		elif(M.atk_choice == 1):
-			yield(get_tree().create_timer(5), "timeout")
 		anim.flip_h = velocity.x < 0 #flip the sprite to the direction we're facing
 		attackAllowed = false
 		print(attackAllowed)
