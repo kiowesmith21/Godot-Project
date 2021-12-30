@@ -6,8 +6,7 @@ export var FRICTION = 500
 
 enum {
 	IDLE,
-	CHASE,
-	ATTACK
+	CHASE
 }
 
 #death effect
@@ -19,8 +18,6 @@ const EnemySpawnEffect = preload("res://Effects/EnemySpawnEffect.tscn")
 
 var Player = preload("res://Player/Player.tscn")
 
-var attacking = false
-
 var Mace = preload("res://Enemies/Executioner/Mace.tscn")
 
 var atk_dmg = 40
@@ -29,7 +26,13 @@ var knockback = Vector2.ZERO
 
 var velocity = Vector2.ZERO
 
-var state = CHASE
+var state = IDLE
+
+var myDelta = 0
+
+var atk_cooldown = 0
+
+const COOLDOWN_WAIT_TIME = 10
 
 onready var stats = $ExecutionerStats
 onready var anim = $AnimatedSprite
@@ -47,7 +50,8 @@ func _ready():
 	Player = get_tree().root.get_node("/root/World/Player/Player")
 
 func _physics_process(delta):
-	
+	myDelta = delta
+
 	knockback = knockback.move_toward(Vector2.ZERO, FRICTION * delta)
 	knockback = move_and_slide(knockback)
 	
@@ -60,28 +64,16 @@ func _physics_process(delta):
 			var player = playerDetectionZone.player
 			if player != null:
 				var direction = (player.global_position - global_position).normalized()
-				velocity = velocity.move_toward(direction * MAX_SPEED, ACCELERATION * delta)
+				velocity = velocity.move_toward(direction * MAX_SPEED, ACCELERATION * myDelta)
 				if direction != Vector2.ZERO:
 					$RayCast2D.cast_to = direction.normalized() * 8
-				if attacking:
-					state = ATTACK
+					attack()
 				else:
-					velocity = velocity.move_toward(direction * MAX_SPEED, ACCELERATION * delta)
+					velocity = velocity.move_toward(direction * MAX_SPEED, ACCELERATION * myDelta)
 					anim.play("Walk")
+				playerDetectionZone.monitorable = false
 			else:
 				state = IDLE
-		ATTACK:
-			var M = Mace.instance()
-			print("Attacking")
-			get_parent().add_child(M)
-			M.transform = $MaceHand.global_transform
-			attacking = false
-			if(M.atk_choice == 0):
-				yield(get_tree().create_timer(4), "timeout")
-			elif(M.atk_choice == 1):
-				yield(get_tree().create_timer(5), "timeout")
-			anim.flip_h = velocity.x < 0 #flip the sprite to the direction we're facing
-			state = CHASE
 	
 	#enemies have soft collisions with each other
 	if softCollision.is_colliding():
@@ -92,6 +84,23 @@ func _physics_process(delta):
 func seek_player():
 	if playerDetectionZone.can_see_player():
 		state = CHASE
+		
+func attack():
+	var M = Mace.instance()
+	if(atk_cooldown <= 0):
+		print("Attacking")
+		get_parent().add_child(M)
+		M.transform = $MaceHand.global_transform
+		if(M.atk_choice == 0):
+			yield(get_tree().create_timer(4), "timeout")
+		elif(M.atk_choice == 1):
+			yield(get_tree().create_timer(5), "timeout")
+		anim.flip_h = velocity.x < 0 #flip the sprite to the direction we're facing
+		
+		atk_cooldown = COOLDOWN_WAIT_TIME # set cooldown
+	else:
+		print("not attacking")
+		atk_cooldown -= get_physics_process_delta_time()
 
 #hitting the enemy
 func _on_Hurtbox_area_entered(area):
@@ -112,9 +121,3 @@ func die():
 	var enemyDeathEffect = EnemyDeathEffect.instance()
 	get_parent().add_child(enemyDeathEffect)
 	enemyDeathEffect.global_position = global_position
-
-func _on_PlayerAttackZone_body_entered(area):
-	attacking = true
-
-func _on_PlayerAttackZone_body_exited(area):
-	attacking = false

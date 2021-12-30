@@ -31,7 +31,6 @@ collision_mask = 2147483652
 modulate = Color( 0.890196, 0.905882, 0.407843, 1 )
 position = Vector2( -31.2714, 13.3684 )
 shape = SubResource( 2 )
-
 [connection signal="body_entered" from="." to="." method="_on_Mace_body_entered"]
 
 [editable path="Hitbox"]
