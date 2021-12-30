@@ -13,7 +13,7 @@ var atk_choice
 var timer = Timer.new()
 
 func _ready():
-	atk_choice = randi() % 2
+	atk_choice = 0#randi() % 2
 	Timer()
 
 func _process(delta):

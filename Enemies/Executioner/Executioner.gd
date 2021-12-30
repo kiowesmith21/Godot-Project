@@ -34,6 +34,9 @@ var atk_cooldown = 0
 
 const COOLDOWN_WAIT_TIME = 10
 
+var attackAllowed = true
+
+onready var timer = $Timer
 onready var stats = $ExecutionerStats
 onready var anim = $AnimatedSprite
 onready var playerDetectionZone = $PlayerDetectionZone 
@@ -71,7 +74,6 @@ func _physics_process(delta):
 				else:
 					velocity = velocity.move_toward(direction * MAX_SPEED, ACCELERATION * myDelta)
 					anim.play("Walk")
-				playerDetectionZone.monitorable = false
 			else:
 				state = IDLE
 	
@@ -86,8 +88,10 @@ func seek_player():
 		state = CHASE
 		
 func attack():
-	var M = Mace.instance()
-	if(atk_cooldown <= 0):
+	if attackAllowed:
+		var M = Mace.instance()
+		#if(atk_cooldown <= 0):
+		attackAllowed = false
 		print("Attacking")
 		get_parent().add_child(M)
 		M.transform = $MaceHand.global_transform
@@ -96,11 +100,9 @@ func attack():
 		elif(M.atk_choice == 1):
 			yield(get_tree().create_timer(5), "timeout")
 		anim.flip_h = velocity.x < 0 #flip the sprite to the direction we're facing
-		
-		atk_cooldown = COOLDOWN_WAIT_TIME # set cooldown
-	else:
-		print("not attacking")
-		atk_cooldown -= get_physics_process_delta_time()
+		attackAllowed = false
+		print(attackAllowed)
+		timer.start() #cooldown start
 
 #hitting the enemy
 func _on_Hurtbox_area_entered(area):
@@ -121,3 +123,8 @@ func die():
 	var enemyDeathEffect = EnemyDeathEffect.instance()
 	get_parent().add_child(enemyDeathEffect)
 	enemyDeathEffect.global_position = global_position
+
+
+func _on_Timer_timeout():
+	attackAllowed = true 
+	timer.start()
