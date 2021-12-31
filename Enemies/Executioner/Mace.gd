@@ -24,9 +24,9 @@ onready var swingTimer = $swingTimer
 
 func _ready():
 	print("im a new mace")
-	atk_choice = 2#randi() % 2
+	atk_choice = randi() % 2
 	if(atk_choice == 0):
-		atk_time = setTimer("destroy",3)
+		atk_time = setTimer("destroy",1.5)
 	elif (atk_choice == 1):
 		atk_time = setTimer("destroy",1.5)
 		swingTimer = setTimer("swing",.7)
