@@ -96,6 +96,7 @@ collide_with_areas = true
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 3.0
+
 [connection signal="body_entered" from="PlayerDetectionZone" to="." method="_on_PlayerDetectionZone_body_entered"]
 [connection signal="body_exited" from="PlayerDetectionZone" to="." method="_on_PlayerDetectionZone_body_exited"]
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_Hurtbox_area_entered"]
@@ -103,7 +104,5 @@ wait_time = 3.0
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 
 [editable path="PlayerDetectionZone"]
-
 [editable path="Hurtbox"]
-
 [editable path="SoftCollision"]

@@ -18,7 +18,7 @@ var swingUp = false
 onready var swingTimer = $swingTimer
 
 func _ready():
-	atk_choice = 3#randi() % 2
+	atk_choice = 1#randi() % 2
 	Timer()
 	player = get_tree().root.get_node("root/World/Player/Player")
 
@@ -27,7 +27,8 @@ func _process(delta):
 	if(atk_choice == 0):
 		rotation += rotation_speed * delta
 	elif(atk_choice == 1):
-		position.move_toward(Vector2(position.x,position.y-100), delta * speed)
+		print(position)
+		position.move_toward(Vector2(position.x,position.y+100), delta * speed)#change this to move towards the executioner's position plus the height of where it's gonna move
 		#swingTimer.start()
 		#if swingUp:
 		#position.move_toward(Vector2(global_position.x,global_position.y+300), delta * 360)

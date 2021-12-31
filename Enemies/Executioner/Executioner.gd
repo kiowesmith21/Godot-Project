@@ -91,12 +91,10 @@ func attack():
 	if attackAllowed:
 		var M = Mace.instance()
 		attackAllowed = false
-		print("Attacking")
 		get_parent().add_child(M)
 		M.transform = $MaceHand.global_transform
 		anim.flip_h = velocity.x < 0 #flip the sprite to the direction we're facing
 		attackAllowed = false
-		print(attackAllowed)
 		timer.start() #cooldown start
 
 #hitting the enemy
