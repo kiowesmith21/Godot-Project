@@ -50,7 +50,6 @@ script = ExtResource( 15 )
 position = Vector2( 27.37, -1.97474 )
 frames = SubResource( 1 )
 animation = "Idle"
-frame = 1
 playing = true
 flip_h = true
 
@@ -95,7 +94,7 @@ collide_with_areas = true
 [node name="ExecutionerStats" parent="." instance=ExtResource( 4 )]
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 3.0
+wait_time = 2.0
 
 [connection signal="body_entered" from="PlayerDetectionZone" to="." method="_on_PlayerDetectionZone_body_entered"]
 [connection signal="body_exited" from="PlayerDetectionZone" to="." method="_on_PlayerDetectionZone_body_exited"]

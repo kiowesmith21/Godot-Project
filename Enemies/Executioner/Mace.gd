@@ -3,6 +3,10 @@ extends Area2D
 export var rotation_speed = PI
 #onready var playerDetectionZone = get_node("root/World/Enemies/Executioner/PlayerDetectionZone")
 var player
+var Executioner
+
+const SWINGWAIT = .25
+var atk_swing_wait = .01
 
 #var Player = preload("res://Player/Player.tscn")
 var knockback_vector = Vector2.ZERO
@@ -11,6 +15,7 @@ var speed = 120
 var direction : Vector2
 var atk_dmg = 45
 var atk_choice
+var atk_time
 var timer = Timer.new()
 
 var swingUp = false
@@ -18,20 +23,36 @@ var swingUp = false
 onready var swingTimer = $swingTimer
 
 func _ready():
+	
 	atk_choice = 1#randi() % 2
-	Timer()
+	atk_time = setTimer("destroy",1.5)
+	swingTimer = setTimer("swing",.7)
 	player = get_tree().root.get_node("root/World/Player/Player")
+	Executioner = get_parent()
+	
+func setTimer(spawn_func, spawn_time) -> Timer:
+	var timer = Timer.new()
+	add_child (timer)
+	timer.set_wait_time(spawn_time)
+	timer.connect("timeout", self, spawn_func) 
+	timer.start()
+	return timer
+
+func destroy():
+	queue_free()
+
+func swing():
+	swingUp = true
 
 func _process(delta):
-	print(atk_choice)
 	if(atk_choice == 0):
 		rotation += rotation_speed * delta
 	elif(atk_choice == 1):
-		print(position)
-		position.move_toward(Vector2(position.x,position.y+100), delta * speed)#change this to move towards the executioner's position plus the height of where it's gonna move
-		#swingTimer.start()
-		#if swingUp:
-		#position.move_toward(Vector2(global_position.x,global_position.y+300), delta * 360)
+		position.y = position.y - 1.5 * delta * 90
+		print(swingUp)
+		if swingUp:
+			position.y = position.y + 3 * delta * 90
+			
 	else:
 		if player != null:
 			var direction = (player.position - position).normalized()
@@ -44,9 +65,7 @@ func _on_Mace_body_entered(body):
 		return queue_free()
 	direction = Vector2.ZERO
 	
-func Timer():
-	yield(get_tree().create_timer(1.5), "timeout")
-	queue_free()
+
 	
 #func atkTimer():
 #	yield(get_tree().create_timer(.5), "timeout")
@@ -55,6 +74,3 @@ func _get(property):
 	return property
 
 
-func _on_Timer_timeout():
-	swingUp = true
-	swingTimer.start()
