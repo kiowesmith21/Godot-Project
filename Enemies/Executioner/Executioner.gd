@@ -25,6 +25,7 @@ var atk_dmg = 40
 var knockback = Vector2.ZERO
 
 var velocity = Vector2.ZERO
+var direction = Vector2.ZERO
 
 var state = IDLE
 
@@ -66,7 +67,7 @@ func _physics_process(delta):
 		CHASE:
 			var player = playerDetectionZone.player
 			if player != null:
-				var direction = (player.global_position - global_position).normalized()
+				direction = (player.global_position - global_position).normalized()
 				velocity = velocity.move_toward(direction * MAX_SPEED, ACCELERATION * myDelta)
 				if direction != Vector2.ZERO:
 					$RayCast2D.cast_to = direction.normalized() * 8
@@ -93,6 +94,7 @@ func attack():
 		attackAllowed = false
 		get_parent().add_child(M)
 		M.transform = $MaceHand.global_transform
+		M.direction = direction
 		anim.flip_h = velocity.x < 0 #flip the sprite to the direction we're facing
 		attackAllowed = false
 		timer.start() #cooldown start
