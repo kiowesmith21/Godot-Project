@@ -16,7 +16,7 @@ var player
 
 func _ready():
 	dialogueUI = get_tree().root.get_node("/root/World/CanvasLayer/DialogueUI")
-	player = get_tree().root.get_node("/root/World/YSort/Player")
+	player = get_tree().root.get_node("/root/World/Player/Player")
 
 
 func talk(choice = ""):
@@ -24,7 +24,7 @@ func talk(choice = ""):
 	dialogueUI.npc = self
 	dialogueUI.npcname = "Elder"
 	
-	if(fireball_given == false):
+	if(quest_status == QuestStatus.NOT_STARTED):
 			#matches the current dialogue state to the dialogue to output
 			match dialogue_state:
 				0:
@@ -41,19 +41,18 @@ func talk(choice = ""):
 							dialogueUI.choices = "[E] Thank you, bye."
 							dialogueUI.open()
 						"Q":
-							dialogue_state = 3
+							dialogue_state = 2
 							dialogueUI.dialogue = "Sucks for you. See you."
 							dialogueUI.choices = "[E] See ya."
 							dialogueUI.open()
 				2:
-					dialogueUI.close()
-					dialogue_state = 3
-
-
-					
-				3:
+					quest_status = QuestStatus.STARTED
 					dialogueUI.close()
 					dialogue_state = 0
+	elif(quest_status == QuestStatus.STARTED):
+		dialogueUI.close()
+		dialogue_state = 0
+		quest_status == QuestStatus.NOT_STARTED
 
 	else:
 		match dialogue_state:

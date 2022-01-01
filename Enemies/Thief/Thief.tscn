@@ -28,14 +28,14 @@ animations = [ {
 "name": "Idle",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 6 ), ExtResource( 1 ), ExtResource( 7 ), ExtResource( 8 ) ],
-"loop": true,
-"name": "Walk",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 12 ), ExtResource( 11 ), ExtResource( 9 ), ExtResource( 10 ) ],
 "loop": true,
 "name": "Melee",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ), ExtResource( 1 ), ExtResource( 7 ), ExtResource( 8 ) ],
+"loop": true,
+"name": "Walk",
 "speed": 5.0
 } ]
 
@@ -58,6 +58,7 @@ radius = 6.673
 height = 13.4795
 
 [node name="Thief" type="KinematicBody2D"]
+position = Vector2( 0.15749, -12.2842 )
 script = ExtResource( 13 )
 
 [node name="hitSound" type="AudioStreamPlayer2D" parent="."]
@@ -69,7 +70,6 @@ stream = ExtResource( 20 )
 attenuation = 5.65685
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( -0.117977, 1.06185 )
 scale = Vector2( 1.5, 1.5 )
 frames = SubResource( 1 )
 animation = "Idle"
@@ -79,22 +79,25 @@ position = Vector2( 0, 12.2157 )
 shape = SubResource( 2 )
 
 [node name="PlayerDetectionZone" parent="." instance=ExtResource( 14 )]
+visible = false
 
 [node name="CollisionShape2D" parent="PlayerDetectionZone" index="0"]
 modulate = Color( 1, 1, 1, 0.180392 )
-position = Vector2( 0, 7.91207 )
+position = Vector2( 0, 12.1213 )
 shape = SubResource( 3 )
 
 [node name="Hurtbox" parent="." instance=ExtResource( 16 )]
+visible = false
 collision_layer = 8
 collision_mask = 32
 
 [node name="CollisionShape2D" parent="Hurtbox" index="0"]
 modulate = Color( 0.388235, 0.843137, 0.811765, 1 )
-position = Vector2( 0, 12.2157 )
+position = Vector2( -0.210461, 12.0052 )
 shape = SubResource( 4 )
 
 [node name="Hitbox" parent="." instance=ExtResource( 17 )]
+visible = false
 collision_layer = 0
 collision_mask = 2147483652
 
@@ -104,6 +107,7 @@ position = Vector2( 0, 12.2157 )
 shape = SubResource( 5 )
 
 [node name="SoftCollision" parent="." instance=ExtResource( 18 )]
+position = Vector2( -0.117981, 12.2704 )
 
 [node name="CollisionShape2D" parent="SoftCollision" index="0"]
 visible = false
@@ -111,14 +115,12 @@ position = Vector2( 0, 12.1737 )
 shape = SubResource( 6 )
 
 [node name="ThiefStats" parent="." instance=ExtResource( 15 )]
+
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_Hurtbox_area_entered"]
 [connection signal="area_entered" from="Hitbox" to="." method="_on_Hitbox_area_entered"]
 [connection signal="area_exited" from="Hitbox" to="." method="_on_Hitbox_area_exited"]
 
 [editable path="PlayerDetectionZone"]
-
 [editable path="Hurtbox"]
-
 [editable path="Hitbox"]
-
 [editable path="SoftCollision"]
