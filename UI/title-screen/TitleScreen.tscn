@@ -106,7 +106,7 @@ margin_bottom = 560.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 custom_fonts/font = SubResource( 4 )
-text = "Pre-Alpha Version 1.0
+text = "Pre-Alpha Version 0.1
 Merlin Studios"
 
 [node name="FadeIn" parent="." instance=ExtResource( 11 )]
