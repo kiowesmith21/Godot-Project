@@ -32,9 +32,8 @@ func _ready():
 		swingTimer = setTimer("swing",.7)
 	else:
 		atk_time = setTimer("destroy",.5)
-	Executioner = get_parent().get_child(1)
+	Executioner = get_parent().get_child(0)
 	player = Executioner.get_child(2).player
-	
 	
 func setTimer(spawn_func, spawn_time) -> Timer:
 	var timer = Timer.new()
