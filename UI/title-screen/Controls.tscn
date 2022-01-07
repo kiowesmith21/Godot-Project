@@ -1,0 +1,114 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://UI/title-screen/Buttons/BackButton.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Npcs/Knight - Heavy/HeavyKnight_Idle_4.png" type="Texture" id=2]
+[ext_resource path="res://Npcs/Knight - Heavy/HeavyKnight_Idle_2.png" type="Texture" id=3]
+[ext_resource path="res://Npcs/Knight - Heavy/HeavyKnight_Idle_3.png" type="Texture" id=4]
+[ext_resource path="res://Npcs/Knight - Heavy/HeavyKnight_Idle_1.png" type="Texture" id=5]
+
+[sub_resource type="DynamicFontData" id=1]
+font_path = "res://UI/title-screen/Fonts/Montserrat-ExtraBold.ttf"
+
+[sub_resource type="DynamicFont" id=2]
+size = 48
+font_data = SubResource( 1 )
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ ExtResource( 5 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 2 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[node name="Control" type="Control"]
+margin_right = 1282.0
+margin_bottom = 718.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 50.0
+margin_top = -310.0
+margin_right = 637.0
+margin_bottom = 310.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="VBoxContainer"]
+margin_top = -1.0
+margin_right = 637.0
+margin_bottom = 99.0
+rect_min_size = Vector2( 100, 100 )
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "CONTROLS"
+
+[node name="Movement" type="Label" parent="VBoxContainer"]
+margin_top = 103.0
+margin_right = 637.0
+margin_bottom = 203.0
+rect_min_size = Vector2( 100, 100 )
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "MOVEMENT: WASD"
+
+[node name="Attack" type="Label" parent="VBoxContainer"]
+margin_top = 207.0
+margin_right = 637.0
+margin_bottom = 307.0
+rect_min_size = Vector2( 100, 100 )
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "ATTACK: LMB"
+
+[node name="ChangeWeapon" type="Label" parent="VBoxContainer"]
+margin_top = 311.0
+margin_right = 637.0
+margin_bottom = 411.0
+rect_min_size = Vector2( 100, 100 )
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "CHANGE WEAPON: 1, 2, 3"
+
+[node name="Interact" type="Label" parent="VBoxContainer"]
+margin_top = 415.0
+margin_right = 637.0
+margin_bottom = 515.0
+rect_min_size = Vector2( 100, 100 )
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "INTERACT: E"
+
+[node name="BackButton" parent="VBoxContainer" instance=ExtResource( 1 )]
+margin_top = 520.0
+margin_right = 637.0
+margin_bottom = 580.0
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -453.721
+margin_top = -191.543
+margin_right = -53.7211
+margin_bottom = 208.457
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="CenterContainer"]
+position = Vector2( -67.1898, -132.851 )
+scale = Vector2( 15, 15 )
+frames = SubResource( 3 )
+frame = 3
+playing = true
+centered = false
+flip_h = true

@@ -4,4 +4,5 @@
 font_path = "res://UI/Magero.ttf"
 
 [resource]
+size = 48
 font_data = SubResource( 1 )
