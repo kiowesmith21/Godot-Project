@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://UI/title-screen/Buttons/BackButton.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Npcs/Knight - Heavy/HeavyKnight_Idle_4.png" type="Texture" id=2]
 [ext_resource path="res://Npcs/Knight - Heavy/HeavyKnight_Idle_2.png" type="Texture" id=3]
 [ext_resource path="res://Npcs/Knight - Heavy/HeavyKnight_Idle_3.png" type="Texture" id=4]
 [ext_resource path="res://Npcs/Knight - Heavy/HeavyKnight_Idle_1.png" type="Texture" id=5]
+[ext_resource path="res://UI/title-screen/Controls.gd" type="Script" id=6]
 
 [sub_resource type="DynamicFontData" id=1]
 font_path = "res://UI/title-screen/Fonts/Montserrat-ExtraBold.ttf"
@@ -21,9 +22,10 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[node name="Control" type="Control"]
+[node name="Controls" type="Control"]
 margin_right = 1282.0
 margin_bottom = 718.0
+script = ExtResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -42,45 +44,44 @@ __meta__ = {
 }
 
 [node name="Title" type="Label" parent="VBoxContainer"]
-margin_top = -1.0
 margin_right = 637.0
-margin_bottom = 99.0
+margin_bottom = 100.0
 rect_min_size = Vector2( 100, 100 )
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "CONTROLS"
 
 [node name="Movement" type="Label" parent="VBoxContainer"]
-margin_top = 103.0
+margin_top = 104.0
 margin_right = 637.0
-margin_bottom = 203.0
+margin_bottom = 204.0
 rect_min_size = Vector2( 100, 100 )
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "MOVEMENT: WASD"
 
 [node name="Attack" type="Label" parent="VBoxContainer"]
-margin_top = 207.0
+margin_top = 208.0
 margin_right = 637.0
-margin_bottom = 307.0
+margin_bottom = 308.0
 rect_min_size = Vector2( 100, 100 )
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "ATTACK: LMB"
 
 [node name="ChangeWeapon" type="Label" parent="VBoxContainer"]
-margin_top = 311.0
+margin_top = 312.0
 margin_right = 637.0
-margin_bottom = 411.0
+margin_bottom = 412.0
 rect_min_size = Vector2( 100, 100 )
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "CHANGE WEAPON: 1, 2, 3"
 
 [node name="Interact" type="Label" parent="VBoxContainer"]
-margin_top = 415.0
+margin_top = 416.0
 margin_right = 637.0
-margin_bottom = 515.0
+margin_bottom = 516.0
 rect_min_size = Vector2( 100, 100 )
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
