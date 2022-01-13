@@ -23,7 +23,7 @@ var swingUp = false
 onready var swingTimer = $swingTimer
 
 func _ready():
-	print("im a new mace")
+	print("im a new mace")#have the boss have a tell to attack
 	atk_choice = randi() % 2
 	if(atk_choice == 0):
 		atk_time = setTimer("destroy",1.5)
