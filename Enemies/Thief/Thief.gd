@@ -90,7 +90,7 @@ func _on_Hurtbox_area_entered(area):
 	#knockback
 	knockback = area.knockback_vector * 150 #this value changes how far enemy gets knocked back, needs to be knocked back based on player direction
 	#enemy loses health on hit
-	print(Player.atk_dmg)
+	print(Player.atk_dmg)#this bug causes a crash when boss walks on player
 	stats.set_health(stats.health - Player.atk_dmg)
 	#play hit sound effect
 	$hitSound.play()

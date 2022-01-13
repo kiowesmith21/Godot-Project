@@ -57,7 +57,7 @@ func _process(delta):
 		if swingUp:
 			position.y = position.y + 3 * delta * 90
 	else:
-		if player != null:
+		if player != null:#doesn't go to the player
 			position = position + 150 * direction * delta
 
 func _on_Mace_body_entered(body):
