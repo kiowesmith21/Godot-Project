@@ -25,12 +25,11 @@ func open():
 	$AnimationPlayer.playback_speed = 60.0 / dialogue.length()
 	$AnimationPlayer.play("ShowDialogue")
 
-	
 func close():
 	get_tree().paused = false
 	hide()
 	
-
+	
 func _ready():
 	set_process_input(false)
 
@@ -44,3 +43,5 @@ func _input(event):
 	elif event.is_action_pressed("cancel"):
 		set_process_input(false)
 		npc.talk("Q")
+
+

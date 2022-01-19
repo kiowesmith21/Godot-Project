@@ -21,5 +21,9 @@ func _on_Fireball_body_entered(body):
 func Timer():
 	yield(get_tree().create_timer(0.75), "timeout")
 	queue_free()
+
 func _get(property):
 	return property
+	
+func _on_Fireball_area_entered(area):
+	queue_free()

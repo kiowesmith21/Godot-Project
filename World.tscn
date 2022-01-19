@@ -811,8 +811,8 @@ rect_scale = Vector2( 0.331726, 0.220067 )
 
 [node name="DialogueUI" type="Popup" parent="CanvasLayer"]
 pause_mode = 2
-margin_right = 200.0
-margin_bottom = 200.0
+margin_right = 400.0
+margin_bottom = 550.0
 popup_exclusive = true
 script = ExtResource( 32 )
 __meta__ = {
