@@ -1,6 +1,6 @@
 [gd_scene load_steps=49 format=2]
 
-[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://UI/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://World/Bushes/Bush-4.png" type="Texture" id=2]
 [ext_resource path="res://World/Woods/DirtTileset.png" type="Texture" id=3]
 [ext_resource path="res://World/Small-House.png" type="Texture" id=4]
@@ -779,9 +779,9 @@ position = Vector2( 2350.69, 1004.93 )
 [node name="NPCs" type="Node" parent="."]
 
 [node name="Villager-Female" parent="NPCs" instance=ExtResource( 11 )]
-frame = 1
 
 [node name="Villager-Male" parent="NPCs" instance=ExtResource( 14 )]
+frame = 1
 
 [node name="Elder" parent="NPCs" instance=ExtResource( 12 )]
 position = Vector2( -297.057, -64.7424 )
@@ -881,6 +881,11 @@ margin_right = 594.195
 margin_bottom = 658.751
 
 [node name="ArmorBar" parent="CanvasLayer" instance=ExtResource( 16 )]
+margin_left = 23.0
+margin_top = 22.0
+margin_right = 63.0
+margin_bottom = 22.0
+rect_scale = Vector2( 0.332, 0.22 )
 
 [connection signal="body_entered" from="ForestSpawnArea" to="ForestSpawnArea" method="_on_ForestSpawnArea_body_entered"]
 [connection signal="body_exited" from="ForestSpawnArea" to="ForestSpawnArea" method="_on_ForestSpawnArea_body_exited"]

@@ -25,6 +25,7 @@ onready var stats = $PlayerStats
 onready var anim = $AnimatedSprite
 onready var hurtBox = $Hurtbox
 onready var healthBar = get_node("/root/World/CanvasLayer/HealthBar") #healthbar
+onready var armorBar = get_node("/root/World/CanvasLayer/ArmorBar")
 
 func _ready():
 	stats.connect("no_health", self, "queue_free") #connect to player stats signal
@@ -125,9 +126,14 @@ func get_input(delta):
 #player getting hit, their hurtbox being entered
 func _on_Hurtbox_area_entered(area):
 	$hurtSound.play()
-	healthBar.set_value(stats.health - area.get_parent().atk_dmg) #set healthbar value to new health
-	#player loses health on hit
-	print(area.get_parent().atk_dmg)
-	stats.set_health(stats.health - area.get_parent().atk_dmg)
+	if(armorBar.armor > 0):
+		armorBar.set_value(stats.armor - area.get_parent().atk_dmg)
+		print(area.get_parent().atk_dmg)
+		stats.set_armor(stats.armor - area.get_parent().atk_dmg)
+	else:
+		healthBar.set_value(stats.health - area.get_parent().atk_dmg) #set healthbar value to new health
+		#player loses health on hit
+		print(area.get_parent().atk_dmg)
+		stats.set_health(stats.health - area.get_parent().atk_dmg)
 	hurtBox.start_invincibility(0.5) #player invincible for a second so doesnt instantly die
 
