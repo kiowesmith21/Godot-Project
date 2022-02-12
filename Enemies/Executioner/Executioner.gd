@@ -20,6 +20,8 @@ var Player = preload("res://UI/Player.tscn")
 
 var Mace = preload("res://Enemies/Executioner/Mace.tscn")
 
+var armorDrop = preload("res://Player/Armor.tscn")
+
 var atk_dmg = 40
 
 var knockback = Vector2.ZERO
@@ -108,16 +110,21 @@ func _on_Hurtbox_area_entered(area):
 	#knockback
 	knockback = area.knockback_vector * 150 #this value changes how far enemy gets knocked back, needs to be knocked back based on player direction
 	#enemy loses health on hit
-	print(Player.atk_dmg)
 	stats.set_health(stats.health - Player.atk_dmg)
 	#print("Enemy Health: " + str(stats.health))
 
 func die():
-	queue_free() #delete enemy
 	#death effect
 	var enemyDeathEffect = EnemyDeathEffect.instance()
 	get_parent().add_child(enemyDeathEffect)
 	enemyDeathEffect.global_position = global_position
+	anim.visible = false
+	var a = armorDrop.instance()
+	get_parent().add_child(a)
+	a.transform = $MaceHand.global_transform
+	queue_free() #delete enemy
+	
+
 
 
 func _on_Timer_timeout():

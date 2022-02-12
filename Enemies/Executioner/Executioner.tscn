@@ -32,7 +32,7 @@ radius = 12.2572
 height = 10.6294
 
 [sub_resource type="CircleShape2D" id=3]
-radius = 87.2896
+radius = 119.737
 
 [sub_resource type="CapsuleShape2D" id=4]
 radius = 11.707
@@ -50,6 +50,7 @@ script = ExtResource( 15 )
 position = Vector2( 0.197592, 0.104021 )
 frames = SubResource( 1 )
 animation = "Idle"
+frame = 1
 playing = true
 flip_h = true
 
