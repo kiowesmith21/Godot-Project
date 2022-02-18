@@ -21,20 +21,20 @@ shader_param/active = false
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
-"frames": [ ExtResource( 3 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 9 ) ],
-"loop": true,
-"name": "Idle",
-"speed": 4.0
-}, {
 "frames": [ ExtResource( 5 ), ExtResource( 10 ), ExtResource( 8 ), ExtResource( 4 ) ],
 "loop": true,
 "name": "Walk",
 "speed": 10.0
+}, {
+"frames": [ ExtResource( 3 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 9 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 4.0
 } ]
 
 [sub_resource type="CapsuleShape2D" id=3]
-radius = 7.15211
-height = 0.0
+radius = 8.07027
+height = 12.4018
 
 [sub_resource type="CapsuleShape2D" id=4]
 radius = 8.18526
@@ -72,7 +72,7 @@ frames = SubResource( 2 )
 animation = "Idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -1.41581, 15.6454 )
+position = Vector2( -5.6298, 10.932 )
 shape = SubResource( 3 )
 
 [node name="Hurtbox" parent="." instance=ExtResource( 11 )]

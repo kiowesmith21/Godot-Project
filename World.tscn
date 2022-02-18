@@ -779,11 +779,11 @@ position = Vector2( 2370.01, 1025.39 )
 
 [node name="NPCs" type="Node" parent="."]
 
-[node name="Villager-Female" parent="NPCs" instance=ExtResource( 11 )]
-frame = 2
+[node name="Villager-Female" parent="NPCs" groups=["NPC"] instance=ExtResource( 11 )]
+position = Vector2( -187.03, 133.29 )
 
-[node name="Villager-Male" parent="NPCs" instance=ExtResource( 14 )]
-frame = 3
+[node name="Villager-Male" parent="NPCs" groups=["NPC"] instance=ExtResource( 14 )]
+position = Vector2( -150.26, 137.532 )
 
 [node name="Elder" parent="NPCs" instance=ExtResource( 12 )]
 position = Vector2( -297.057, -64.7424 )
@@ -791,7 +791,7 @@ position = Vector2( -297.057, -64.7424 )
 [node name="Enemies" type="Node" parent="."]
 
 [node name="Executioner" parent="Enemies" groups=["Enemy"] instance=ExtResource( 7 )]
-position = Vector2( 2360.99, 693.329 )
+position = Vector2( 194.324, 140.972 )
 
 [node name="Thief" parent="Enemies" groups=["Enemy"] instance=ExtResource( 6 )]
 position = Vector2( 2300.32, 565.205 )
