@@ -76,7 +76,6 @@ position = Vector2( -5.6298, 10.932 )
 shape = SubResource( 3 )
 
 [node name="Hurtbox" parent="." instance=ExtResource( 11 )]
-visible = false
 collision_layer = 4
 
 [node name="CollisionShape2D" parent="Hurtbox" index="0"]
@@ -88,6 +87,7 @@ shape = SubResource( 4 )
 position = Vector2( -6.4616, 15.9996 )
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
+visible = false
 position = Vector2( -6.34172, 15.9468 )
 enabled = true
 cast_to = Vector2( 5, 0 )

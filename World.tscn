@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=2]
+[gd_scene load_steps=53 format=2]
 
 [ext_resource path="res://UI/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://World/Bushes/Bush-4.png" type="Texture" id=2]
@@ -16,6 +16,10 @@
 [ext_resource path="res://Npcs/Townsfolk - Male/StartingVillageMale.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Weapons/FireballSpellbook.tscn" type="PackedScene" id=15]
 [ext_resource path="res://UI/ArmorBar.tscn" type="PackedScene" id=16]
+[ext_resource path="res://World/HouseEntrance1.tscn" type="PackedScene" id=17]
+[ext_resource path="res://World/HouseEntrance2.tscn" type="PackedScene" id=18]
+[ext_resource path="res://World/HouseEntrance3.tscn" type="PackedScene" id=19]
+[ext_resource path="res://World.gd" type="Script" id=20]
 [ext_resource path="res://UI/HealthBar.tscn" type="PackedScene" id=22]
 [ext_resource path="res://World/Fences/Wooden fence/Wooden-fence-3.png" type="Texture" id=23]
 [ext_resource path="res://World/Fences/Wooden fence/Wooden-fence-4.png" type="Texture" id=24]
@@ -723,6 +727,7 @@ tracks/1/keys = {
 }
 
 [node name="World" type="Node2D"]
+script = ExtResource( 20 )
 
 [node name="GrasslandsMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 29 )
@@ -775,7 +780,16 @@ scale = Vector2( 0.996283, 1.25409 )
 remote_path = NodePath("../../../Camera2D")
 
 [node name="FireballSpellbook" parent="Player" instance=ExtResource( 15 )]
-position = Vector2( 2370.01, 1025.39 )
+position = Vector2( 2353.34, 715.053 )
+
+[node name="HouseEntrance3" parent="Player" instance=ExtResource( 19 )]
+position = Vector2( -549.861, 70.984 )
+
+[node name="HouseEntrance2" parent="Player" instance=ExtResource( 18 )]
+position = Vector2( 153.796, 39.9515 )
+
+[node name="HouseEntrance1" parent="Player" instance=ExtResource( 17 )]
+position = Vector2( -67.25, 56.75 )
 
 [node name="NPCs" type="Node" parent="."]
 
@@ -791,7 +805,7 @@ position = Vector2( -297.057, -64.7424 )
 [node name="Enemies" type="Node" parent="."]
 
 [node name="Executioner" parent="Enemies" groups=["Enemy"] instance=ExtResource( 7 )]
-position = Vector2( 194.324, 140.972 )
+position = Vector2( 2357.16, 904.512 )
 
 [node name="Thief" parent="Enemies" groups=["Enemy"] instance=ExtResource( 6 )]
 position = Vector2( 2300.32, 565.205 )

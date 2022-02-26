@@ -9,6 +9,8 @@ export(int) var armor = max_armor setget set_armor
 export(int) var curr_wpn = 1
 onready var wpn_choice = curr_wpn
 
+var player_position
+
 signal no_health
 signal health_changed(value)
 signal max_health_changed(value)
