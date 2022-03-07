@@ -29,7 +29,6 @@ onready var armorBar = get_node("/root/World/CanvasLayer/ArmorBar")
 
 func _ready():
 	stats.connect("no_health", self, "queue_free") #connect to player stats signal
-	print(self.position)
 	
 
 #movement

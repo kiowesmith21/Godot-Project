@@ -44,6 +44,10 @@ enabled=PoolStringArray(  )
 
 singletons=[ "res://git_api.gdnlib" ]
 
+[global]
+
+viewport=true
+
 [importer_defaults]
 
 texture={

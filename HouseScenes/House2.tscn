@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Assets/Tilemaps/A2_Ground.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Tilemaps/D_Inside_House.png" type="Texture" id=2]
+[ext_resource path="res://UI/Player.tscn" type="PackedScene" id=3]
 
 [sub_resource type="TileSet" id=3]
 0/name = "A2_Ground.png 0"
@@ -413,3 +414,18 @@ show_collision = true
 collision_use_kinematic = true
 format = 1
 tile_data = PoolIntArray( -524297, 9, 0, -524291, 9, 0, -589821, 9, 0, -65545, 10, 0, -65540, 10, 0, -131069, 10, 0, -131065, 10, 0, 262137, 7, 0, 196613, 7, 0 )
+
+[node name="Camera2D2" type="Camera2D" parent="."]
+position = Vector2( 5.57967, 69.4569 )
+scale = Vector2( 0.996283, 1.25409 )
+current = true
+zoom = Vector2( 0.2, 0.2 )
+smoothing_enabled = true
+
+[node name="Player" parent="." instance=ExtResource( 3 )]
+position = Vector2( 5.57967, 106.457 )
+scale = Vector2( 0.996283, 1.25409 )
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
+position = Vector2( 0, -43.0591 )
+remote_path = NodePath("../../Camera2D2")
