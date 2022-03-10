@@ -135,5 +135,3 @@ func _on_Hurtbox_area_entered(area):
 		print(area.get_parent().atk_dmg)
 		stats.set_health(stats.health - area.get_parent().atk_dmg)
 	hurtBox.start_invincibility(0.5) #player invincible for a second so doesnt instantly die
-
-
