@@ -1,7 +1,7 @@
 extends Area2D
 
 
-var scene = preload("res://World.tscn")
+onready var scene = get_node("res://World.tscn")
 export (Vector2) var move_to_position	
 
 func _on_HouseExit3_body_entered(body):
