@@ -3,7 +3,7 @@
 [ext_resource path="res://Assets/Tilemaps/D_Inside_House.png" type="Texture" id=1]
 [ext_resource path="res://World/Aurora Tileset.png" type="Texture" id=2]
 [ext_resource path="res://UI/Player.tscn" type="PackedScene" id=3]
-[ext_resource path="res://HouseScenes/HouseExit1.tscn" type="PackedScene" id=4]
+[ext_resource path="res://HouseScenes/HouseExit.tscn" type="PackedScene" id=4]
 
 [sub_resource type="ConvexPolygonShape2D" id=3]
 points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
