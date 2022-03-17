@@ -443,4 +443,5 @@ scale = Vector2( 0.996283, 1.25409 )
 position = Vector2( 0, -12.7583 )
 remote_path = NodePath("../../Camera2D2")
 
-[node name="HouseExit1" parent="." instance=ExtResource( 4 )]
+[node name="HouseExit" parent="." instance=ExtResource( 4 )]
+position = Vector2( 16, 224 )

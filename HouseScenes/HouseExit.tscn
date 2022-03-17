@@ -9,7 +9,6 @@ extents = Vector2( 15.3592, 17 )
 script = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 16.6408, 223 )
 shape = SubResource( 17 )
 
 [connection signal="body_entered" from="." to="." method="_on_HouseExit1_body_entered"]
