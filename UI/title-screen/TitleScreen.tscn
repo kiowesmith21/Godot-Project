@@ -92,7 +92,7 @@ position = Vector2( 443.353, 156.679 )
 scale = Vector2( 10, 10 )
 frames = SubResource( 3 )
 animation = "Idle"
-frame = 1
+frame = 2
 playing = true
 
 [node name="VersionLabel" type="Label" parent="Menu"]
