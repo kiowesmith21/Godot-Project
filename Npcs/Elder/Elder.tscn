@@ -18,14 +18,16 @@ animations = [ {
 radius = 17.145
 height = 0.0
 
-[node name="Elder" type="KinematicBody2D" groups=["NPC"]]
+[node name="Elder" type="KinematicBody2D" groups=[
+"NPC",
+]]
 script = ExtResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 1.5, 1.5 )
 frames = SubResource( 1 )
 animation = "idle"
-frame = 2
+frame = 3
 speed_scale = 1.2
 playing = true
 

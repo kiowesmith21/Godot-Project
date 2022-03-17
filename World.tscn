@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=2]
+[gd_scene load_steps=50 format=2]
 
 [ext_resource path="res://UI/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://World/Bushes/Bush-4.png" type="Texture" id=2]
@@ -16,6 +16,7 @@
 [ext_resource path="res://Npcs/Townsfolk - Male/StartingVillageMale.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Weapons/FireballSpellbook.tscn" type="PackedScene" id=15]
 [ext_resource path="res://UI/ArmorBar.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Npcs/King/FutureMerlin.tscn" type="PackedScene" id=17]
 [ext_resource path="res://UI/HealthBar.tscn" type="PackedScene" id=22]
 [ext_resource path="res://World/Fences/Wooden fence/Wooden-fence-3.png" type="Texture" id=23]
 [ext_resource path="res://World/Fences/Wooden fence/Wooden-fence-4.png" type="Texture" id=24]
@@ -677,7 +678,7 @@ points = PoolVector2Array( 32, 32, 0, 32, 5.64813, 12.679, 26.8672, 11.7145 )
 [sub_resource type="CircleShape2D" id=21]
 radius = 950.674
 
-[sub_resource type="GDScript" id=24]
+[sub_resource type="GDScript" id=22]
 script/source = "extends Node
 
 
@@ -696,7 +697,7 @@ func _ready():
 #	pass
 "
 
-[sub_resource type="Animation" id=25]
+[sub_resource type="Animation" id=23]
 tracks/0/type = "value"
 tracks/0/path = NodePath("ColorRect/Dialogue:percent_visible")
 tracks/0/interp = 1
@@ -780,30 +781,43 @@ position = Vector2( 2370.01, 1025.39 )
 [node name="NPCs" type="Node" parent="."]
 
 [node name="Villager-Female" parent="NPCs" instance=ExtResource( 11 )]
+position = Vector2( 183.673, 128.681 )
 frame = 2
 
 [node name="Villager-Male" parent="NPCs" instance=ExtResource( 14 )]
+position = Vector2( -92.8738, -37.8538 )
 frame = 3
 
 [node name="Elder" parent="NPCs" instance=ExtResource( 12 )]
 position = Vector2( -297.057, -64.7424 )
 
+[node name="FutureMerlin" parent="NPCs" instance=ExtResource( 17 )]
+position = Vector2( -104.231, 187.687 )
+
 [node name="Enemies" type="Node" parent="."]
 
-[node name="Executioner" parent="Enemies" groups=["Enemy"] instance=ExtResource( 7 )]
+[node name="Executioner" parent="Enemies" groups=[
+"Enemy",
+] instance=ExtResource( 7 )]
 position = Vector2( 2360.99, 693.329 )
 
-[node name="Thief" parent="Enemies" groups=["Enemy"] instance=ExtResource( 6 )]
+[node name="Thief" parent="Enemies" groups=[
+"Enemy",
+] instance=ExtResource( 6 )]
 position = Vector2( 2300.32, 565.205 )
 
-[node name="Thief3" parent="Enemies" groups=["Enemy"] instance=ExtResource( 6 )]
+[node name="Thief3" parent="Enemies" groups=[
+"Enemy",
+] instance=ExtResource( 6 )]
 position = Vector2( 2428.32, 561.205 )
 
-[node name="Thief2" parent="Enemies" groups=["Enemy"] instance=ExtResource( 6 )]
+[node name="Thief2" parent="Enemies" groups=[
+"Enemy",
+] instance=ExtResource( 6 )]
 position = Vector2( 426.793, -158.872 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-script = SubResource( 24 )
+script = SubResource( 22 )
 
 [node name="HealthBar" parent="CanvasLayer" instance=ExtResource( 22 )]
 margin_left = 23.3597
@@ -836,8 +850,8 @@ margin_left = 3.0
 margin_top = 1.0
 margin_right = 293.0
 margin_bottom = 200.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = ExtResource( 31 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "placeholder"
 autowrap = true
 __meta__ = {
@@ -849,8 +863,8 @@ margin_left = 3.41583
 margin_top = 20.0
 margin_right = 266.416
 margin_bottom = 51.5281
-custom_colors/font_color = Color( 0, 0, 0, 0.639216 )
 custom_fonts/font = ExtResource( 31 )
+custom_colors/font_color = Color( 0, 0, 0, 0.639216 )
 text = "placeholder"
 autowrap = true
 percent_visible = 0.0
@@ -864,8 +878,8 @@ margin_left = 4.77728
 margin_top = 150.0
 margin_right = 269.777
 margin_bottom = 60.5636
-custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = ExtResource( 31 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "placeholder"
 align = 1
 autowrap = true
@@ -874,7 +888,7 @@ __meta__ = {
 }
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/DialogueUI"]
-anims/ShowDialogue = SubResource( 25 )
+anims/ShowDialogue = SubResource( 23 )
 
 [node name="Skillbar" parent="CanvasLayer" instance=ExtResource( 13 )]
 margin_left = 550.195
