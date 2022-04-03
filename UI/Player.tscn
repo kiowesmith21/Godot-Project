@@ -53,7 +53,6 @@ resource_name = "Stop"
 length = 0.1
 
 [node name="Player" type="KinematicBody2D"]
-position = Vector2( 148.726, 78.0111 )
 scale = Vector2( 1.5, 1.5 )
 collision_layer = 2
 script = ExtResource( 2 )
@@ -66,7 +65,6 @@ stream = ExtResource( 13 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 material = SubResource( 1 )
-position = Vector2( 0, 0.0589256 )
 scale = Vector2( 1.5, 1.5 )
 frames = SubResource( 2 )
 animation = "Idle"
