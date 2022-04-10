@@ -1,3 +1,1 @@
 extends Button
-
-export(String) var selectedMenu

@@ -29,7 +29,7 @@ onready var armorBar = get_node("/root/World/CanvasLayer/ArmorBar")
 
 func _ready():
 	stats.connect("no_health", self, "queue_free") #connect to player stats signal
-	print("notPlayerNode", global_position)
+	global_position = $PlayerStats.global_pos
 
 #movement
 func _physics_process(delta):
@@ -37,7 +37,6 @@ func _physics_process(delta):
 	var attack_direction = get_input(delta) #run get input to find attack input (weapon choice)
 	direction.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
 	direction.y = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
-	
 	
 	#handling diagonal movement 
 	if (abs(direction.x) == 1 and abs(direction.y) == 1):
@@ -61,7 +60,7 @@ func attack(choice):
 	#melee
 	if (choice == 1):
 		var m = Melee.instance()
-		m.Player = self #Melee doesn't like this line :(
+		m.Player = self
 		get_parent().add_child(m)
 		m.direction = (get_global_mouse_position() - position).normalized()
 		m.transform = $MageHand.global_transform #shoots the projectile from the position of MageHand
@@ -120,7 +119,6 @@ func get_input(delta):
 		if target != null:
 			if target.is_in_group("NPC"):
 				target.talk()
-				
 
 #player getting hit, their hurtbox being entered
 func _on_Hurtbox_area_entered(area):
