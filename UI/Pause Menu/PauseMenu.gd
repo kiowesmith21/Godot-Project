@@ -3,33 +3,34 @@ extends Popup
 
 onready var player = get_node("/root/World/Player/Player")
 var already_paused
-var selectedMenu
+var selected_menu
 
 
 func _ready():
-	pass
+	pass # Replace with function body.
 
 func _input(event):
-	if Input.is_action_just_pressed("menu"):
-		if already_paused:
-			get_tree().paused = false
-			already_paused = false
-			hide()
-		else:
+	if not visible:
+		if Input.is_action_just_pressed("menu"):
 			# Pause game
 			already_paused = get_tree().paused
 			get_tree().paused = true
+			# Reset the popup
+			selected_menu = 0
 			# Show popup
+			player.set_process_input(false)
 			popup()
-
-func _on_Resume_pressed():
-	if not already_paused:
-		get_tree().paused = false
-		player.set_process_input(true)
-		hide()
-
-func _on_Save_pressed():
-	pass # Replace with function body.
-
-func _on_Quit_pressed():
-	get_tree().quit()
+		for button in $".".get_children():
+			selected_menu = button.connect("pressed", self, "on_button_pressed",[selected_menu])
+		
+func on_button_pressed(selected_menu):
+	match selected_menu:
+		0:
+			if not already_paused:
+				get_tree().paused = false
+				player.set_process_input(true)
+				hide()
+		1:
+			pass
+		2:
+			get_tree().quit()
