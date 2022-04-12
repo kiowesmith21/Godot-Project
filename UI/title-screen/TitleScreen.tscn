@@ -83,6 +83,7 @@ scene_to_load = "res://UI/Intro.tscn"
 margin_top = 192.0
 margin_right = 518.0
 margin_bottom = 252.0
+scene_to_load = ""
 
 [node name="CenterContainer" type="CenterContainer" parent="Menu/CenterRow"]
 margin_left = 522.0
@@ -96,6 +97,7 @@ position = Vector2( 443.353, 156.679 )
 scale = Vector2( 10, 10 )
 frames = SubResource( 3 )
 animation = "Idle"
+frame = 1
 playing = true
 
 [node name="VersionLabel" type="Label" parent="Menu"]

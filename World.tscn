@@ -783,10 +783,11 @@ position = Vector2( 2370.01, 1025.39 )
 
 [node name="Villager-Female" parent="NPCs" instance=ExtResource( 11 )]
 position = Vector2( 183.673, 128.681 )
+frame = 2
 
 [node name="Villager-Male" parent="NPCs" instance=ExtResource( 14 )]
 position = Vector2( -92.8738, -37.8538 )
-frame = 1
+frame = 3
 
 [node name="Elder" parent="NPCs" instance=ExtResource( 12 )]
 position = Vector2( -297.057, -64.7424 )
