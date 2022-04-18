@@ -17,6 +17,7 @@ func choices_set(new_value):
 	choices = new_value
 	$ColorRect/Choices.text = new_value
 
+
 func open():
 	popup()
 	$AnimationPlayer.playback_speed = 60.0 / dialogue.length()

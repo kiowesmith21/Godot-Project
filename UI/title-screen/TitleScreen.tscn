@@ -71,13 +71,11 @@ alignment = 1
 margin_top = 112.0
 margin_right = 518.0
 margin_bottom = 172.0
-scene_to_load = "res://UI/Intro.tscn"
 
 [node name="ControlsButton" parent="Menu/CenterRow/Buttons" instance=ExtResource( 3 )]
 margin_top = 192.0
 margin_right = 518.0
 margin_bottom = 252.0
-scene_to_load = ""
 
 [node name="CenterContainer" type="CenterContainer" parent="Menu/CenterRow"]
 margin_left = 522.0
