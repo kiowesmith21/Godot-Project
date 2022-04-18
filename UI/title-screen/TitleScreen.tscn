@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://UI/title-screen/Buttons/NewGameButton.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Sound/Music/01.2_LOOP_The_Sword_and_the_Heart_by_Florian_Stracker.wav" type="AudioStream" id=2]
@@ -9,7 +9,9 @@
 [ext_resource path="res://UI/title-screen/title_screen.gd" type="Script" id=7]
 [ext_resource path="res://Npcs/Archer/Archer_Idle_1.png" type="Texture" id=8]
 [ext_resource path="res://UI/title-screen/Fonts/Montserrat-ExtraBold.ttf" type="DynamicFontData" id=9]
+[ext_resource path="res://UI/title-screen/Buttons/LoadGameButton.tscn" type="PackedScene" id=10]
 [ext_resource path="res://UI/title-screen/fade_in/FadeIn.tscn" type="PackedScene" id=11]
+[ext_resource path="res://UI/title-screen/Buttons/QuitGameButton.tscn" type="PackedScene" id=12]
 
 [sub_resource type="DynamicFontData" id=1]
 font_path = "res://UI/title-screen/Fonts/Montserrat-ExtraBold.ttf"
@@ -67,7 +69,13 @@ size_flags_vertical = 3
 custom_constants/separation = 20
 alignment = 1
 
-[node name="NewGame" parent="Menu/CenterRow/Buttons" instance=ExtResource( 1 )]
+[node name="NewGame2" parent="Menu/CenterRow/Buttons" instance=ExtResource( 1 )]
+margin_top = 32.0
+margin_right = 518.0
+margin_bottom = 92.0
+rect_pivot_offset = Vector2( 18, -145 )
+
+[node name="Load Game" parent="Menu/CenterRow/Buttons" instance=ExtResource( 10 )]
 margin_top = 112.0
 margin_right = 518.0
 margin_bottom = 172.0
@@ -76,6 +84,12 @@ margin_bottom = 172.0
 margin_top = 192.0
 margin_right = 518.0
 margin_bottom = 252.0
+
+[node name="Quit Game" parent="Menu/CenterRow/Buttons" instance=ExtResource( 12 )]
+margin_top = 272.0
+margin_right = 518.0
+margin_bottom = 332.0
+scene_to_load = ""
 
 [node name="CenterContainer" type="CenterContainer" parent="Menu/CenterRow"]
 margin_left = 522.0
@@ -105,4 +119,8 @@ Merlin Studios"
 [node name="FadeIn" parent="." instance=ExtResource( 11 )]
 visible = false
 
+[connection signal="pressed" from="Menu/CenterRow/Buttons/NewGame2" to="." method="_on_NewGame_pressed"]
+[connection signal="pressed" from="Menu/CenterRow/Buttons/Load Game" to="." method="_on_Load_Game_pressed"]
+[connection signal="pressed" from="Menu/CenterRow/Buttons/ControlsButton" to="." method="_on_ControlsButton_pressed"]
+[connection signal="pressed" from="Menu/CenterRow/Buttons/Quit Game" to="." method="_on_QuitGame_pressed"]
 [connection signal="fade_finished" from="FadeIn" to="." method="_on_FadeIn_fade_finished"]

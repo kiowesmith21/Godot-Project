@@ -1,5 +1,7 @@
 extends Node2D
 
+var load_saved_game = false
+
 func _ready():
 	$Player/Player.global_position = PlayerStats.global_pos
 	
@@ -8,4 +10,3 @@ func save_scene():
 	var scene = PackedScene.new()
 	scene.pack(World)
 	ResourceSaver.save(file_path,scene)
-#https://godotengine.org/qa/89982/how-to-save-changes-when-switching-scenes

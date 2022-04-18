@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 const ACCELERATION = 10
-const  MAX_SPEED = 100
+const MAX_SPEED = 100
 const FRICTION = .1
 const COOLDOWN_WAIT_TIME = 1
 
@@ -133,3 +133,17 @@ func _on_Hurtbox_area_entered(area):
 		print(area.get_parent().atk_dmg)
 		stats.set_health(stats.health - area.get_parent().atk_dmg)
 	hurtBox.start_invincibility(0.5) #player invincible for a second so doesnt instantly die
+	
+func to_dictionary(): #made to save the player's data
+	return {
+		"position" : [global_position.x, global_position.y],
+		"health" : stats.health,
+		"armor": stats.armor,
+		"fireball_given": fireball_given
+	}
+
+func from_dictionary(data):
+	global_position = Vector2(data.position[0], data.position[1])
+	stats.health = data.health
+	stats.armor = data.armor
+	fireball_given = data.fireball_given

@@ -109,3 +109,13 @@ func die():
 	var enemyDeathEffect = EnemyDeathEffect.instance()
 	get_parent().add_child(enemyDeathEffect)
 	enemyDeathEffect.global_position = global_position
+
+func to_dictionary():
+	return {
+		"position": [global_position.x, global_position.y],
+		"health" : stats.health
+	}
+
+func from_dictionary(data):
+	global_position = Vector2(data.position[0], data.position[1])
+	stats.health = data.health

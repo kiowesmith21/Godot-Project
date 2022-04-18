@@ -73,7 +73,7 @@ custom_styles/pressed = SubResource( 29 )
 custom_styles/normal = SubResource( 27 )
 text = "SAVE"
 
-[node name="Quit" type="Button" parent="."]
+[node name="Main Menu" type="Button" parent="."]
 margin_left = 60.0
 margin_top = 340.0
 margin_right = 640.0
@@ -83,8 +83,8 @@ custom_styles/hover = SubResource( 33 )
 custom_styles/pressed = SubResource( 30 )
 custom_styles/focus = SubResource( 26 )
 custom_styles/normal = SubResource( 27 )
-text = "QUIT"
+text = "MAIN MENU"
 
 [connection signal="pressed" from="Resume" to="." method="_on_Resume_pressed"]
 [connection signal="pressed" from="Save" to="." method="_on_Save_pressed"]
-[connection signal="pressed" from="Quit" to="." method="_on_Quit_pressed"]
+[connection signal="pressed" from="Main Menu" to="." method="_on_Quit_pressed"]
