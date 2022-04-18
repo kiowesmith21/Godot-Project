@@ -29,8 +29,7 @@ onready var armorBar = get_node("/root/World/CanvasLayer/ArmorBar")
 
 func _ready():
 	stats.connect("no_health", self, "queue_free") #connect to player stats signal
-	print(self.position)
-	
+	print("notPlayerNode", global_position)
 
 #movement
 func _physics_process(delta):
@@ -136,4 +135,3 @@ func _on_Hurtbox_area_entered(area):
 		print(area.get_parent().atk_dmg)
 		stats.set_health(stats.health - area.get_parent().atk_dmg)
 	hurtBox.start_invincibility(0.5) #player invincible for a second so doesnt instantly die
-

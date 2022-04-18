@@ -34,9 +34,6 @@ font_data = ExtResource( 9 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 7 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="TitleMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 2 )
@@ -47,9 +44,6 @@ margin_left = 120.0
 margin_top = 80.0
 margin_right = 1160.0
 margin_bottom = 640.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Label" type="Label" parent="Menu"]
 margin_right = 1040.0
@@ -97,7 +91,7 @@ position = Vector2( 443.353, 156.679 )
 scale = Vector2( 10, 10 )
 frames = SubResource( 3 )
 animation = "Idle"
-frame = 1
+frame = 2
 playing = true
 
 [node name="VersionLabel" type="Label" parent="Menu"]

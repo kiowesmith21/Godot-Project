@@ -14,20 +14,20 @@ animations = [ {
 } ]
 
 [sub_resource type="CapsuleShape2D" id=24]
+radius = 14.8666
 height = 0.0
 
-[node name="Villager-Male" type="AnimatedSprite" groups=["NPC"]]
-position = Vector2( -482.685, -33.6282 )
+[node name="KinematicBody2D" type="KinematicBody2D"]
+
+[node name="Villager-Male" type="AnimatedSprite" parent="."]
+position = Vector2( 0.969604, -0.182751 )
 scale = Vector2( 1.5, 1.5 )
 frames = SubResource( 23 )
 animation = "Idle"
-frame = 2
+frame = 1
 playing = true
-offset = Vector2( 219.672, 110.855 )
 flip_h = true
 
-[node name="KinematicBody2D" type="KinematicBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D"]
-position = Vector2( 218.714, 117.816 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0.353546, 10.3414 )
 shape = SubResource( 24 )

@@ -27,7 +27,6 @@ config/icon="res://icon.png"
 [autoload]
 
 PlayerStats="*res://Player/PlayerStats.gd"
-DialogueManager="*res://addons/saywhat_godot/dialogue_manager.gd"
 
 [display]
 
@@ -44,6 +43,10 @@ enabled=PoolStringArray(  )
 [gdnative]
 
 singletons=[ "res://git_api.gdnlib" ]
+
+[global]
+
+viewport=true
 
 [importer_defaults]
 
@@ -131,6 +134,11 @@ cancel={
 choose_weapon_4={
 "deadzone": 0.5,
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":52,"unicode":0,"echo":false,"script":null)
+ ]
+}
+menu={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777217,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
  ]
 }
 

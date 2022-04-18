@@ -14,17 +14,18 @@ animations = [ {
 } ]
 
 [sub_resource type="CapsuleShape2D" id=23]
+radius = 13.4865
 height = 0.0
 
-[node name="Villager-Female" type="AnimatedSprite" groups=["NPC"]]
-position = Vector2( -189.588, 131.498 )
+[node name="KinematicBody2D" type="KinematicBody2D"]
+
+[node name="Villager-Female" type="AnimatedSprite" parent="."]
 scale = Vector2( 1.5, 1.5 )
 frames = SubResource( 22 )
 animation = "Idle"
+frame = 1
 playing = true
 
-[node name="KinematicBody2D" type="KinematicBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D"]
-position = Vector2( -0.389328, 9.28826 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -0.723038, 14.4608 )
 shape = SubResource( 23 )
