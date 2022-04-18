@@ -26,6 +26,9 @@ animations = [ {
 margin_right = 1282.0
 margin_bottom = 718.0
 script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 anchor_top = 0.5
@@ -44,8 +47,8 @@ __meta__ = {
 margin_right = 637.0
 margin_bottom = 100.0
 rect_min_size = Vector2( 100, 100 )
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 2 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "CONTROLS"
 
 [node name="Movement" type="Label" parent="VBoxContainer"]
@@ -53,8 +56,8 @@ margin_top = 104.0
 margin_right = 637.0
 margin_bottom = 204.0
 rect_min_size = Vector2( 100, 100 )
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 2 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "MOVEMENT: WASD"
 
 [node name="Attack" type="Label" parent="VBoxContainer"]
@@ -62,8 +65,8 @@ margin_top = 208.0
 margin_right = 637.0
 margin_bottom = 308.0
 rect_min_size = Vector2( 100, 100 )
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 2 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "ATTACK: LMB"
 
 [node name="ChangeWeapon" type="Label" parent="VBoxContainer"]
@@ -71,8 +74,8 @@ margin_top = 312.0
 margin_right = 637.0
 margin_bottom = 412.0
 rect_min_size = Vector2( 100, 100 )
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 2 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "CHANGE WEAPON: 1, 2, 3"
 
 [node name="Interact" type="Label" parent="VBoxContainer"]
@@ -80,25 +83,14 @@ margin_top = 416.0
 margin_right = 637.0
 margin_bottom = 516.0
 rect_min_size = Vector2( 100, 100 )
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 2 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "INTERACT: E"
 
-[node name="Main Menu" type="Label" parent="VBoxContainer"]
+[node name="BackButton" parent="VBoxContainer" instance=ExtResource( 1 )]
 margin_top = 520.0
 margin_right = 637.0
-margin_bottom = 620.0
-rect_min_size = Vector2( 100, 100 )
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 2 )
-text = "MAIN MENU: ESC"
-
-[node name="BackButton" parent="VBoxContainer" instance=ExtResource( 1 )]
-anchor_top = -0.0394737
-anchor_bottom = -0.0394737
-margin_top = 624.0
-margin_right = 637.0
-margin_bottom = 684.0
+margin_bottom = 580.0
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 anchor_left = 1.0
