@@ -12,6 +12,7 @@ font_path = "res://UI/title-screen/Fonts/Montserrat-ExtraBold.ttf"
 
 [sub_resource type="DynamicFont" id=2]
 size = 48
+outline_color = Color( 0.0823529, 0.0823529, 0.0823529, 1 )
 font_data = SubResource( 1 )
 
 [sub_resource type="SpriteFrames" id=3]
@@ -70,6 +71,8 @@ custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "ATTACK: LMB"
 
 [node name="ChangeWeapon" type="Label" parent="VBoxContainer"]
+anchor_top = -0.0102339
+anchor_bottom = -0.0102339
 margin_top = 312.0
 margin_right = 637.0
 margin_bottom = 412.0
@@ -79,11 +82,22 @@ custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "CHANGE WEAPON: 1, 2, 3"
 
 [node name="Interact" type="Label" parent="VBoxContainer"]
+anchor_top = -0.0233918
+anchor_bottom = -0.0233918
 margin_top = 416.0
 margin_right = 637.0
 margin_bottom = 516.0
 rect_min_size = Vector2( 100, 100 )
 custom_fonts/font = SubResource( 2 )
+text = "INTERACT: E"
+
+[node name="Main Menu" type="Label" parent="VBoxContainer"]
+anchor_top = -0.0292398
+anchor_bottom = -0.0292398
+margin_top = 520.0
+margin_right = 637.0
+margin_bottom = 620.0
+rect_min_size = Vector2( 100, 100 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "INTERACT: E"
 

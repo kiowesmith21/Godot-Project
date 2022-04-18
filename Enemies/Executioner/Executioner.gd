@@ -123,10 +123,17 @@ func die():
 	get_parent().add_child(a)
 	a.transform = $MaceHand.global_transform
 	queue_free() #delete enemy
-	
-
-
 
 func _on_Timer_timeout():
 	attackAllowed = true 
 	timer.start()
+
+func to_dictionary():
+	return {
+		"position" : [global_position.x, global_position.y],
+		"health" : stats.health
+	}
+
+func from_dictionary(data):
+	global_position = Vector2(data.position[0], data.position[1])
+	stats.health = data.health

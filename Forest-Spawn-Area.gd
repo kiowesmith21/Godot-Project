@@ -55,5 +55,14 @@ func _physics_process(delta):
 				spawnCoolDown = spawnCoolDown - delta
 			seek_player()
 
+func to_dictionary():
+	var thieves = []
+	for node in get_children():
+		if node.name.find("Thief") >= 0:
+			thieves.append(node.to_dictionary())
+	return thieves
 
-
+func from_dictionary(data):
+	for thief_data in data:
+		thief.from_dictionary(thief_data)
+		add_child(thief)
