@@ -23,7 +23,7 @@ func _on_FadeIn_fade_finished():
 
 
 func _on_NewGame_pressed():
-	scene_path_to_load = ("res://World.tscn")
+	scene_path_to_load = ("res://UI/Intro.tscn")
 	PlayerStats.global_pos = Vector2(23,130)
 	$TitleMusic.stop()
 	$FadeIn.show()
