@@ -15,7 +15,7 @@ var dialogueUI
 var player
 
 func _ready():
-	dialogueUI = get_tree().root.get_node("/root/World/CanvasLayer/DialogueUI")
+	dialogueUI = get_tree().root.get_node("/root/World/GameUI/DialogueUI")
 	player = get_tree().root.get_node("/root/World/Player/Player")
 
 func talk(choice = ""):

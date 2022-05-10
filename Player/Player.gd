@@ -116,6 +116,7 @@ func get_input(delta):
 	
 	if(Input.get_action_strength("interact")):
 		var target = $RayCast2D.get_collider()
+		print(target)
 		if target != null:
 			if target.is_in_group("NPC"):
 				target.talk()

@@ -703,7 +703,7 @@ func _ready():
 
 [sub_resource type="Animation" id=25]
 tracks/0/type = "value"
-tracks/0/path = NodePath("ColorRect/Dialogue:percent_visible")
+tracks/0/path = NodePath("ColorRect/Choices:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -712,10 +712,10 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.9 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ 0.0, 1.0 ]
+"values": [ false, true ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("ColorRect/Choices:visible")
+tracks/1/path = NodePath("ColorRect/Dialogue:percent_visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -723,8 +723,8 @@ tracks/1/enabled = true
 tracks/1/keys = {
 "times": PoolRealArray( 0, 0.9 ),
 "transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ false, true ]
+"update": 0,
+"values": [ 0.0, 1.0 ]
 }
 
 [node name="World" type="Node2D"]
@@ -796,10 +796,10 @@ position = Vector2( 2353.34, 715.053 )
 [node name="NPCs" type="Node" parent="."]
 
 [node name="Villager-Female" parent="NPCs" groups=["NPC"] instance=ExtResource( 11 )]
-position = Vector2( -187.03, 133.29 )
+position = Vector2( -169.569, 128.528 )
 
 [node name="Villager-Male" parent="NPCs" groups=["NPC"] instance=ExtResource( 14 )]
-position = Vector2( -150.26, 137.532 )
+position = Vector2( 238.653, 122.452 )
 
 [node name="Elder" parent="NPCs" instance=ExtResource( 12 )]
 position = Vector2( -297.057, -64.7424 )
@@ -830,7 +830,7 @@ rect_scale = Vector2( 0.331726, 0.220067 )
 
 [node name="DialogueUI" type="Popup" parent="GameUI"]
 pause_mode = 2
-margin_right = 400.0
+margin_right = 812.0
 margin_bottom = 550.0
 popup_exclusive = true
 script = ExtResource( 32 )
@@ -841,8 +841,8 @@ __meta__ = {
 [node name="ColorRect" type="ColorRect" parent="GameUI/DialogueUI"]
 margin_left = 10.0
 margin_top = 115.0
-margin_right = 310.0
-margin_bottom = 315.0
+margin_right = 406.0
+margin_bottom = 344.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -850,8 +850,8 @@ __meta__ = {
 [node name="NPCName" type="Label" parent="GameUI/DialogueUI/ColorRect"]
 margin_left = 3.0
 margin_top = 1.0
-margin_right = 293.0
-margin_bottom = 200.0
+margin_right = 580.0
+margin_bottom = 81.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = ExtResource( 31 )
 text = "placeholder"
@@ -861,10 +861,10 @@ __meta__ = {
 }
 
 [node name="Dialogue" type="Label" parent="GameUI/DialogueUI/ColorRect"]
-margin_left = 3.41583
-margin_top = 20.0
-margin_right = 266.416
-margin_bottom = 51.5281
+margin_left = 7.0
+margin_top = 53.0
+margin_right = 297.0
+margin_bottom = 142.0
 custom_colors/font_color = Color( 0, 0, 0, 0.639216 )
 custom_fonts/font = ExtResource( 31 )
 text = "placeholder"
@@ -875,11 +875,10 @@ __meta__ = {
 }
 
 [node name="Choices" type="Label" parent="GameUI/DialogueUI/ColorRect"]
-visible = false
-margin_left = 4.77728
+margin_left = 5.0
 margin_top = 150.0
-margin_right = 269.777
-margin_bottom = 60.5636
+margin_right = 323.0
+margin_bottom = 204.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = ExtResource( 31 )
 text = "placeholder"
