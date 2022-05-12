@@ -21,19 +21,19 @@ shader_param/active = false
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
-"frames": [ ExtResource( 5 ), ExtResource( 10 ), ExtResource( 8 ), ExtResource( 4 ) ],
-"loop": true,
-"name": "Walk",
-"speed": 10.0
-}, {
 "frames": [ ExtResource( 3 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 9 ) ],
 "loop": true,
 "name": "Idle",
 "speed": 4.0
+}, {
+"frames": [ ExtResource( 5 ), ExtResource( 10 ), ExtResource( 8 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "Walk",
+"speed": 10.0
 } ]
 
 [sub_resource type="CapsuleShape2D" id=3]
-radius = 8.07027
+radius = 11.2373
 height = 12.4018
 
 [sub_resource type="CapsuleShape2D" id=4]
@@ -68,9 +68,10 @@ material = SubResource( 1 )
 scale = Vector2( 1.5, 1.5 )
 frames = SubResource( 2 )
 animation = "Idle"
+flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -5.6298, 10.932 )
+position = Vector2( 0, 10.932 )
 shape = SubResource( 3 )
 
 [node name="Hurtbox" parent="." instance=ExtResource( 11 )]
@@ -78,16 +79,16 @@ collision_layer = 4
 
 [node name="CollisionShape2D" parent="Hurtbox" index="0"]
 modulate = Color( 1, 1, 1, 0.760784 )
-position = Vector2( 0.15731, 14.3154 )
+position = Vector2( 0.15731, 10.9821 )
 shape = SubResource( 4 )
 
 [node name="MageHand" type="Position2D" parent="."]
-position = Vector2( -6.4616, 15.9996 )
+position = Vector2( 0.205067, 15.9996 )
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
-position = Vector2( -6.34172, 15.9468 )
+position = Vector2( 0.324946, 15.9468 )
 enabled = true
-cast_to = Vector2( 15, 0 )
+cast_to = Vector2( 20, 0 )
 collide_with_areas = true
 
 [node name="BlinkAnimationPlayer" type="AnimationPlayer" parent="."]

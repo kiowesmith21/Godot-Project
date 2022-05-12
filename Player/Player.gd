@@ -51,7 +51,7 @@ func _physics_process(delta):
 	move_and_collide(movement)
 	
 	if direction != Vector2.ZERO:
-		$RayCast2D.cast_to = direction.normalized() * 8
+		$RayCast2D.cast_to = direction.normalized() * 20
 	last_direction = direction
 
 #weapon choices determine distance and damage. 
@@ -67,10 +67,11 @@ func attack(choice):
 		m.Timer()
 	elif (choice == 2):
 		var b = Bow.instance()
-		get_parent().add_child(b)
 		b.Player = self
-		b.direction = (get_global_mouse_position() - position).normalized()
+		get_parent().add_child(b)
+		b.position = position
 		b.transform = $MageHand.global_transform
+		b.direction = (get_global_mouse_position() - position).normalized()
 		var a = Arrow.instance()
 		a.Player = self
 		get_parent().add_child(a)
@@ -98,6 +99,7 @@ func get_input(delta):
 		wpn_choice = 1
 		atk_dmg = m.atk_dmg
 	if(Input.get_action_strength("choose_weapon_2")):
+		var b = Bow.instance()
 		var a = Arrow.instance()
 		wpn_choice = 2
 		atk_dmg = a.atk_dmg
@@ -126,12 +128,10 @@ func _on_Hurtbox_area_entered(area):
 	$hurtSound.play()
 	if(armorBar.armor > 0):
 		armorBar.set_value(stats.armor - area.get_parent().atk_dmg)
-		print(area.get_parent().atk_dmg)
 		stats.set_armor(stats.armor - area.get_parent().atk_dmg)
 	else:
 		healthBar.set_value(stats.health - area.get_parent().atk_dmg) #set healthbar value to new health
 		#player loses health on hit
-		print(area.get_parent().atk_dmg)
 		stats.set_health(stats.health - area.get_parent().atk_dmg)
 	hurtBox.start_invincibility(0.5) #player invincible for a second so doesnt instantly die
 	

@@ -9,5 +9,5 @@ func _process(_delta):
 	look_at(get_global_mouse_position())
 
 func Timer():
-	yield(get_tree().create_timer(0.1), "timeout")
+	yield(get_tree().create_timer(0.35), "timeout")
 	queue_free()

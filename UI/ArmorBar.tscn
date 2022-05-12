@@ -23,9 +23,6 @@ func _ready():
 margin_right = 40.0
 margin_bottom = 40.0
 script = SubResource( 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
 anchor_right = 7.3

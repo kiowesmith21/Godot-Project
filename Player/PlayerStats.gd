@@ -10,6 +10,7 @@ export(int) var curr_wpn = 1
 onready var wpn_choice = curr_wpn
 
 var global_pos: Vector2
+var saved_pos: Vector2
 
 signal no_health
 signal health_changed(value)
