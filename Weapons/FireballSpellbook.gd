@@ -7,9 +7,10 @@ var dialogue_state = 0
 #2285.02, 1007.48
 
 func _ready():
+	dialogueUI = get_node("/root/World/GameUI/DialogueUI")#get_tree().root.get_node("/root/World/CanvasLayer/DialogueUI")
 	player = get_tree().root.get_node("/root/World/Player/Player")
-	skillbar = get_tree().root.get_node("/root/World/CanvasLayer/Skillbar")
-	dialogueUI = get_tree().root.get_node("/root/World/CanvasLayer/DialogueUI")
+	skillbar = get_node("/root/World/GameUI/Skillbar")
+	
 
 func _on_FireballSpellbook_body_entered(body):
 	if body.name == "Player":
@@ -20,15 +21,21 @@ func _on_FireballSpellbook_body_entered(body):
 #Pop up dialogue to tell player picked up item
 func talk(choice = ""):
 	#setting the npc's state and name to the dialogueUI
-	dialogueUI.npc = self
-	dialogueUI.npcname = "Fireball Spellbook"
+	if(is_instance_valid(dialogueUI)):
+		print_debug("DialogueUI is true")
+		
+		dialogueUI.npc = self
+		dialogueUI.npcname = "Fireball Spellbook"
+	else:
+		print_debug("Dialogue is false")
+	
 	
 	match dialogue_state:
 		0:
 			#dialogue
 			#setting the npc's state and name to the dialogueUI
 			dialogue_state = 1
-			dialogueUI.dialogue = "Picked up Fireball Spellbook"
+			dialogueUI.dialogue = "Picked up Fireball Spellbooddk"
 			dialogueUI.choices = "[E] OK"
 			player.fireball_given = true
 			dialogueUI.open()
