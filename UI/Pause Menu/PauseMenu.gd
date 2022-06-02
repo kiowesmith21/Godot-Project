@@ -3,12 +3,13 @@ extends Control
 onready var player = get_node("/root/World/Player/Player")
 onready var Enemies = get_node("/root/World/Enemies")
 onready var ForestSpawnArea = get_node("/root/World/ForestSpawnArea")
+
 var already_paused
 
 func _ready():
 	hide()
 
-func _input(event):
+func _input(_event):
 	if Input.is_action_just_pressed("menu"):
 		if already_paused:
 			get_tree().paused = false
@@ -38,6 +39,7 @@ func _on_Save_pressed():
 	var json = to_json(data)
 	file.store_line(json)
 	file.close()
+	SaveLoad.load_saved_game = true
 
 func _on_Quit_pressed():
 	get_tree().paused = false

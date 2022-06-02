@@ -21,13 +21,13 @@ _global_script_class_icons={
 [application]
 
 config/name="Rpg Project"
-run/main_scene="res://UI/title-screen/TitleScreen.tscn"
+run/main_scene="res://Scenes/title-screen/TitleScreen.tscn"
 config/icon="res://icon.png"
 
 [autoload]
 
 PlayerStats="*res://Player/PlayerStats.gd"
-DialogueManager="*res://addons/saywhat_godot/dialogue_manager.gd"
+SaveLoad="*res://root/SaveLoad.gd"
 
 [display]
 

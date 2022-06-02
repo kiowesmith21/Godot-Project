@@ -1,0 +1,35 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Assets/NPCs/Townsfolk - Male/Townsfolk_M_Idle_2.png" type="Texture" id=1]
+[ext_resource path="res://Assets/NPCs/Townsfolk - Male/Townsfolk_M_Idle_4.png" type="Texture" id=2]
+[ext_resource path="res://Assets/NPCs/Townsfolk - Male/Townsfolk_M_Idle_1.png" type="Texture" id=3]
+[ext_resource path="res://Assets/NPCs/Townsfolk - Male/Townsfolk_M_Idle_3.png" type="Texture" id=4]
+[ext_resource path="res://Npcs/VillageMale/StartingVillageMale.gd" type="Script" id=5]
+
+[sub_resource type="SpriteFrames" id=23]
+animations = [ {
+"frames": [ ExtResource( 3 ), ExtResource( 1 ), ExtResource( 4 ), ExtResource( 2 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 5.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=24]
+radius = 7.87361
+height = 14.3884
+
+[node name="KinematicBody2D" type="KinematicBody2D"]
+script = ExtResource( 5 )
+
+[node name="Villager-Male" type="AnimatedSprite" parent="."]
+position = Vector2( 0.969604, -0.182751 )
+scale = Vector2( 1.5, 1.5 )
+frames = SubResource( 23 )
+animation = "Idle"
+frame = 2
+playing = true
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0.353546, 10.3414 )
+shape = SubResource( 24 )

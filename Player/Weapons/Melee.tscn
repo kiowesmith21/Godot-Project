@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Assets/Weapons/dagger.png" type="Texture" id=1]
+[ext_resource path="res://Player/Weapons/Melee.gd" type="Script" id=2]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 1.26197
+height = 12.2706
+
+[node name="Melee" type="Area2D"]
+collision_layer = 32
+collision_mask = 8
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+rotation = 1.5708
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+flip_h = true
+flip_v = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 0.0393724 )
+rotation = 1.5708
+shape = SubResource( 1 )
+
+[connection signal="area_entered" from="." to="." method="_on_Melee_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_Melee_body_entered"]

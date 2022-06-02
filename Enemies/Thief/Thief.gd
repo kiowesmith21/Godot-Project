@@ -17,7 +17,7 @@ const HitEffect = preload("res://Effects/HitEffect.tscn")
 #spawn effect
 const EnemySpawnEffect = preload("res://Effects/EnemySpawnEffect.tscn")
 
-var Player = preload("res://UI/Player.tscn")
+var Player = preload("res://Player/Player.tscn")
 
 var attacking = false
 
@@ -39,7 +39,7 @@ onready var softCollision = $SoftCollision
 func _ready():
 	$AnimatedSprite.hide()
 	var enemySpawnEffect = EnemySpawnEffect.instance()
-	get_parent().add_child(enemySpawnEffect)
+	get_parent().call_deferred("add_child",enemySpawnEffect)
 	enemySpawnEffect.global_position = global_position
 	$AnimatedSprite.show()
 	stats.connect("no_health", self, "die") #connect to stats signal, runs die() function when it reaches 0 health

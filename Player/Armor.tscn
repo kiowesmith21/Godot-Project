@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Npcs/Knight - Standard/Knight_Idle_1.png" type="Texture" id=1]
+[ext_resource path="res://Assets/NPCs/Knight - Standard/Knight_Idle_1.png" type="Texture" id=1]
 [ext_resource path="res://Player/Armor.gd" type="Script" id=2]
 
 [sub_resource type="CapsuleShape2D" id=1]

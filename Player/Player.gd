@@ -16,16 +16,16 @@ var wpn_choice = 1
 var fireball_given = false
 
 #loading other scenes
-var Melee = preload("res://Player/Melee.tscn")
-var Fireball = preload("res://Player/Fireball.tscn")
-var Arrow = preload("res://Player/Arrow.tscn")
-var Bow = preload("res://Player/Bow And Arrow.tscn")
+var Melee = preload("res://Player/Weapons/Melee.tscn")
+var Fireball = preload("res://Player/Weapons/Fireball.tscn")
+var Arrow = preload("res://Player/Weapons/Arrow.tscn")
+var Bow = preload("res://Player/Weapons/Bow And Arrow.tscn")
 
 onready var stats = $PlayerStats
 onready var anim = $AnimatedSprite
 onready var hurtBox = $Hurtbox
-onready var healthBar = get_node("/root/World/CanvasLayer/HealthBar") #healthbar
-onready var armorBar = get_node("/root/World/CanvasLayer/ArmorBar")
+onready var healthBar = get_node("/root/World/GameUI/HealthBar") #healthbar
+onready var armorBar = get_node("/root/World/GameUI/ArmorBar")
 
 func _ready():
 	stats.connect("no_health", self, "queue_free") #connect to player stats signal
@@ -99,7 +99,6 @@ func get_input(delta):
 		wpn_choice = 1
 		atk_dmg = m.atk_dmg
 	if(Input.get_action_strength("choose_weapon_2")):
-		var b = Bow.instance()
 		var a = Arrow.instance()
 		wpn_choice = 2
 		atk_dmg = a.atk_dmg
@@ -145,6 +144,7 @@ func to_dictionary(): #made to save the player's data
 
 func from_dictionary(data):
 	global_position = Vector2(data.position[0], data.position[1])
+	PlayerStats.global_pos = global_position
 	stats.health = data.health
 	stats.armor = data.armor
 	fireball_given = data.fireball_given

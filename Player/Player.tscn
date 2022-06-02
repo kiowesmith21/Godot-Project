@@ -1,0 +1,112 @@
+[gd_scene load_steps=22 format=2]
+
+[ext_resource path="res://WhiteColor.shader" type="Shader" id=1]
+[ext_resource path="res://Hitboxes and Hurtboxes/Hurtbox.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Player/PlayerStats.gd" type="Script" id=3]
+[ext_resource path="res://Player/Player.gd" type="Script" id=4]
+[ext_resource path="res://Sound/sfx/playerHurtSound.wav" type="AudioStream" id=5]
+[ext_resource path="res://Sound/sfx/playerDeathSound.wav" type="AudioStream" id=6]
+[ext_resource path="res://Assets/NPCs/Archer/Archer_Walk_4.png" type="Texture" id=7]
+[ext_resource path="res://Assets/NPCs/Archer/Archer_Walk_3.png" type="Texture" id=8]
+[ext_resource path="res://Assets/NPCs/Archer/Archer_Walk_1.png" type="Texture" id=9]
+[ext_resource path="res://Assets/NPCs/Archer/Archer_Walk_2.png" type="Texture" id=10]
+
+[sub_resource type="ShaderMaterial" id=1]
+shader = ExtResource( 1 )
+shader_param/active = false
+
+[sub_resource type="StreamTexture" id=8]
+load_path = "res://.import/Archer_Idle_1.png-3aa132fa95bff6be9b85b3d064d0242c.stex"
+
+[sub_resource type="StreamTexture" id=9]
+load_path = "res://.import/Archer_Idle_2.png-e7dec8299a59b465285a729d325fc667.stex"
+
+[sub_resource type="StreamTexture" id=10]
+load_path = "res://.import/Archer_Idle_3.png-9ae23a3f36cdbd02f641a4a21dea3f03.stex"
+
+[sub_resource type="StreamTexture" id=11]
+load_path = "res://.import/Archer_Idle_4.png-17297f58ffd8293979cb1ca2ec723832.stex"
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 9 ), ExtResource( 10 ), ExtResource( 8 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "Walk",
+"speed": 10.0
+}, {
+"frames": [ SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 4.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=3]
+radius = 11.2373
+height = 12.4018
+
+[sub_resource type="CapsuleShape2D" id=4]
+radius = 8.18526
+height = 0.0
+
+[sub_resource type="Animation" id=5]
+resource_name = "Blink"
+
+[sub_resource type="Animation" id=6]
+resource_name = "Start"
+length = 0.2
+loop = true
+
+[sub_resource type="Animation" id=7]
+resource_name = "Stop"
+length = 0.1
+
+[node name="Player" type="KinematicBody2D"]
+scale = Vector2( 1.5, 1.5 )
+collision_layer = 2
+script = ExtResource( 4 )
+
+[node name="hurtSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 5 )
+
+[node name="deathSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 6 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+material = SubResource( 1 )
+position = Vector2( 0.666667, 0 )
+scale = Vector2( 1.5, 1.5 )
+frames = SubResource( 2 )
+animation = "Idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 10.932 )
+shape = SubResource( 3 )
+
+[node name="Hurtbox" parent="." instance=ExtResource( 2 )]
+collision_layer = 4
+
+[node name="CollisionShape2D" parent="Hurtbox" index="0"]
+modulate = Color( 1, 1, 1, 0.760784 )
+position = Vector2( 0.15731, 10.9821 )
+shape = SubResource( 4 )
+
+[node name="MageHand" type="Position2D" parent="."]
+position = Vector2( 0.205067, 15.9996 )
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2( 0.324946, 15.9468 )
+enabled = true
+cast_to = Vector2( 20, 0 )
+collide_with_areas = true
+
+[node name="BlinkAnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Blink = SubResource( 5 )
+anims/Start = SubResource( 6 )
+anims/Stop = SubResource( 7 )
+
+[node name="PlayerStats" type="Node" parent="."]
+script = ExtResource( 3 )
+
+[connection signal="area_entered" from="Hurtbox" to="." method="_on_Hurtbox_area_entered"]
+
+[editable path="Hurtbox"]

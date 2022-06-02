@@ -16,7 +16,7 @@ const HitEffect = preload("res://Effects/HitEffect.tscn")
 #spawn effect
 const EnemySpawnEffect = preload("res://Effects/EnemySpawnEffect.tscn")
 
-var Player = preload("res://UI/Player.tscn")
+var Player = preload("res://Player/Player.tscn")
 
 var Mace = preload("res://Enemies/Executioner/Mace.tscn")
 
