@@ -7,9 +7,8 @@
 [ext_resource path="res://Assets/NPCs/Knight - Heavy/HeavyKnight_Idle_1.png" type="Texture" id=5]
 [ext_resource path="res://Scenes/title-screen/Controls.gd" type="Script" id=6]
 
-
 [sub_resource type="DynamicFontData" id=1]
-font_path = "res://UI/title-screen/Fonts/Montserrat-ExtraBold.ttf"
+font_path = "res://Scenes/title-screen/Fonts/Montserrat-ExtraBold.ttf"
 
 [sub_resource type="DynamicFont" id=2]
 size = 48
@@ -43,7 +42,7 @@ __meta__ = {
 }
 
 [node name="Title" type="Label" parent="VBoxContainer"]
-margin_right = 637.0
+margin_right = 587.0
 margin_bottom = 100.0
 rect_min_size = Vector2( 100, 100 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
@@ -52,7 +51,7 @@ text = "CONTROLS"
 
 [node name="Movement" type="Label" parent="VBoxContainer"]
 margin_top = 104.0
-margin_right = 637.0
+margin_right = 587.0
 margin_bottom = 204.0
 rect_min_size = Vector2( 100, 100 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
@@ -61,7 +60,7 @@ text = "MOVEMENT: WASD"
 
 [node name="Attack" type="Label" parent="VBoxContainer"]
 margin_top = 208.0
-margin_right = 637.0
+margin_right = 587.0
 margin_bottom = 308.0
 rect_min_size = Vector2( 100, 100 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
@@ -69,10 +68,8 @@ custom_fonts/font = SubResource( 2 )
 text = "ATTACK: LMB"
 
 [node name="ChangeWeapon" type="Label" parent="VBoxContainer"]
-anchor_top = -0.0102339
-anchor_bottom = -0.0102339
 margin_top = 312.0
-margin_right = 637.0
+margin_right = 587.0
 margin_bottom = 412.0
 rect_min_size = Vector2( 100, 100 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
@@ -80,10 +77,8 @@ custom_fonts/font = SubResource( 2 )
 text = "CHANGE WEAPON: 1, 2, 3"
 
 [node name="Interact" type="Label" parent="VBoxContainer"]
-anchor_top = -0.0233918
-anchor_bottom = -0.0233918
 margin_top = 416.0
-margin_right = 637.0
+margin_right = 587.0
 margin_bottom = 516.0
 rect_min_size = Vector2( 100, 100 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
@@ -91,10 +86,8 @@ custom_fonts/font = SubResource( 2 )
 text = "INTERACT: E"
 
 [node name="Main Menu" type="Label" parent="VBoxContainer"]
-anchor_top = -0.0292398
-anchor_bottom = -0.0292398
 margin_top = 520.0
-margin_right = 637.0
+margin_right = 587.0
 margin_bottom = 620.0
 rect_min_size = Vector2( 100, 100 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
@@ -102,11 +95,10 @@ custom_fonts/font = SubResource( 2 )
 text = "MAIN MENU: ESC"
 
 [node name="BackButton" parent="VBoxContainer" instance=ExtResource( 1 )]
-anchor_top = -0.0394737
-anchor_bottom = -0.0394737
 margin_top = 624.0
-margin_right = 637.0
+margin_right = 587.0
 margin_bottom = 684.0
+scene_to_load = "res://Scenes/title-screen/TitleScreen.tscn"
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 anchor_left = 1.0

@@ -6,7 +6,6 @@
 [ext_resource path="res://Assets/NPCs/King/King_Idle_2.png" type="Texture" id=4]
 [ext_resource path="res://Assets/World/Bushes/Bush-4.png" type="Texture" id=5]
 
-
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
 "frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 2 ), ExtResource( 1 ) ],
@@ -24,7 +23,7 @@ position = Vector2( -28.735, -7.87791 )
 scale = Vector2( 1.46412, 1.49237 )
 frames = SubResource( 1 )
 animation = "idle"
-frame = 2
+frame = 1
 playing = true
 
 [node name="Bush-4" type="Sprite" parent="AnimatedSprite"]
