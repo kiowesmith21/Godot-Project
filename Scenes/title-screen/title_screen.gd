@@ -3,6 +3,8 @@ extends Control
 var scene_path_to_load
 var load_saved_game = false
 
+var world = preload("res://Scenes/World.tscn").instance()
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	#have player spawn location be the correct position when loading in after clicking new game
@@ -29,9 +31,8 @@ func _on_NewGame_pressed():
 
 
 func _on_Load_Game_pressed():
-	var world_resource = load("res://Scenes/World.tscn")
-	var world = world_resource.instance()
 	SaveLoad.load(world)
+	add_child(world)
 	scene_path_to_load = world.get_path()
 	$TitleMusic.stop()
 	$FadeIn.show()

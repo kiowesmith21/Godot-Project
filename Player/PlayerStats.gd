@@ -18,7 +18,7 @@ signal health_changed(value)
 signal max_health_changed(value)
 
 signal no_armor
-signal armorchanged(value)
+signal armor_changed(value)
 signal max_armor_changed(value)
 
 func set_max_health(value):

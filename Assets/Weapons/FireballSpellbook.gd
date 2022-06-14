@@ -7,9 +7,9 @@ var dialogue_state = 0
 #2285.02, 1007.48
 
 func _ready():
-	dialogueUI = get_node("/root/World/GameUI/DialogueUI")#get_tree().root.get_node("/root/World/CanvasLayer/DialogueUI")
-	player = get_tree().root.get_node("/root/World/Player/Player")
-	skillbar = get_node("/root/World/GameUI/Skillbar")
+	dialogueUI = get_parent().get_parent().get_node("GameUI/DialogueUI")#get_tree().root.get_node("/root/World/CanvasLayer/DialogueUI")
+	player = get_parent().get_parent().get_node("Player/Player")
+	skillbar = get_parent().get_parent().get_node("GameUI/Skillbar")
 	
 
 func _on_FireballSpellbook_body_entered(body):

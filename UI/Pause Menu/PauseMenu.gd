@@ -1,8 +1,8 @@
 extends Control
 
-onready var player = get_node("/root/World/Player/Player")
-onready var Enemies = get_node("/root/World/Enemies")
-onready var ForestSpawnArea = get_node("/root/World/ForestSpawnArea")
+onready var player = get_parent().get_parent().get_node("Player/Player")
+onready var Enemies = get_parent().get_parent().get_node("Enemies")
+onready var ForestSpawnArea = get_parent().get_parent().get_node("ForestSpawnArea")
 
 var already_paused
 
@@ -43,4 +43,4 @@ func _on_Save_pressed():
 
 func _on_Quit_pressed():
 	get_tree().paused = false
-	get_tree().change_scene_to(load("res://UI/title-screen/TitleScreen.tscn"))
+	get_tree().change_scene_to(load("res://Scenes/title-screen/TitleScreen.tscn"))

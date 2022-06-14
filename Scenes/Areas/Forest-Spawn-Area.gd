@@ -64,5 +64,6 @@ func to_dictionary():
 
 func from_dictionary(data):
 	for thief_data in data:
-		thief.from_dictionary(thief_data)
-		add_child(thief)
+		var enemy = thief.instance()
+		enemy.from_dictionary(thief_data)
+		add_child(enemy)

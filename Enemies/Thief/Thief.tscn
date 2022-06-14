@@ -28,14 +28,14 @@ animations = [ {
 "name": "Melee",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 6 ), ExtResource( 1 ), ExtResource( 7 ), ExtResource( 8 ) ],
-"loop": true,
-"name": "Walk",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 5 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ) ],
 "loop": true,
 "name": "Idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ), ExtResource( 1 ), ExtResource( 7 ), ExtResource( 8 ) ],
+"loop": true,
+"name": "Walk",
 "speed": 5.0
 } ]
 

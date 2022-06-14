@@ -9,7 +9,9 @@ func _ready():
 		$TitleMusic.play()
 		
 func on_button_pressed(scene_to_load):
-	scene_path_to_load = scene_to_load
+	var World = load("res://Scenes/World.tscn")
+	add_child(World.instance())
+	scene_path_to_load = World
 	$TitleMusic.stop()
 	$FadeIn.show()
 	$FadeIn.fade_in()

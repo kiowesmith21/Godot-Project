@@ -14,9 +14,7 @@ func _ready():
 #	ResourceSaver.save(file_path,scene)
 
 func from_dictionary(data):
-	print("before", player.global_position)
 	player.global_position = Vector2(data.player.position[0], data.player.position[1])
-	print("player global position", player.global_position)
 	PlayerStats.global_pos = $Player/Player.global_position
 	PlayerStats.health = data.player.health
 	PlayerStats.armor = data.player.armor
@@ -27,4 +25,3 @@ func from_dictionary(data):
 		$ForestSpawnArea.add_child(thief)
 
 	executioner.global_position = Vector2(data.executioner.position[0], data.executioner.position[1])
-	executioner.get_node("ExecutionerStats").set_health(data.executioner.health)

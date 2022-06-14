@@ -24,8 +24,8 @@ var Bow = preload("res://Player/Weapons/Bow And Arrow.tscn")
 onready var stats = $PlayerStats
 onready var anim = $AnimatedSprite
 onready var hurtBox = $Hurtbox
-onready var healthBar = get_node("/root/World/GameUI/HealthBar") #healthbar
-onready var armorBar = get_node("/root/World/GameUI/ArmorBar")
+onready var healthBar = get_parent().get_parent().get_node("GameUI/HealthBar") #healthbar
+onready var armorBar = get_parent().get_parent().get_node("GameUI/ArmorBar")
 
 func _ready():
 	stats.connect("no_health", self, "queue_free") #connect to player stats signal
@@ -145,6 +145,6 @@ func to_dictionary(): #made to save the player's data
 func from_dictionary(data):
 	global_position = Vector2(data.position[0], data.position[1])
 	PlayerStats.global_pos = global_position
-	stats.health = data.health
-	stats.armor = data.armor
-	fireball_given = data.fireball_given
+	PlayerStats.set_health(data.get("health"))
+	PlayerStats.set_armor(data.get("armor"))
+	fireball_given = data.get("fireball_given")

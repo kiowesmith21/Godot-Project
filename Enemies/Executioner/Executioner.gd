@@ -53,7 +53,7 @@ func _ready():
 	$AnimatedSprite.show()
 	stats.connect("no_health", self, "die") #connect to stats signal, runs die() function when it reaches 0 health
 	#stats.set_max_health(50)
-	Player = get_tree().root.get_node("/root/World/Player/Player")
+	Player = get_parent().get_parent().get_node("Player/Player")
 
 func _physics_process(delta):
 	myDelta = delta
@@ -131,9 +131,7 @@ func _on_Timer_timeout():
 func to_dictionary():
 	return {
 		"position" : [global_position.x, global_position.y],
-		"health" : stats.health
 	}
 
 func from_dictionary(data):
 	global_position = Vector2(data.position[0], data.position[1])
-	stats.health = data.health

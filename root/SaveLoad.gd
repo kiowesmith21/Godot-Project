@@ -4,12 +4,9 @@ var load_saved_game = false
 
 var world
 
-var player = preload("res://Player/Player.gd")
-var ForestSpawnArea = preload("res://Scenes/Areas/Forest-Spawn-Area.gd")
-var executioner = preload("res://Enemies/Executioner/Executioner.gd")
-
-func _ready():
-	pass
+var player = preload("res://Player/Player.gd").new()
+var ForestSpawnArea = preload("res://Scenes/Areas/Forest-Spawn-Area.gd").new()
+var executioner = preload("res://Enemies/Executioner/Executioner.gd").new()
 
 func load(world):
 	var file = File.new()
@@ -18,8 +15,8 @@ func load(world):
 		var data = parse_json(file.get_as_text())
 		file.close()
 
-		#Player.from_dictionary(data.player)
-		#ForestSpawnArea.from_dictionary(data.thieves)#Thieves spawn area
-		#Executioner.from_dictionary(data.executioner)#Executioner
+		player.from_dictionary(data.player)
+		ForestSpawnArea.from_dictionary(data.thieves)#Thieves spawn area
+		executioner.from_dictionary(data.executioner)#Executioner
 		
-		world.from_dictionary(data)
+		#world.from_dictionary(data)
