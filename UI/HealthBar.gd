@@ -11,4 +11,4 @@ func set_value(value):
 	print("Healthbar: " + str(healthBar.value))
 
 func _ready():
-	self.set_value(max_health) #set value of health bar to 100
+	self.set_value(PlayerStats.health) #set value of health bar to 100

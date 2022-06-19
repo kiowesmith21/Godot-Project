@@ -16,7 +16,7 @@ func set_value(value):
 	print(\"Armor: \" + str(armorBar.value))
 
 func _ready():
-	self.set_value(0) #set value of armor to max value
+	self.set_value(PlayerStats.armor) #set value of armor to max value
 "
 
 [node name="Control" type="Control"]

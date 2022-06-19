@@ -5,8 +5,7 @@ var player
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	player = get_tree().root.get_node("/root/World/Player/Player")
-
+	player = get_parent().get_parent().get_node("Player/Player")
 
 func _on_Armor_body_entered(body):
 	if body.name == "Player":

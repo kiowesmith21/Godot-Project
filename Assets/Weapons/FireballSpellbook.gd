@@ -22,14 +22,9 @@ func _on_FireballSpellbook_body_entered(body):
 func talk(choice = ""):
 	#setting the npc's state and name to the dialogueUI
 	if(is_instance_valid(dialogueUI)):
-		print_debug("DialogueUI is true")
-		
 		dialogueUI.npc = self
 		dialogueUI.npcname = "Fireball Spellbook"
-	else:
-		print_debug("Dialogue is false")
-	
-	
+
 	match dialogue_state:
 		0:
 			#dialogue
@@ -38,6 +33,7 @@ func talk(choice = ""):
 			dialogueUI.dialogue = "Picked up Fireball Spellbooddk"
 			dialogueUI.choices = "[E] OK"
 			player.fireball_given = true
+			PlayerStats.fireball_given = true
 			dialogueUI.open()
 		1:
 			get_tree().queue_delete(self) #delete itself from the world
