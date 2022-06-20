@@ -13,7 +13,7 @@ var atk_cooldown = 0
 var atk_dmg = 25
 
 var wpn_choice = 1
-var fireball_given = false
+var fireball_given
 
 #loading other scenes
 var Melee = preload("res://Player/Weapons/Melee.tscn")
@@ -30,7 +30,7 @@ onready var armorBar = get_parent().get_parent().get_node("GameUI/ArmorBar")
 func _ready():
 	stats.connect("no_health", self, "queue_free") #connect to player stats signal
 	global_position = $PlayerStats.global_pos
-	fireball_given = $PlayerStats.fireball_given
+	self.fireball_given = $PlayerStats.fireball_given
 
 #movement
 func _physics_process(delta):
@@ -81,6 +81,7 @@ func attack(choice):
 		b.Timer()
 		a.Timer()
 	elif (choice == 3):
+		print("fireball is ", fireball_given)
 		if(fireball_given == true):
 			var f = Fireball.instance()
 			get_parent().add_child(f)
@@ -144,4 +145,5 @@ func from_dictionary(data):
 	PlayerStats.global_pos = Vector2(data.position[0], data.position[1])
 	PlayerStats.set_health(data.get("health"))
 	PlayerStats.set_armor(data.get("armor"))
-	PlayerStats.fireball_given = data.get("fireball_given")
+	PlayerStats.set_fireball(data.get("fireball_given"))
+	fireball_given = PlayerStats.fireball_given

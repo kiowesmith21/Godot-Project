@@ -9,7 +9,7 @@ export(int) var armor = max_armor setget set_armor
 export(int) var curr_wpn = 1
 onready var wpn_choice = curr_wpn
 
-export(bool) var fireball_given
+export(bool) var fireball_given = false
 
 var global_pos: Vector2
 var saved_pos: Vector2
@@ -22,6 +22,8 @@ signal max_health_changed(value)
 signal no_armor
 signal armor_changed(value)
 signal max_armor_changed(value)
+
+signal fireball_given
 
 func set_max_health(value):
 	max_health = value
@@ -45,9 +47,11 @@ signal wpn_change(choice)
 func set_weapon(choice):
 	wpn_choice = choice
 	emit_signal("wpn_change", wpn_choice)
+
+func set_fireball(choice):
+	fireball_given = choice
 	
+
 func _ready():
 	self.health = max_health
 	self.armor = 0
-	self.fireball_given = false
-

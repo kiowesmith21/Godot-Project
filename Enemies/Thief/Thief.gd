@@ -113,7 +113,6 @@ func die():
 func to_dictionary():
 	return {
 		"position": [global_position.x, global_position.y],
-		"health" : stats.health
 	}
 
 func from_dictionary(data):

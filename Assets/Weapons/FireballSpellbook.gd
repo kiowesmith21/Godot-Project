@@ -10,6 +10,8 @@ func _ready():
 	dialogueUI = get_parent().get_parent().get_node("GameUI/DialogueUI")#get_tree().root.get_node("/root/World/CanvasLayer/DialogueUI")
 	player = get_parent().get_parent().get_node("Player/Player")
 	skillbar = get_parent().get_parent().get_node("GameUI/Skillbar")
+	if(PlayerStats.fireball_given == true):
+		get_tree().queue_delete(self)
 	
 
 func _on_FireballSpellbook_body_entered(body):
