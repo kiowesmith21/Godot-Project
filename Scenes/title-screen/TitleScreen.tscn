@@ -36,6 +36,9 @@ font_data = ExtResource( 9 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="TitleMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 2 )
@@ -49,53 +52,54 @@ margin_bottom = 640.0
 
 [node name="Label" type="Label" parent="Menu"]
 margin_right = 1040.0
-margin_bottom = 2.0
+margin_bottom = 123.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 custom_fonts/font = SubResource( 2 )
 text = "MERLIN"
 
 [node name="CenterRow" type="HBoxContainer" parent="Menu"]
-margin_top = 6.0
+margin_top = 127.0
 margin_right = 1040.0
 margin_bottom = 491.0
 size_flags_vertical = 3
 
 [node name="Buttons" type="VBoxContainer" parent="Menu/CenterRow"]
 margin_right = 518.0
-margin_bottom = 485.0
+margin_bottom = 364.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/separation = 20
 alignment = 1
 
 [node name="NewGame2" parent="Menu/CenterRow/Buttons" instance=ExtResource( 1 )]
-margin_top = 92.0
+margin_top = 32.0
 margin_right = 518.0
-margin_bottom = 152.0
+margin_bottom = 92.0
 rect_pivot_offset = Vector2( 18, -145 )
 scene_to_load = "res://Scenes/Intro.tscn"
 
 [node name="Load Game" parent="Menu/CenterRow/Buttons" instance=ExtResource( 10 )]
-margin_top = 172.0
+margin_top = 112.0
 margin_right = 518.0
-margin_bottom = 232.0
+margin_bottom = 172.0
 
 [node name="ControlsButton" parent="Menu/CenterRow/Buttons" instance=ExtResource( 3 )]
-margin_top = 252.0
+margin_top = 192.0
 margin_right = 518.0
-margin_bottom = 312.0
+margin_bottom = 252.0
+scene_to_load = "res://Scenes/title-screen/Controls.tscn"
 
 [node name="Quit Game" parent="Menu/CenterRow/Buttons" instance=ExtResource( 12 )]
-margin_top = 332.0
+margin_top = 272.0
 margin_right = 518.0
-margin_bottom = 392.0
+margin_bottom = 332.0
 scene_to_load = ""
 
 [node name="CenterContainer" type="CenterContainer" parent="Menu/CenterRow"]
 margin_left = 522.0
 margin_right = 1040.0
-margin_bottom = 485.0
+margin_bottom = 364.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
@@ -104,7 +108,7 @@ position = Vector2( 443.353, 156.679 )
 scale = Vector2( 10, 10 )
 frames = SubResource( 3 )
 animation = "Idle"
-frame = 3
+frame = 2
 playing = true
 
 [node name="VersionLabel" type="Label" parent="Menu"]

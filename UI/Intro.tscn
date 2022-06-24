@@ -1,20 +1,20 @@
 [gd_scene load_steps=14 format=2]
 
-[ext_resource path="res://Scenes/Screen Shot 2022-04-05 at 1.27.50 PM.png" type="Texture" id=1]
+[ext_resource path="res://Screen Shot 2022-04-05 at 1.27.50 PM.png" type="Texture" id=1]
 [ext_resource path="res://UI/ChatButton.gd" type="Script" id=2]
-[ext_resource path="res://Assets/NPCs/King/King_Idle_4.png" type="Texture" id=3]
-[ext_resource path="res://Assets/NPCs/King/King_Idle_3.png" type="Texture" id=4]
-[ext_resource path="res://Assets/NPCs/King/King_Idle_2.png" type="Texture" id=5]
-[ext_resource path="res://Assets/NPCs/King/King_Idle_1.png" type="Texture" id=6]
+[ext_resource path="res://Npcs/King/King_Idle_4.png" type="Texture" id=3]
+[ext_resource path="res://Npcs/King/King_Idle_3.png" type="Texture" id=4]
+[ext_resource path="res://Npcs/King/King_Idle_2.png" type="Texture" id=5]
+[ext_resource path="res://Npcs/King/King_Idle_1.png" type="Texture" id=6]
 [ext_resource path="res://UI/Magero.tres" type="DynamicFont" id=7]
-[ext_resource path="res://Scenes/title-screen/Fonts/Romulus.tres" type="DynamicFont" id=8]
+[ext_resource path="res://UI/title-screen/Fonts/Romulus.tres" type="DynamicFont" id=8]
 [ext_resource path="res://UI/Chatbox.gd" type="Script" id=9]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
 "frames": [ ExtResource( 6 ), ExtResource( 5 ), ExtResource( 4 ), ExtResource( 3 ) ],
 "loop": true,
-"name": "Future Merlin",
+"name": "FutureMerlin ",
 "speed": 5.0
 } ]
 
@@ -55,15 +55,16 @@ __meta__ = {
 position = Vector2( 628.813, 191.407 )
 scale = Vector2( 9.875, 9.875 )
 frames = SubResource( 1 )
-animation = "Future Merlin"
+animation = "FutureMerlin "
+frame = 2
 
 [node name="Panel" type="Panel" parent="."]
 anchor_left = 0.000635242
 anchor_right = 0.000635242
 margin_left = 234.0
-margin_top = 389.374
+margin_top = 391.0
 margin_right = 1069.0
-margin_bottom = 649.374
+margin_bottom = 651.0
 custom_styles/panel = SubResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
