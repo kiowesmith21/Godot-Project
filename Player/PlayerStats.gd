@@ -9,7 +9,8 @@ export(int) var armor = max_armor setget set_armor
 export(int) var curr_wpn = 1
 onready var wpn_choice = curr_wpn
 
-export(bool) var fireball_given = false
+export(bool)var fireball
+export(bool) var fireball_given = fireball setget set_fireball
 
 var global_pos: Vector2
 var saved_pos: Vector2
@@ -50,8 +51,8 @@ func set_weapon(choice):
 
 func set_fireball(choice):
 	fireball_given = choice
-	
 
 func _ready():
+	print("stats ready ", fireball_given)
 	self.health = max_health
 	self.armor = 0

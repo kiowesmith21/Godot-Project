@@ -31,6 +31,7 @@ func _ready():
 	stats.connect("no_health", self, "queue_free") #connect to player stats signal
 	global_position = $PlayerStats.global_pos
 	self.fireball_given = $PlayerStats.fireball_given
+	print("is the fireball given? ", fireball_given)
 
 #movement
 func _physics_process(delta):
