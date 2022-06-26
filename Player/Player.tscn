@@ -108,5 +108,6 @@ anims/Stop = SubResource( 7 )
 script = ExtResource( 3 )
 
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_Hurtbox_area_entered"]
+[connection signal="area_exited" from="Hurtbox" to="." method="_on_Hurtbox_area_exited"]
 
 [editable path="Hurtbox"]

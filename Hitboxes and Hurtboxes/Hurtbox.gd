@@ -11,13 +11,18 @@ func set_invincible(value):
 	invincible = value 
 	if invincible == true:
 		emit_signal("invincibility_started")
+		#print_debug("invincible")
 	else:
 		emit_signal("invincibility_ended")
+		#print_debug("not invincible")
 
 func start_invincibility(duration):
 	self.invincible = true
 	timer.start(duration)
 
+func invincibility_ended():
+	self.invincible = false
+	
 func _on_Timer_timeout():
 	self.invincible = false
 
