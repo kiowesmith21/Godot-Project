@@ -14,7 +14,8 @@ var atk_dmg = 25
 
 var wpn_choice = 1
 var fireball_given = false
-
+var gettingHit = false
+var playerArea 
 #loading other scenes
 var Melee = preload("res://Player/Weapons/Melee.tscn")
 var Fireball = preload("res://Player/Weapons/Fireball.tscn")
@@ -28,7 +29,7 @@ onready var healthBar = get_parent().get_parent().get_node("GameUI/HealthBar") #
 onready var armorBar = get_parent().get_parent().get_node("GameUI/ArmorBar")
 
 func _ready():
-	stats.connect("no_health", self, "queue_free") #connect to player stats signal
+	stats.connect("no_health", self, "die") #connect to player stats signal
 	global_position = $PlayerStats.global_pos
 
 #movement
@@ -53,7 +54,21 @@ func _physics_process(delta):
 	if direction != Vector2.ZERO:
 		$RayCast2D.cast_to = direction.normalized() * 20
 	last_direction = direction
-
+	
+	if gettingHit == true && hurtBox.invincible == false: #check if playing is being hit and is not invincible every frame
+		
+		#print_debug("PLAYER BEING HIT")
+		$hurtSound.play()
+		if(armorBar.armor > 0):
+			armorBar.set_value(stats.armor - playerArea.get_parent().atk_dmg)
+			stats.set_armor(stats.armor - playerArea.get_parent().atk_dmg)
+		else:
+			healthBar.set_value(stats.health - playerArea.get_parent().atk_dmg) #set healthbar value to new health
+			#player loses health on hit
+			stats.set_health(stats.health - playerArea.get_parent().atk_dmg)
+		hurtBox.start_invincibility(1.0) #player invincible for a second so doesnt instantly die
+		
+	
 #weapon choices determine distance and damage. 
 #sword = highest damage but closest distance while arrow = lowest damage but further distance
 func attack(choice):
@@ -124,15 +139,19 @@ func get_input(delta):
 
 #player getting hit, their hurtbox being entered
 func _on_Hurtbox_area_entered(area):
-	$hurtSound.play()
-	if(armorBar.armor > 0):
-		armorBar.set_value(stats.armor - area.get_parent().atk_dmg)
-		stats.set_armor(stats.armor - area.get_parent().atk_dmg)
-	else:
-		healthBar.set_value(stats.health - area.get_parent().atk_dmg) #set healthbar value to new health
-		#player loses health on hit
-		stats.set_health(stats.health - area.get_parent().atk_dmg)
-	hurtBox.start_invincibility(0.5) #player invincible for a second so doesnt instantly die
+	gettingHit = true
+	playerArea = area
+	
+	
+
+#death
+func die():
+	if !$deathSound.is_playing():
+		$deathSound.play(0.0)
+		print_debug("Player Death:" + str($deathSound.is_playing()))
+		yield(get_tree().create_timer(2.2), "timeout")
+	
+	queue_free()#delete player
 	
 func to_dictionary(): #made to save the player's data
 	return {
@@ -145,6 +164,10 @@ func to_dictionary(): #made to save the player's data
 func from_dictionary(data):
 	global_position = Vector2(data.position[0], data.position[1])
 	PlayerStats.global_pos = global_position
-	PlayerStats.set_health(data.get("health"))
-	PlayerStats.set_armor(data.get("armor"))
-	fireball_given = data.get("fireball_given")
+	stats.health = data.health
+	stats.armor = data.armor
+	fireball_given = data.fireball_given
+
+#player not getting hit, their hurtbox has been exited
+func _on_Hurtbox_area_exited(area):
+	gettingHit = false

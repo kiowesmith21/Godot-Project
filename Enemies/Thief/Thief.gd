@@ -1,4 +1,4 @@
-extends KinematicBody2D
+extends KinematicBody2D 
 
 export var ACCELERATION = 300
 export var MAX_SPEED = 50
@@ -12,6 +12,8 @@ enum {
 
 #death effect
 const EnemyDeathEffect = preload("res://Effects/EnemyDeathEffect.tscn")
+#death sound 
+const Sound = preload("res://Sound/sfx/EnemyDie.wav")
 #hit effect
 const HitEffect = preload("res://Effects/HitEffect.tscn")
 #spawn effect
@@ -29,6 +31,7 @@ var velocity = Vector2.ZERO
 
 var state = CHASE
 
+var clock = Timer.new()
 onready var stats = $ThiefStats
 onready var anim = $AnimatedSprite
 onready var playerDetectionZone = $PlayerDetectionZone 
@@ -66,6 +69,7 @@ func _physics_process(delta):
 			else:
 				state = IDLE
 			if attacking:
+				
 				anim.play("Melee")
 			else:
 				anim.play("Walk")
@@ -83,6 +87,7 @@ func seek_player():
 
 #hitting the enemy
 func _on_Hurtbox_area_entered(area):
+	
 	#hit effect
 	var hitEffect = HitEffect.instance()
 	get_parent().add_child(hitEffect)
@@ -103,7 +108,14 @@ func _on_Hitbox_area_exited(area):
 	attacking = false
 	
 func die():
-	$deathSound.play()
+	if !$deathSound.is_playing():
+		$deathSound.play(0.0)
+		yield(get_tree().create_timer(0.25), "timeout")
+	print_debug("Thief Death:" + str($deathSound.is_playing()))
+	
+		
+	
+	
 	queue_free() #delete enemy
 	#death effect
 	var enemyDeathEffect = EnemyDeathEffect.instance()
