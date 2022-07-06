@@ -2,7 +2,6 @@
 
 [ext_resource path="res://Scenes/title-screen/Fonts/Romulus.ttf" type="DynamicFontData" id=1]
 
-
 [resource]
-size = 27
+size = 42
 font_data = ExtResource( 1 )
