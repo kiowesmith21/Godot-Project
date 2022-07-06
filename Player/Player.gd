@@ -30,6 +30,7 @@ onready var armorBar = get_parent().get_parent().get_node("GameUI/ArmorBar")
 func _ready():
 	stats.connect("no_health", self, "queue_free") #connect to player stats signal
 	global_position = $PlayerStats.global_pos
+	print("in ready, player stats fireball si given? ", $PlayerStats.fireball_given)
 	self.fireball_given = $PlayerStats.fireball_given
 	print("is the fireball given? ", fireball_given)
 
