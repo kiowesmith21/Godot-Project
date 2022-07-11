@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=2]
+[gd_scene load_steps=56 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/World/Bushes/Bush-4.png" type="Texture" id=2]
@@ -16,6 +16,7 @@
 [ext_resource path="res://Npcs/VillageMale/StartingVillageMale.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Assets/Weapons/FireballSpellbook.tscn" type="PackedScene" id=15]
 [ext_resource path="res://UI/ArmorBar.tscn" type="PackedScene" id=16]
+[ext_resource path="res://TestItem.tscn" type="PackedScene" id=17]
 [ext_resource path="res://Scenes/Houses/HouseEntrance2.tscn" type="PackedScene" id=18]
 [ext_resource path="res://Scenes/Houses/HouseEntrance3.tscn" type="PackedScene" id=19]
 [ext_resource path="res://Scenes/World.gd" type="Script" id=20]
@@ -25,8 +26,10 @@
 [ext_resource path="res://Assets/World/Fences/Wooden fence/Wooden-fence-4.png" type="Texture" id=24]
 [ext_resource path="res://Assets/World/Bench and chest/Chest.png" type="Texture" id=25]
 [ext_resource path="res://Assets/World/Bench and chest/Bench.png" type="Texture" id=26]
+[ext_resource path="res://UI/InventoryUI/Inventory.tscn" type="PackedScene" id=27]
 [ext_resource path="res://Scenes/Areas/Forest-Spawn-Area.gd" type="Script" id=28]
 [ext_resource path="res://Sound/Music/02.2_LOOP_Valley_Grounds_by_Florian_Stracker.wav" type="AudioStream" id=29]
+[ext_resource path="res://TestItem.gd" type="Script" id=30]
 [ext_resource path="res://UI/Magero.tres" type="DynamicFont" id=31]
 [ext_resource path="res://UI/DialogueUI.gd" type="Script" id=32]
 
@@ -771,6 +774,10 @@ position = Vector2( -549.861, 70.984 )
 [node name="HouseEntrance2" parent="." instance=ExtResource( 18 )]
 position = Vector2( 153.796, 39.9515 )
 
+[node name="Area2D" parent="." instance=ExtResource( 17 )]
+position = Vector2( -9.61923, 138.447 )
+script = ExtResource( 30 )
+
 [node name="Player" type="Node" parent="."]
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
@@ -899,9 +906,35 @@ margin_top = 643.751
 margin_right = 594.195
 margin_bottom = 658.751
 
+[node name="Inventory" parent="GameUI" instance=ExtResource( 27 )]
+visible = false
+margin_left = 778.921
+margin_top = 76.8107
+margin_right = -101.079
+margin_bottom = -108.189
+
+[node name="V" parent="GameUI/Inventory/Background/M" index="0"]
+margin_right = 357.0
+
+[node name="Header" parent="GameUI/Inventory/Background/M/V" index="0"]
+margin_right = 337.0
+
+[node name="Exit" parent="GameUI/Inventory/Background/M/V/Header" index="2"]
+margin_right = 337.0
+
+[node name="GridContainer" parent="GameUI/Inventory/Background/M/V" index="1"]
+margin_right = 337.0
+
 [node name="PauseMenu" parent="GameUI" instance=ExtResource( 21 )]
 visible = false
+margin_left = 301.606
+margin_top = 74.6078
+margin_right = 341.606
+margin_bottom = 114.608
 
 [connection signal="body_entered" from="ForestSpawnArea" to="ForestSpawnArea" method="_on_ForestSpawnArea_body_entered"]
 [connection signal="body_exited" from="ForestSpawnArea" to="ForestSpawnArea" method="_on_ForestSpawnArea_body_exited"]
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_Area2D_body_entered"]
 [connection signal="animation_finished" from="GameUI/DialogueUI/AnimationPlayer" to="GameUI/DialogueUI" method="_on_AnimationPlayer_animation_finished"]
+
+[editable path="GameUI/Inventory"]
