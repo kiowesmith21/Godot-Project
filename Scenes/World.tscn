@@ -728,19 +728,19 @@ tracks/1/keys = {
 "values": [ 0.0, 1.0 ]
 }
 
-[sub_resource type="DynamicFont" id=25]
+[sub_resource type="DynamicFont" id=24]
 size = 92
+font_data = ExtResource( 27 )
+
+[sub_resource type="DynamicFont" id=25]
+size = 70
 font_data = ExtResource( 27 )
 
 [sub_resource type="DynamicFont" id=26]
 size = 70
 font_data = ExtResource( 27 )
 
-[sub_resource type="DynamicFont" id=27]
-size = 70
-font_data = ExtResource( 27 )
-
-[sub_resource type="Animation" id=24]
+[sub_resource type="Animation" id=27]
 tracks/0/type = "value"
 tracks/0/path = NodePath("TextureRect/Choices:visible")
 tracks/0/interp = 1
@@ -986,7 +986,7 @@ margin_right = 1762.0
 margin_bottom = 142.0
 size_flags_horizontal = 0
 size_flags_stretch_ratio = 9.51
-custom_fonts/font = SubResource( 25 )
+custom_fonts/font = SubResource( 24 )
 custom_colors/font_color = Color( 1, 0.878431, 0.403922, 1 )
 text = "placeholder"
 autowrap = true
@@ -999,7 +999,7 @@ margin_left = 67.8944
 margin_top = 149.305
 margin_right = 1986.89
 margin_bottom = 268.305
-custom_fonts/font = SubResource( 26 )
+custom_fonts/font = SubResource( 25 )
 custom_colors/font_color = Color( 1, 1, 1, 0.639216 )
 text = "placeholder"
 autowrap = true
@@ -1013,7 +1013,7 @@ margin_left = 66.5826
 margin_top = 328.906
 margin_right = 1997.58
 margin_bottom = 503.906
-custom_fonts/font = SubResource( 27 )
+custom_fonts/font = SubResource( 26 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Choices
 "
@@ -1023,7 +1023,7 @@ __meta__ = {
 }
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="GameUI/DialogueUI2"]
-anims/ShowDialogue = SubResource( 24 )
+anims/ShowDialogue = SubResource( 27 )
 
 [connection signal="body_entered" from="ForestSpawnArea" to="ForestSpawnArea" method="_on_ForestSpawnArea_body_entered"]
 [connection signal="body_exited" from="ForestSpawnArea" to="ForestSpawnArea" method="_on_ForestSpawnArea_body_exited"]
