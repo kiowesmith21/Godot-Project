@@ -39,7 +39,7 @@ func _on_Save_pressed():
 	var json = to_json(data)
 	file.store_line(json)
 	file.close()
-	SaveLoad.load_saved_game = true
+	$SaveLoad.load_saved_game = true
 
 func _on_Quit_pressed():
 	get_tree().paused = false

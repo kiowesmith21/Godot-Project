@@ -31,7 +31,7 @@ func _on_NewGame_pressed():
 
 
 func _on_Load_Game_pressed():
-	SaveLoad.load(world)
+	$SaveLoad.load(world)
 	add_child(world)
 	scene_path_to_load = world.get_path()
 	$TitleMusic.stop()

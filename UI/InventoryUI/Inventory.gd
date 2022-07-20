@@ -29,6 +29,6 @@ func _on_Button_pressed():
 	
 
 func _on_adding_item():
-	inventory.get_child(0).get_child(0).get_child(0).get_child(1).get_child(free_item).get_child(0).set_texture()
+	$inventory.get_child(0).get_child(0).get_child(0).get_child(1).get_child(free_item).get_child(0).set_texture()
 	free_item += 1
 
