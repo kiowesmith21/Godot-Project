@@ -775,7 +775,7 @@ position = Vector2( -549.861, 70.984 )
 [node name="HouseEntrance2" parent="." instance=ExtResource( 18 )]
 position = Vector2( 153.796, 39.9515 )
 
-[node name="Area2D" parent="." instance=ExtResource( 17 )]
+[node name="TestItem" parent="." instance=ExtResource( 17 )]
 position = Vector2( -9.61923, 138.447 )
 script = ExtResource( 30 )
 
@@ -914,9 +914,6 @@ margin_top = 76.8107
 margin_right = -101.079
 margin_bottom = -108.189
 
-[node name="V" parent="GameUI/Inventory/Background/M" index="0"]
-margin_bottom = 640.0
-
 [node name="Header" parent="GameUI/Inventory/Background/M/V" index="0"]
 margin_right = 337.0
 
@@ -938,7 +935,7 @@ position = Vector2( -218, 103 )
 
 [connection signal="body_entered" from="ForestSpawnArea" to="ForestSpawnArea" method="_on_ForestSpawnArea_body_entered"]
 [connection signal="body_exited" from="ForestSpawnArea" to="ForestSpawnArea" method="_on_ForestSpawnArea_body_exited"]
-[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_Area2D_body_entered"]
+[connection signal="body_entered" from="TestItem" to="TestItem" method="_on_Area2D_body_entered"]
 [connection signal="animation_finished" from="GameUI/DialogueUI/AnimationPlayer" to="GameUI/DialogueUI" method="_on_AnimationPlayer_animation_finished"]
 
 [editable path="GameUI/Inventory"]

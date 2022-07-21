@@ -38,7 +38,7 @@ custom_constants/margin_bottom = 20
 margin_left = 20.0
 margin_top = 20.0
 margin_right = 358.0
-margin_bottom = 641.0
+margin_bottom = 640.0
 custom_constants/separation = 20
 
 [node name="Header" type="HBoxContainer" parent="Background/M/V"]
@@ -89,7 +89,7 @@ expand = true
 [node name="GridContainer" type="GridContainer" parent="Background/M/V"]
 margin_top = 100.0
 margin_right = 338.0
-margin_bottom = 621.0
+margin_bottom = 620.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/vseparation = 45
