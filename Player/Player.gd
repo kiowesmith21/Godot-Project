@@ -31,6 +31,8 @@ onready var armorBar = get_parent().get_parent().get_node("GameUI/ArmorBar")
 func _ready():
 	stats.connect("no_health", self, "die") #connect to player stats signal
 	global_position = $PlayerStats.global_pos
+	
+	
 
 #movement
 func _physics_process(delta):
@@ -167,7 +169,15 @@ func from_dictionary(data):
 	stats.health = data.health
 	stats.armor = data.armor
 	fireball_given = data.fireball_given
-
+	
 #player not getting hit, their hurtbox has been exited
 func _on_Hurtbox_area_exited(area):
 	gettingHit = false
+
+
+func _on_FutureMerlin_FMAppears():
+	$Exclamation.show()
+	$ExclamationSound.play()
+	yield(get_tree().create_timer(1.4), "timeout")
+	$Exclamation.hide()
+	$ExclamationSound.stop()

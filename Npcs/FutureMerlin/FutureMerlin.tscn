@@ -35,6 +35,7 @@ position = Vector2( -28.735, -7.87791 )
 scale = Vector2( 1.46412, 1.49237 )
 frames = SubResource( 1 )
 animation = "idle"
+frame = 3
 playing = true
 
 [node name="Bush-4" type="Sprite" parent="."]
@@ -53,5 +54,4 @@ position = Vector2( -27, 2 )
 scale = Vector2( 13.28, 13.28 )
 shape = SubResource( 3 )
 
-[connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
