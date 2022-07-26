@@ -88,6 +88,7 @@ texture_pressed = ExtResource( 4 )
 expand = true
 
 [node name="GridContainer" parent="Background/M/V" instance=ExtResource( 7 )]
+anchor_bottom = 0.0
 margin_top = 100.0
 margin_right = 338.0
 margin_bottom = 408.0

@@ -5,7 +5,6 @@
 [ext_resource path="res://UI/Skillbar.gd" type="Script" id=3]
 [ext_resource path="res://Assets/Weapons/dagger.png" type="Texture" id=4]
 
-
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 1 )
 region = Rect2( 0, 0, 512, 512 )
@@ -38,9 +37,6 @@ margin_bottom = 29.0
 rect_scale = Vector2( 4, 4 )
 color = Color( 0.282353, 0.317647, 0.305882, 1 )
 script = ExtResource( 3 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Skill1" type="ColorRect" parent="."]
 margin_left = 1.2287
@@ -49,9 +45,6 @@ margin_right = 15.2287
 margin_bottom = 14.3632
 rect_pivot_offset = Vector2( 8.76503, 7.1459 )
 color = Color( 0.588235, 0.627451, 0.196078, 0.490196 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Sprite" type="Sprite" parent="Skill1"]
 position = Vector2( 7.01895, 6.35678 )
@@ -64,9 +57,6 @@ margin_top = 1.0784
 margin_right = 28.6918
 margin_bottom = 14.0784
 color = Color( 0, 0, 0, 0.490196 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Arrow" type="Sprite" parent="Skill2"]
 light_mask = 64
