@@ -1057,4 +1057,10 @@ anims/ShowDialogue = SubResource( 27 )
 [connection signal="body_entered" from="ForestSpawnArea" to="ForestSpawnArea" method="_on_ForestSpawnArea_body_entered"]
 [connection signal="body_exited" from="ForestSpawnArea" to="ForestSpawnArea" method="_on_ForestSpawnArea_body_exited"]
 [connection signal="animation_finished" from="GameUI/DialogueUI/AnimationPlayer" to="GameUI/DialogueUI" method="_on_AnimationPlayer_animation_finished"]
+<<<<<<< Updated upstream
 [connection signal="animation_finished" from="GameUI/DialogueUI2/AnimationPlayer" to="GameUI/DialogueUI2" method="_on_AnimationPlayer_animation_finished"]
+=======
+[connection signal="FMAppears" from="FutureMerlin" to="Player/Player" method="_on_FutureMerlin_FMAppears"]
+
+[editable path="GameUI/Inventory"]
+>>>>>>> Stashed changes
