@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Assets/NPCs/King/King_Idle_4.png" type="Texture" id=1]
 [ext_resource path="res://Assets/NPCs/King/King_Idle_3.png" type="Texture" id=2]
@@ -14,7 +14,13 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="CapsuleShape2D" id=2]
+[sub_resource type="Curve" id=2]
+min_value = -500.0
+max_value = 500.0
+_data = [ Vector2( 0.335227, -206.047 ), 0.0, 0.0, 0, 0, Vector2( 0.6875, -188.029 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CapsuleShape2D" id=3]
+radius = 14.4846
 
 [node name="FutureMerlin" type="KinematicBody2D"]
 
@@ -23,14 +29,32 @@ position = Vector2( -28.735, -7.87791 )
 scale = Vector2( 1.46412, 1.49237 )
 frames = SubResource( 1 )
 animation = "idle"
-frame = 1
 playing = true
 
-[node name="Bush-4" type="Sprite" parent="AnimatedSprite"]
-position = Vector2( -10.3668, 11.3622 )
-scale = Vector2( 0.861389, 0.849698 )
+[node name="Bush-4" type="Sprite" parent="."]
+position = Vector2( -43.9132, 9.0787 )
+scale = Vector2( 1.26118, 1.26806 )
 texture = ExtResource( 5 )
 
+[node name="CPUParticles2D2" type="CPUParticles2D" parent="."]
+modulate = Color( 1, 0.788235, 0.411765, 1 )
+position = Vector2( -27, 0 )
+rotation = -3.1032
+amount = 5
+lifetime = 0.02
+speed_scale = 0.2
+randomness = 0.44
+emission_shape = 1
+emission_sphere_radius = 26.7
+spread = 0.0
+gravity = Vector2( 0, -5 )
+orbit_velocity_curve = SubResource( 2 )
+linear_accel = -78.49
+radial_accel = -44.09
+scale_amount = 4.0
+scale_amount_random = 0.9
+color = Color( 0.94902, 0.796078, 0.396078, 1 )
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -28.4121, 3.3578 )
-shape = SubResource( 2 )
+position = Vector2( -28.5836, 3.44356 )
+shape = SubResource( 3 )

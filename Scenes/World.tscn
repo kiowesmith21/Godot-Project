@@ -1,4 +1,4 @@
-[gd_scene load_steps=59 format=2]
+[gd_scene load_steps=64 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/World/Bushes/Bush-4.png" type="Texture" id=2]
@@ -29,8 +29,13 @@
 [ext_resource path="res://Scenes/title-screen/Fonts/Romulus.ttf" type="DynamicFontData" id=27]
 [ext_resource path="res://Scenes/Areas/Forest-Spawn-Area.gd" type="Script" id=28]
 [ext_resource path="res://Sound/Music/02.2_LOOP_Valley_Grounds_by_Florian_Stracker.wav" type="AudioStream" id=29]
+[ext_resource path="res://Npcs/FutureMerlin/FutureMerlin.gd" type="Script" id=30]
 [ext_resource path="res://UI/Magero.tres" type="DynamicFont" id=31]
 [ext_resource path="res://UI/DialogueUI.gd" type="Script" id=32]
+[ext_resource path="res://Npcs/FutureMerlin/FutureMerlin.tscn" type="PackedScene" id=33]
+[ext_resource path="res://Npcs/FutureMerlin/FutureMerlin2.gd" type="Script" id=34]
+[ext_resource path="res://Npcs/FutureMerlin/FutureMerlin3.gd" type="Script" id=35]
+[ext_resource path="res://Npcs/FutureMerlin/FutureMerlin4.gd" type="Script" id=36]
 
 [sub_resource type="TileSet" id=1]
 0/name = "DirtTileset.png 0"
@@ -829,6 +834,30 @@ remote_path = NodePath("../../Camera2D")
 position = Vector2( 2353.34, 715.053 )
 
 [node name="NPCs" type="Node" parent="."]
+
+[node name="Future Merlin 1" parent="NPCs" groups=[
+"NPC",
+] instance=ExtResource( 33 )]
+position = Vector2( -203.58, 96.3496 )
+script = ExtResource( 30 )
+
+[node name="FutureMerlin 2" parent="NPCs/Future Merlin 1" groups=[
+"NPC",
+] instance=ExtResource( 33 )]
+position = Vector2( 2570.94, 228.501 )
+script = ExtResource( 34 )
+
+[node name="FutureMerlin 3" parent="NPCs/Future Merlin 1" groups=[
+"NPC",
+] instance=ExtResource( 33 )]
+position = Vector2( 2789.69, 641.85 )
+script = ExtResource( 35 )
+
+[node name="FutureMerlin 4" parent="NPCs/Future Merlin 1" groups=[
+"NPC",
+] instance=ExtResource( 33 )]
+position = Vector2( 2397.16, 1075.11 )
+script = ExtResource( 36 )
 
 [node name="Mary" parent="NPCs" groups=[
 "NPC",
