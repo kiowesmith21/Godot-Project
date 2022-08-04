@@ -7,15 +7,15 @@ var npc
 
 func name_set(new_value):
 	npcname = new_value
-	$ColorRect/NPCName.text = new_value
+	$TextureRect/NPCName.text = new_value
 	
 func dialogue_set(new_value):
 	dialogue = new_value
-	$ColorRect/Dialogue.text = new_value
+	$TextureRect/Dialogue.text = new_value
 	
 func choices_set(new_value):
 	choices = new_value
-	$ColorRect/Choices.text = new_value
+	$TextureRect/Choices.text = new_value
 
 
 func open():

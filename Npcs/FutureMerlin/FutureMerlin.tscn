@@ -16,8 +16,8 @@ animations = [ {
 } ]
 
 [sub_resource type="CapsuleShape2D" id=3]
-radius = 9.1706
-height = 9.04843
+radius = 14.4846
+height = 0.617437
 
 [node name="FutureMerlin" type="KinematicBody2D"]
 script = ExtResource( 6 )
@@ -41,6 +41,7 @@ position = Vector2( -28.735, -7.87791 )
 scale = Vector2( 1.46412, 1.49237 )
 frames = SubResource( 1 )
 animation = "idle"
+frame = 3
 playing = true
 
 [node name="Bush-4" type="Sprite" parent="."]
