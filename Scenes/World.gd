@@ -27,10 +27,10 @@ func from_dictionary(data):
 		$ForestSpawnArea.add_child(thief)
 
 	executioner.global_position = Vector2(data.executioner.position[0], data.executioner.position[1])
-<<<<<<< Updated upstream
+#<<<<<<< Updated upstream
 	executioner.get_node("ExecutionerStats").set_health(data.executioner.health)
-=======
+#=======
 
 
 
->>>>>>> Stashed changes
+#>>>>>>> Stashed changes

@@ -835,38 +835,26 @@ position = Vector2( 2353.34, 715.053 )
 
 [node name="NPCs" type="Node" parent="."]
 
-[node name="Future Merlin 1" parent="NPCs" groups=[
-"NPC",
-] instance=ExtResource( 33 )]
+[node name="Future Merlin 1" parent="NPCs" groups=["NPC"] instance=ExtResource( 33 )]
 position = Vector2( -203.58, 96.3496 )
 script = ExtResource( 30 )
 
-[node name="FutureMerlin 2" parent="NPCs/Future Merlin 1" groups=[
-"NPC",
-] instance=ExtResource( 33 )]
+[node name="FutureMerlin 2" parent="NPCs/Future Merlin 1" groups=["NPC"] instance=ExtResource( 33 )]
 position = Vector2( 2570.94, 228.501 )
 script = ExtResource( 34 )
 
-[node name="FutureMerlin 3" parent="NPCs/Future Merlin 1" groups=[
-"NPC",
-] instance=ExtResource( 33 )]
+[node name="FutureMerlin 3" parent="NPCs/Future Merlin 1" groups=["NPC"] instance=ExtResource( 33 )]
 position = Vector2( 2789.69, 641.85 )
 script = ExtResource( 35 )
 
-[node name="FutureMerlin 4" parent="NPCs/Future Merlin 1" groups=[
-"NPC",
-] instance=ExtResource( 33 )]
+[node name="FutureMerlin 4" parent="NPCs/Future Merlin 1" groups=["NPC"] instance=ExtResource( 33 )]
 position = Vector2( 2397.16, 1075.11 )
 script = ExtResource( 36 )
 
-[node name="Mary" parent="NPCs" groups=[
-"NPC",
-] instance=ExtResource( 11 )]
+[node name="Mary" parent="NPCs" groups=["NPC"] instance=ExtResource( 11 )]
 position = Vector2( -169.569, 128.528 )
 
-[node name="Jim" parent="NPCs" groups=[
-"NPC",
-] instance=ExtResource( 14 )]
+[node name="Jim" parent="NPCs" groups=["NPC"] instance=ExtResource( 14 )]
 position = Vector2( 238.653, 122.452 )
 
 [node name="Elder" parent="NPCs" instance=ExtResource( 12 )]
@@ -874,24 +862,16 @@ position = Vector2( -297.057, -64.7424 )
 
 [node name="Enemies" type="Node" parent="."]
 
-[node name="Executioner" parent="Enemies" groups=[
-"Enemy",
-] instance=ExtResource( 7 )]
+[node name="Executioner" parent="Enemies" groups=["Enemy"] instance=ExtResource( 7 )]
 position = Vector2( 2357.16, 904.512 )
 
-[node name="Thief" parent="Enemies" groups=[
-"Enemy",
-] instance=ExtResource( 6 )]
+[node name="Thief" parent="Enemies" groups=["Enemy"] instance=ExtResource( 6 )]
 position = Vector2( 2300.32, 565.205 )
 
-[node name="Thief3" parent="Enemies" groups=[
-"Enemy",
-] instance=ExtResource( 6 )]
+[node name="Thief3" parent="Enemies" groups=["Enemy"] instance=ExtResource( 6 )]
 position = Vector2( 2428.32, 561.205 )
 
-[node name="Thief2" parent="Enemies" groups=[
-"Enemy",
-] instance=ExtResource( 6 )]
+[node name="Thief2" parent="Enemies" groups=["Enemy"] instance=ExtResource( 6 )]
 position = Vector2( 426.793, -158.872 )
 
 [node name="GameUI" type="CanvasLayer" parent="."]
@@ -935,8 +915,8 @@ margin_left = 3.0
 margin_top = 1.0
 margin_right = 580.0
 margin_bottom = 81.0
-custom_fonts/font = ExtResource( 31 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 31 )
 text = "placeholder"
 autowrap = true
 __meta__ = {
@@ -948,8 +928,8 @@ margin_left = 7.0
 margin_top = 53.0
 margin_right = 297.0
 margin_bottom = 142.0
-custom_fonts/font = ExtResource( 31 )
 custom_colors/font_color = Color( 0, 0, 0, 0.639216 )
+custom_fonts/font = ExtResource( 31 )
 text = "placeholder"
 autowrap = true
 percent_visible = 0.0
@@ -962,8 +942,8 @@ margin_left = 5.0
 margin_top = 150.0
 margin_right = 323.0
 margin_bottom = 204.0
-custom_fonts/font = ExtResource( 31 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 31 )
 text = "placeholder"
 align = 1
 autowrap = true
@@ -1015,8 +995,8 @@ margin_right = 1762.0
 margin_bottom = 142.0
 size_flags_horizontal = 0
 size_flags_stretch_ratio = 9.51
-custom_fonts/font = SubResource( 24 )
 custom_colors/font_color = Color( 1, 0.878431, 0.403922, 1 )
+custom_fonts/font = SubResource( 24 )
 text = "placeholder"
 autowrap = true
 __meta__ = {
@@ -1028,8 +1008,8 @@ margin_left = 67.8944
 margin_top = 149.305
 margin_right = 1986.89
 margin_bottom = 268.305
-custom_fonts/font = SubResource( 25 )
 custom_colors/font_color = Color( 1, 1, 1, 0.639216 )
+custom_fonts/font = SubResource( 25 )
 text = "placeholder"
 autowrap = true
 percent_visible = 0.0
@@ -1042,8 +1022,8 @@ margin_left = 66.5826
 margin_top = 328.906
 margin_right = 1997.58
 margin_bottom = 503.906
-custom_fonts/font = SubResource( 26 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 26 )
 text = "Choices
 "
 autowrap = true
@@ -1057,10 +1037,4 @@ anims/ShowDialogue = SubResource( 27 )
 [connection signal="body_entered" from="ForestSpawnArea" to="ForestSpawnArea" method="_on_ForestSpawnArea_body_entered"]
 [connection signal="body_exited" from="ForestSpawnArea" to="ForestSpawnArea" method="_on_ForestSpawnArea_body_exited"]
 [connection signal="animation_finished" from="GameUI/DialogueUI/AnimationPlayer" to="GameUI/DialogueUI" method="_on_AnimationPlayer_animation_finished"]
-<<<<<<< Updated upstream
 [connection signal="animation_finished" from="GameUI/DialogueUI2/AnimationPlayer" to="GameUI/DialogueUI2" method="_on_AnimationPlayer_animation_finished"]
-=======
-[connection signal="FMAppears" from="FutureMerlin" to="Player/Player" method="_on_FutureMerlin_FMAppears"]
-
-[editable path="GameUI/Inventory"]
->>>>>>> Stashed changes
