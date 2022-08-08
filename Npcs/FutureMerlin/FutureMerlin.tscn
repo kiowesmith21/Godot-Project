@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Assets/NPCs/King/King_Idle_4.png" type="Texture" id=1]
 [ext_resource path="res://Assets/NPCs/King/King_Idle_3.png" type="Texture" id=2]
@@ -15,8 +15,10 @@ animations = [ {
 "speed": 5.0
 } ]
 
+[sub_resource type="CapsuleShape2D" id=4]
+
 [sub_resource type="CapsuleShape2D" id=3]
-radius = 14.4846
+radius = 7.50126
 height = 0.617437
 
 [node name="FutureMerlin" type="KinematicBody2D"]
@@ -41,7 +43,7 @@ position = Vector2( -28.735, -7.87791 )
 scale = Vector2( 1.46412, 1.49237 )
 frames = SubResource( 1 )
 animation = "idle"
-frame = 3
+frame = 1
 playing = true
 
 [node name="Bush-4" type="Sprite" parent="."]
@@ -51,6 +53,7 @@ texture = ExtResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -28.4121, 3.3578 )
+shape = SubResource( 4 )
 
 [node name="Area2D" type="Area2D" parent="."]
 

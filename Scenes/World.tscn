@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=2]
+[gd_scene load_steps=58 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/World/Bushes/Bush-4.png" type="Texture" id=2]
@@ -691,58 +691,6 @@ radius = 950.674
 size = 92
 font_data = ExtResource( 27 )
 
-[sub_resource type="Animation" id=25]
-tracks/0/type = "value"
-tracks/0/path = NodePath("ColorRect/Choices:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.9 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ false, true ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("ColorRect/Dialogue:percent_visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 0.9 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ 0.0, 1.0 ]
-}
-
-[sub_resource type="Animation" id=26]
-tracks/0/type = "value"
-tracks/0/path = NodePath("TextureRect/Choices:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.9 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ false, true ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("TextureRect/Dialogue:percent_visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 0.9 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ 0.0, 1.0 ]
-}
-
 [node name="World" type="Node2D"]
 script = ExtResource( 20 )
 
@@ -810,6 +758,9 @@ remote_path = NodePath("../../Camera2D")
 position = Vector2( 2353.34, 715.053 )
 
 [node name="NPCs" type="Node" parent="."]
+
+[node name="FutureMerlin" parent="NPCs" groups=["NPC"] instance=ExtResource( 33 )]
+position = Vector2( -218, 103 )
 
 [node name="Mary" parent="NPCs" groups=["NPC"] instance=ExtResource( 11 )]
 position = Vector2( -169.569, 128.528 )
@@ -912,7 +863,6 @@ __meta__ = {
 }
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="GameUI/DialogueUI"]
-anims/ShowDialogue = SubResource( 25 )
 
 [node name="DialogueUI2" type="Popup" parent="GameUI"]
 pause_mode = 2
@@ -975,7 +925,6 @@ __meta__ = {
 }
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="GameUI/DialogueUI2"]
-anims/ShowDialogue = SubResource( 26 )
 
 [node name="Skillbar" parent="GameUI" instance=ExtResource( 13 )]
 margin_left = 550.195
@@ -1008,9 +957,6 @@ margin_left = 301.606
 margin_top = 74.6078
 margin_right = 341.606
 margin_bottom = 114.608
-
-[node name="FutureMerlin" parent="." instance=ExtResource( 33 )]
-position = Vector2( -218, 103 )
 
 [connection signal="body_entered" from="ForestSpawnArea" to="ForestSpawnArea" method="_on_ForestSpawnArea_body_entered"]
 [connection signal="body_exited" from="ForestSpawnArea" to="ForestSpawnArea" method="_on_ForestSpawnArea_body_exited"]
