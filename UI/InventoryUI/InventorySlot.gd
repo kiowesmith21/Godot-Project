@@ -2,16 +2,18 @@ extends CenterContainer
 
 var inventory = preload("res://UI/InventoryUI/Inventory.tres")
 
-onready var itemTexture = $Icon
+onready var itemTexture = $ItemTexture
 
 func display_item(item):
-	if item is Item:
+	print("we're getting here?")
+	if item is Resource:
+		print("it is a resource right")
 		itemTexture.texture = item.texture
 
 func get_drag_data(_position):
 	var item_index = get_index()
 	var item = inventory.remove_item(item_index)
-	if item is Item:
+	if item is Resource:
 		var data = {}
 		data.item = item
 		data.item_index = item_index

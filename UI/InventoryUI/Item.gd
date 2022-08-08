@@ -6,4 +6,3 @@ export (String) var name = ""
 export (Texture) var texture
 
 export (String) var Type = ""
-

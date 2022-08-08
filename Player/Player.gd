@@ -164,8 +164,8 @@ func to_dictionary(): #made to save the player's data
 func from_dictionary(data):
 	global_position = Vector2(data.position[0], data.position[1])
 	PlayerStats.global_pos = global_position
-	stats.health = data.health
-	stats.armor = data.armor
+	PlayerStats.health = data.health
+	PlayerStats.armor = data.armor
 	fireball_given = data.fireball_given
 
 #player not getting hit, their hurtbox has been exited

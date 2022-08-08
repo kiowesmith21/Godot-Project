@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=2]
+[gd_scene load_steps=56 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/World/Bushes/Bush-4.png" type="Texture" id=2]
@@ -16,6 +16,7 @@
 [ext_resource path="res://Npcs/VillageMale/StartingVillageMale.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Assets/Weapons/FireballSpellbook.tscn" type="PackedScene" id=15]
 [ext_resource path="res://UI/ArmorBar.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Test/TestItem/ItemScene.tscn" type="PackedScene" id=17]
 [ext_resource path="res://Scenes/Houses/HouseEntrance2.tscn" type="PackedScene" id=18]
 [ext_resource path="res://Scenes/Houses/HouseEntrance3.tscn" type="PackedScene" id=19]
 [ext_resource path="res://Scenes/World.gd" type="Script" id=20]
@@ -926,6 +927,9 @@ margin_bottom = 114.608
 
 [node name="FutureMerlin" parent="." instance=ExtResource( 33 )]
 position = Vector2( -218, 103 )
+
+[node name="TestDagger" parent="." instance=ExtResource( 17 )]
+position = Vector2( -10.5827, 117.653 )
 
 [connection signal="body_entered" from="ForestSpawnArea" to="ForestSpawnArea" method="_on_ForestSpawnArea_body_entered"]
 [connection signal="body_exited" from="ForestSpawnArea" to="ForestSpawnArea" method="_on_ForestSpawnArea_body_exited"]

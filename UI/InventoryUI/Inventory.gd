@@ -35,9 +35,12 @@ func _on_Button_pressed():
 	already_pressed = false
 	
 func set_item(item_index, item):
+	print("im setting an item!")
 	var previousItem = items[item_index]
 	items[item_index] = item
 	emit_signal("items_changed", [item_index])
+	print(items)
+	print(items[0].get_class())
 	return previousItem
 
 func swap_items(item_index, target_item_index):
@@ -69,6 +72,7 @@ func _on_adding_item(item):
 	#get_child(0).get_child(0).get_child(0).get_child(1).get_child(free_item).get_child(1)
 	#future stuff to do -> draggable items to move between the inventory and hot bar
 	if(free_item < 9):
+		print("the player has space!")
 		set_item(free_item,item)
 		free_item += 1
 	else:
