@@ -171,3 +171,10 @@ func from_dictionary(data):
 #player not getting hit, their hurtbox has been exited
 func _on_Hurtbox_area_exited(area):
 	gettingHit = false
+
+func _on_FutureMerlin_FMJAppears():
+	$Exclamation.show()
+	$ExclamationSound.play()
+	yield(get_tree().create_timer(1.4), "timeout")
+	$Exclamation.hide()
+	$ExclamationSound.stop()

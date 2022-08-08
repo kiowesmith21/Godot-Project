@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://WhiteColor.shader" type="Shader" id=1]
 [ext_resource path="res://Hitboxes and Hurtboxes/Hurtbox.tscn" type="PackedScene" id=2]
@@ -10,6 +10,8 @@
 [ext_resource path="res://Assets/NPCs/Archer/Archer_Walk_3.png" type="Texture" id=8]
 [ext_resource path="res://Assets/NPCs/Archer/Archer_Walk_1.png" type="Texture" id=9]
 [ext_resource path="res://Assets/NPCs/Archer/Archer_Walk_2.png" type="Texture" id=10]
+[ext_resource path="res://Player/exclamation.png" type="Texture" id=11]
+[ext_resource path="res://Player/merlin_cut_alert.wav" type="AudioStream" id=12]
 
 [sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 1 )
@@ -70,6 +72,15 @@ stream = ExtResource( 5 )
 
 [node name="deathSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 6 )
+
+[node name="ExclamationSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 12 )
+
+[node name="Exclamation" type="Sprite" parent="."]
+visible = false
+position = Vector2( -0.166669, -15 )
+scale = Vector2( 0.0224171, 0.0186012 )
+texture = ExtResource( 11 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 material = SubResource( 1 )

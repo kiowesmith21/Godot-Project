@@ -12,6 +12,7 @@ var dialogue_state = 0
 var dialogueUI
 var player
 
+signal FMJAppears
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	dialogueUI = get_tree().root.get_node("/root/World/GameUI/DialogueUI2")
@@ -27,6 +28,7 @@ func _on_Area2D_body_entered(body):
 	if body.name == "Player":
 		FMJSprite.visible = true
 		FMJParticles.visible = true
+		emit_signal("FMJAppears")
 	pass # Replace with function body.
 
 func talk(choice = ""):
