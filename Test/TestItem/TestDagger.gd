@@ -8,5 +8,4 @@ func _ready():
 
 func _on_TestDagger_body_entered(body):
 	if body.name == "Player":
-		print("the player landed on me!")
 		inventory._on_adding_item(resource)

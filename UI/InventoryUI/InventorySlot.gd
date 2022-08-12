@@ -5,9 +5,7 @@ var inventory = preload("res://UI/InventoryUI/Inventory.tres")
 onready var itemTexture = $ItemTexture
 
 func display_item(item):
-	print("we're getting here?")
-	if item is Resource:
-		print("it is a resource right")
+	if item is Item:
 		itemTexture.texture = item.texture
 
 func get_drag_data(_position):
