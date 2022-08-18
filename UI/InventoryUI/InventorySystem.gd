@@ -1,9 +1,8 @@
 extends Resource
 class_name Inventory
 
-var drag_data = null
-
 signal items_changed(indexes)
+var drag_data = null
 
 export(Array, Resource) var items = [
 	null, null, null, null, null, null, null, null, null,
