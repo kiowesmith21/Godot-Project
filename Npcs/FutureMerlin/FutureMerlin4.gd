@@ -39,8 +39,8 @@ func talk(choice = ""):
 	match dialogue_state:
 		0:
 			dialogue_state = 1
-			dialogueUI.dialogue = "What are you talking to me for? Go find the elder!"
-			dialogueUI.choices = "[Q] Got it!"
+			dialogueUI.dialogue = "Wow… I can’t believe you pulled it off. Now your real journey begins. "
+			dialogueUI.choices = "[Q] Let's do it!"
 			dialogueUI.open()
 			print("Next option ", dialogue_state)
 		1:

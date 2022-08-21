@@ -29,6 +29,7 @@ func _on_Button_pressed():
 	already_pressed = false
 	
 
+
 func _on_adding_item(item):
 	#set the inventory texture as the pic of the item
 	#get_child(0).get_child(0).get_child(0).get_child(1).get_child(free_item).get_child(0).set_texture(item.get_child(0).get_texture())
@@ -38,4 +39,3 @@ func _on_adding_item(item):
 	if(free_item < 9):
 		inventory.set_item(free_item,item)
 		free_item += 1
-
