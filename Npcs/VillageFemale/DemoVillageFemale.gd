@@ -6,7 +6,7 @@ var dialogueUI
 var player
 
 func _ready():
-	dialogueUI = get_parent().get_parent().get_node("GameUI/DialogueUI")
+	dialogueUI = get_parent().get_parent().get_node("GameUI/DialogueUI2")
 	player = get_parent().get_parent().get_node("Player/Player")
 
 func talk(choice = ""):
@@ -28,5 +28,6 @@ func talk(choice = ""):
 			dialogueUI.open()
 		2:
 			dialogue_state = 0
+			player.talkingStat = false
 			dialogueUI.close()
 	

@@ -16,6 +16,9 @@ var wpn_choice = 1
 var fireball_given = false
 var gettingHit = false
 var playerArea 
+var talkingStat = false
+var target
+var Clock = Timer.new()
 #loading other scenes
 var Melee = preload("res://Player/Weapons/Melee.tscn")
 var Fireball = preload("res://Player/Weapons/Fireball.tscn")
@@ -27,6 +30,7 @@ onready var anim = $AnimatedSprite
 onready var hurtBox = $Hurtbox
 onready var healthBar = get_parent().get_parent().get_node("GameUI/HealthBar") #healthbar
 onready var armorBar = get_parent().get_parent().get_node("GameUI/ArmorBar")
+onready var dialogBox = get_parent().get_parent().get_node("GameUI/DialogueUI2")
 
 func _ready():
 	stats.connect("no_health", self, "die") #connect to player stats signal
@@ -130,12 +134,29 @@ func get_input(delta):
 	else:
 		atk_cooldown -= delta
 	
-	if(Input.get_action_strength("interact")):
-		var target = $RayCast2D.get_collider()
+	if(Input.is_action_just_pressed("interact") and talkingStat == false):
+		
+		target = $RayCast2D.get_collider()
 		print(target)
 		if target != null:
 			if target.is_in_group("NPC"):
-				target.talk()
+				talkingStat = true
+				#target.talk(0)
+	if(talkingStat == true):
+		
+		#Clock.start(10)
+		if(Input.is_action_just_pressed("cancel")):
+			target.talk(1)
+			
+			
+		elif(Input.is_action_just_pressed("interact")):
+			target.talk(0)			
+	
+#func _physics_process(delta):
+func _process(delta):
+	
+	pass
+		
 
 #player getting hit, their hurtbox being entered
 func _on_Hurtbox_area_entered(area):

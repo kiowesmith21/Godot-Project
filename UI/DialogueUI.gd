@@ -29,16 +29,25 @@ func close():
 	
 func _ready():
 	set_process_input(false)
+	
+
 
 func _on_AnimationPlayer_animation_finished(anim_name):
 	set_process_input(true)
+	pass
+
+func reset():
+	name_set(null)
+	dialogue_set(null)
+	choices_set(null)
 	
 func _input(event):
 	if event.is_action_pressed("interact"):
 		set_process_input(false)
-		npc.talk("E")
+		npc.talk(0)
+		
 	elif event.is_action_pressed("cancel"):
 		set_process_input(false)
-		npc.talk("Q")
+		npc.talk(1)
 
 

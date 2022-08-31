@@ -11,12 +11,14 @@ onready var FMJParticles = get_node("CPUParticles2D")
 var dialogue_state = 0
 var dialogueUI
 var player
+var appeared = false
 
 signal FMJAppears
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	dialogueUI = get_tree().root.get_node("/root/World/GameUI/DialogueUI2")
 	player = get_tree().root.get_node("/root/World/Player/Player")
+	
 
 
 func _on_Area2D_area_entered(area):
@@ -25,17 +27,18 @@ func _on_Area2D_area_entered(area):
 
 
 func _on_Area2D_body_entered(body):
-	if body.name == "Player":
+	if body.name == "Player" and appeared == false:
 		FMJSprite.visible = true
 		FMJParticles.visible = true
 		emit_signal("FMJAppears")
+		appeared = true
 	pass # Replace with function body.
 
-func talk(choice = ""):
+func talk(dialogue_state):
 	#setting the npc's state and name to the dialogueUI
 	dialogueUI.npc = self
 	dialogueUI.npcname = "Future Merlin"
-
+	
 	match dialogue_state:
 		0:
 			dialogue_state = 1
@@ -46,6 +49,7 @@ func talk(choice = ""):
 		1:
 			dialogueUI.close()
 			dialogue_state = 0
+			player.talkingStat = false
 
 
 
